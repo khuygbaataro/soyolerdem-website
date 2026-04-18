@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Соёл Эрдэм Дээд Сургууль — モンゴル文化教育大学</title>
+<meta name="description" content="Япон улсын 100% хөрөнгө оруулалтаар байгуулагдсан Соёл Эрдэм дээд сургууль. 30+ Япон түнш, 1500+ төгсөгч, 100+ солилцоо.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+/* Энэ хуудсанд онцгой хэрэгтэй стилүүд */
+.hero-visual {
+  position: relative;
+  height: 580px;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(26, 26, 46, 0.2), rgba(26, 26, 46, 0.5)),
+    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80') center/cover;
+  filter: sepia(15%) brightness(0.95);
+}
+
+.hero-visual .vertical-text {
+  position: absolute;
+  top: 2rem;
+  right: -3rem;
+  writing-mode: vertical-rl;
+  font-family: var(--font-jp);
+  font-size: 0.75rem;
+  letter-spacing: 0.6em;
+  color: var(--ink-light);
+  z-index: 3;
+  font-weight: 500;
+}
+
+.hero-tag {
+  position: absolute;
+  bottom: -2rem;
+  left: -3rem;
+  background: var(--paper);
+  padding: 1.5rem 1.8rem;
+  border-left: 3px solid var(--vermillion);
+  z-index: 4;
+  max-width: 280px;
+  box-shadow: -6px 12px 30px rgba(26, 26, 46, 0.08);
+}
+
+.hero-tag .label-jp {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--vermillion);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.hero-tag .big-num {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero-tag .desc {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.about-principles {
+  margin: var(--space-6) 0;
+  padding: var(--space-4);
+  background: var(--paper-warm);
+  border-left: 3px solid var(--ink);
+  position: relative;
+}
+
+.about-principles::before {
+  content: "四則";
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--vermillion);
+  background: var(--paper);
+  padding: 0.3rem 0.6rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.about-principles .title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+  font-style: italic;
+}
+
+.principles-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-4);
+}
+
+.principles-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding: 0.3rem 0;
+}
+
+.principles-list .letter {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--vermillion);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.chairman-card {
+  position: relative;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.chairman-photo {
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(26, 26, 46, 0.4)),
+    url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80') center/cover;
+  filter: grayscale(30%) sepia(10%);
+}
+
+.chairman-info {
+  padding: var(--space-3) 0 0;
+  border-top: 2px solid var(--ink);
+  margin-top: var(--space-2);
+}
+
+.chairman-info .name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.chairman-info .role {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  margin-top: 0.3rem;
+}
+
+.chairman-quote {
+  position: absolute;
+  top: 2rem;
+  left: -4rem;
+  background: var(--vermillion);
+  color: var(--paper);
+  padding: 1.2rem 1.4rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  max-width: 240px;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.program-card {
+  background: var(--paper);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  cursor: pointer;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.08);
+  border-color: var(--ink);
+}
+
+.program-card.featured {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.program-card.featured h3 { color: var(--paper); }
+.program-card.featured .meta { color: rgba(247, 243, 233, 0.55); }
+.program-card.featured .description { color: rgba(247, 243, 233, 0.8); }
+.program-card.featured .card-footer { border-top-color: rgba(247, 243, 233, 0.15); }
+.program-card.featured .ees { color: rgba(247, 243, 233, 0.5); }
+.program-card.featured .more { color: var(--vermillion); }
+
+.card-num-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-3);
+}
+
+.card-num {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--vermillion);
+  line-height: 1;
+  font-style: italic;
+}
+
+.card-num-jp {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-align: right;
+}
+
+.program-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.program-card .meta {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  margin-bottom: var(--space-3);
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.program-card .meta .dot {
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.program-card .description {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.card-footer .ees { color: var(--ink-light); }
+
+.card-footer .more {
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.japan-banner {
+  padding: var(--space-12) 0;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.japan-banner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: 620px;
+  height: 620px;
+  border: 40px solid var(--vermillion);
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.japan-banner .bg-text {
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 22rem;
+  color: rgba(247, 243, 233, 0.04);
+  left: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.banner-content {
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  color: var(--paper);
+  margin-bottom: var(--space-3);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.banner-content h2 .italic {
+  font-style: italic;
+  color: var(--vermillion);
+}
+
+.banner-content p {
+  font-size: 1.05rem;
+  color: rgba(247, 243, 233, 0.8);
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.banner-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(247, 243, 233, 0.15);
+}
+
+.feature .big {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--vermillion);
+  line-height: 1;
+  font-style: italic;
+}
+
+.feature .desc {
+  font-size: 0.85rem;
+  color: rgba(247, 243, 233, 0.7);
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.testimonial {
+  background: var(--paper-warm);
+  padding: var(--space-4);
+  position: relative;
+  transition: all 0.3s ease;
+  border-top: 3px solid var(--vermillion);
+}
+
+.testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(26, 26, 46, 0.08);
+}
+
+.testimonial-number {
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: var(--vermillion);
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+.testimonial blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.testimonial blockquote::before {
+  content: "「";
+  position: absolute;
+  left: -0.5rem;
+  top: -0.5rem;
+  font-family: var(--font-jp);
+  font-size: 2rem;
+  color: var(--vermillion);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+}
+
+.testimonial-author .avatar {
+  width: 52px;
+  height: 52px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vermillion);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.testimonial-author .info .name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.testimonial-author .info .current {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  margin-top: 2px;
+}
+
+.shilin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.shilin-image {
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(26, 26, 46, 0.5)),
+    url('https://images.unsplash.com/photo-1589873900116-20cc27075c11?w=800&q=80') center/cover;
+  position: relative;
+  filter: sepia(20%);
+}
+
+.shilin-image .caption {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  color: var(--paper);
+}
+
+.shilin-image .caption .mn {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.shilin-image .caption .jp {
+  font-family: var(--font-jp);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin-top: 0.3rem;
+  color: var(--vermillion);
+  font-weight: 600;
+}
+
+.shilin-features {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-4);
+}
+
+.shilin-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.shilin-feature .num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--vermillion);
+  line-height: 1;
+  font-style: italic;
+}
+
+.shilin-feature .text {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.news-card {
+  background: var(--paper);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-3);
+}
+
+.news-card:hover { transform: translateY(-3px); }
+.news-card:hover h3 { color: var(--vermillion); }
+.news-card.large { grid-row: span 2; }
+
+.news-image {
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(10%);
+}
+
+.news-card.large .news-image { aspect-ratio: 4/3; }
+
+.news-image-1 { background-image: linear-gradient(135deg, rgba(26, 26, 46, 0.6), rgba(230, 57, 70, 0.4)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800'); }
+.news-image-2 { background-image: linear-gradient(135deg, rgba(26, 26, 46, 0.5), rgba(201, 169, 97, 0.3)), url('https://images.unsplash.com/photo-1549737221-bef65e2604a6?w=800'); }
+.news-image-3 { background-image: linear-gradient(135deg, rgba(230, 57, 70, 0.4), rgba(26, 26, 46, 0.6)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800'); }
+
+.news-content {
+  padding: var(--space-3) 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.news-category {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--vermillion);
+}
+
+.news-date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+
+.news-card h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.news-card.large h3 { font-size: 1.8rem; }
+
+.news-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.news-card .read-more {
+  margin-top: var(--space-2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.partner-logo {
+  text-align: center;
+  padding: var(--space-2);
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.partner-logo:hover { opacity: 1; }
+
+.partner-logo .en {
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--ink-light);
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .hero-visual { height: 420px; margin-top: var(--space-4); }
+  .hero-visual .vertical-text { display: none; }
+  .hero-tag { left: 1rem; }
+  .about-grid, .shilin-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .chairman-card { margin: 0 auto; }
+  .chairman-quote { left: -1rem; }
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .news-card.large { grid-row: auto; grid-column: span 2; }
+  .partners-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .hero h1 .stamp-mark { right: -0.5rem; top: -1.5em; }
+  .programs-grid, .testimonials-grid, .news-grid { grid-template-columns: 1fr; }
+  .news-card.large { grid-column: span 1; }
+  .banner-features { grid-template-columns: 1fr; gap: var(--space-3); }
+  .principles-list { grid-template-columns: 1fr; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .news-header { flex-direction: column; align-items: flex-start; }
+  .shilin-features { flex-direction: column; gap: var(--space-2); }
+  .chairman-quote { position: static; margin-bottom: var(--space-3); max-width: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text">
+        <div class="mn">Соёл Эрдэм</div>
+        <div class="jp">モンゴル文化教育大学</div>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="pages/about.html">Сургуулийн тухай</a></li>
+      <li><a href="pages/surgalt.html">Сургалт</a></li>
+      <li><a href="pages/erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="pages/oyutan.html">Оюутан</a></li>
+      <li><a href="pages/hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="pages/medee.html">Мэдээ</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="index.html" class="active">MN</a>
+        <span>|</span>
+        <a href="jp/index.html">JP</a>
+        <span>|</span>
+        <a href="#">EN</a>
+      </div>
+      <a href="pages/elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg-text">文化教育</div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="issue-mark fade-up">
+        <span class="num">№ 01 · est. 1993</span>
+        <span class="divider"></span>
+        <span class="jp-label">文化教育の架け橋</span>
+      </div>
+
+      <h1 class="fade-up delay-1">
+        Япон руу <span class="italic">нээгдсэн</span><br>
+        <span class="stamp-container">хаалга<span class="stamp-mark">印</span></span><span class="dot">.</span>
+      </h1>
+
+      <p class="lead fade-up delay-2">
+        Япон улсын хөрөнгө оруулалтаар 1993 онд байгуулагдсан Соёл Эрдэм
+        Дээд Сургууль нь 30 гаруй Япон түнш сургуультай хамтран ажилладаг,
+        Монголын тэргүүлэх Япон хэлний боловсролын төв юм.
+      </p>
+
+      <div class="hero-ctas fade-up delay-3">
+        <a href="pages/elselt.html" class="btn-primary">Элсэлт 2026 <span class="arrow">→</span></a>
+        <a href="pages/surgalt.html" class="btn-outline">Сургалт үзэх</a>
+        <a href="#" class="btn-link">Moodle-д нэвтрэх →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up delay-4">
+      <div class="hero-image"></div>
+      <div class="vertical-text">文化・教育・未来</div>
+      <div class="hero-tag">
+        <div class="label-jp">交換留学 · 2006-оос</div>
+        <div class="big-num">100<span style="color:var(--vermillion)">+</span></div>
+        <div class="desc">оюутан Японд солилцоонд амжилттай хамрагдсан</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+  <div class="bg-text">実績</div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="num">30<span class="plus">+</span></div>
+        <div class="label">жилийн түүх</div>
+        <div class="label-jp">創立以来</div>
+      </div>
+      <div class="stat">
+        <div class="num">1,500<span class="plus">+</span></div>
+        <div class="label">амжилттай төгсөгч</div>
+        <div class="label-jp">卒業生</div>
+      </div>
+      <div class="stat">
+        <div class="num">100<span class="plus">+</span></div>
+        <div class="label">солилцооны оюутан</div>
+        <div class="label-jp">交換留学生</div>
+      </div>
+      <div class="stat">
+        <div class="num">30<span class="plus">+</span></div>
+        <div class="label">Япон түнш сургууль</div>
+        <div class="label-jp">提携大学</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="content-block">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-label">
+          <span class="jp">私たちについて</span>
+          <span class="line"></span>
+          <span class="en">About us</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.6rem); margin-bottom: var(--space-4);">Монгол-Японы боловсролын <span class="italic">гүүр</span>.</h2>
+
+        <p class="drop-cap" style="color:var(--ink-soft); font-size:1.05rem; margin-bottom:var(--space-3); max-width:580px;">
+          1993 онд Япон улсын "Хармони Центр" олон нийтийн байгууллагын
+          хөрөнгө оруулалтаар "Соёл" япон хэлний дамжаа нэртэйгээр анх
+          байгуулагдсан. 1996 онд дээд сургууль болон өргөжиж, өнөөг
+          хүртэл 30 жилийн турш Монгол-Японы боловсролын харилцааг
+          тасралтгүй хөгжүүлж байна.
+        </p>
+
+        <p style="color:var(--ink-soft); font-size:1.05rem; margin-bottom:var(--space-3); max-width:580px;">
+          Бидний төгсөгчдийн 40 орчим хувь нь Япон улсад сурч, ажиллаж,
+          амьдарч байна. Монголын хувийн их, дээд сургуулиудын түүчээ нь
+          болж, дэлхийн түвшинд мэргэжилтэн бэлтгэхийг зорьсоор байна.
+        </p>
+
+        <div class="about-principles">
+          <div class="title">Бидний дөрвөн зарчим</div>
+          <ul class="principles-list">
+            <li><span class="letter">С</span> Соёл уламжлалаа дээдэлсэн</li>
+            <li><span class="letter">Э</span> Эрдэм мэдлэгийг эрхэмлэсэн</li>
+            <li><span class="letter">А</span> Амьдрах арга ухаанд суралцсан</li>
+            <li><span class="letter">С</span> Сурлагын хоцрогдолгүй</li>
+          </ul>
+        </div>
+
+        <a href="pages/about.html" class="btn-link">Сургуулийн түүх бүрэн унших →</a>
+      </div>
+
+      <div class="about-visual">
+        <div class="chairman-card">
+          <div class="chairman-quote">Таны сонголт — ирээдүйдээ хийсэн хөрөнгө оруулалт.</div>
+          <div class="chairman-photo"></div>
+          <div class="chairman-info">
+            <div class="name">Т. Дорждагва</div>
+            <div class="role">Захирал · Эрдмийн зөвлөлийн дарга</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROGRAMS -->
+<section class="content-block warm" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center">
+        <span class="jp">学部・専攻</span>
+        <span class="line"></span>
+        <span class="en">Programs</span>
+      </div>
+      <h2>5 бакалавр, 1 <span class="italic">магистр</span></h2>
+      <p>Монгол-Японы хосолсон сургалттай, олон улсын стандартад нийцсэн хөтөлбөрүүд</p>
+    </div>
+
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="card-num-wrap"><div class="card-num">01</div><div class="card-num-jp">第 一</div></div>
+        <h3>Гадаад хэлний орчуулга (Япон)</h3>
+        <div class="meta"><span>4 жил</span><span class="dot"></span><span>120 кредит</span></div>
+        <p class="description">Манай хамгийн уламжлалт мэргэжил. Япон хэл, орчуулга, хэлмэрч мэргэжлийг эзэмших.</p>
+        <div class="card-footer"><span class="ees">ЭЕШ: Англи, Нийгэм</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+
+      <div class="program-card">
+        <div class="card-num-wrap"><div class="card-num">02</div><div class="card-num-jp">第 二</div></div>
+        <h3>Олон улс, орон судлал (Япон)</h3>
+        <div class="meta"><span>4 жил</span><span class="dot"></span><span>120 кредит</span></div>
+        <p class="description">Япон улсын соёл, түүх, нийгэм, эдийн засгийг гүнзгий судлах мэргэжил.</p>
+        <div class="card-footer"><span class="ees">ЭЕШ: Англи, Орос</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+
+      <div class="program-card">
+        <div class="card-num-wrap"><div class="card-num">03</div><div class="card-num-jp">第 三</div></div>
+        <h3>Аялал жуулчлалын менежмент</h3>
+        <div class="meta"><span>4 жил</span><span class="dot"></span><span>120 кредит</span></div>
+        <p class="description">Шилийн булаг дадлагатай, Япон жуулчидтай шууд харилцах боломжтой.</p>
+        <div class="card-footer"><span class="ees">ЭЕШ: Математик, Англи</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+
+      <div class="program-card featured">
+        <div class="card-num-wrap"><div class="card-num">04</div><div class="card-num-jp">注目 · ONCLOH</div></div>
+        <h3>Программ хангамж</h3>
+        <div class="meta"><span>4 жил</span><span class="dot"></span><span>120 кредит</span></div>
+        <p class="description">Японы Велнесс Спортын их сургуультай 2+2 хөтөлбөр. Cisco, xCloud сертификат.</p>
+        <div class="card-footer"><span class="ees">ЭЕШ: Математик, Физик</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+
+      <div class="program-card">
+        <div class="card-num-wrap"><div class="card-num">05</div><div class="card-num-jp">第 五</div></div>
+        <h3>Эдийн засаг</h3>
+        <div class="meta"><span>4 жил</span><span class="dot"></span><span>120 кредит</span></div>
+        <p class="description">Монгол-Японы бизнесийн харилцаа, гадаад худалдаа, эдийн засгийн чиглэлээр.</p>
+        <div class="card-footer"><span class="ees">ЭЕШ: Математик, Англи</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+
+      <div class="program-card">
+        <div class="card-num-wrap"><div class="card-num">06</div><div class="card-num-jp">修士 · МАГИСТР</div></div>
+        <h3>Магистрын хөтөлбөр</h3>
+        <div class="meta"><span>2 жил</span><span class="dot"></span><span>Судалгаа</span></div>
+        <p class="description">Харьцуулсан хэл шинжлэл, Япон-Монголын уран зохиол, олон улсын судалгаа.</p>
+        <div class="card-footer"><span class="ees">Бакалавр диплом</span><a href="pages/surgalt.html" class="more">Дэлгэрэнгүй →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JAPAN BANNER -->
+<section class="japan-banner">
+  <div class="bg-text">留学</div>
+  <div class="container">
+    <div class="banner-content">
+      <div class="section-label">
+        <span class="jp">日本留学</span>
+        <span class="line"></span>
+        <span class="en">Study in Japan</span>
+      </div>
+
+      <h2>100 гаруй оюутны<br>амжилттай <span class="italic">туулсан зам</span></h2>
+      <p>2006 оноос хойш Оберлин их сургуультай хамтран оюутан солилцоог тасралтгүй зохион байгуулж байна. 50-100% тэтгэлэгтэй суралцах, Японд цалинтай дадлага хийх, хэлний бэлтгэлд хамрагдах — эдгээр боломж Соёл Эрдэмд элссэн танд бэлэн байна.</p>
+
+      <div class="banner-features">
+        <div class="feature"><div class="big">2 + 2</div><div class="desc">2 жил Монголд + 2 жил Японд суралцах</div></div>
+        <div class="feature"><div class="big">¥160,000</div><div class="desc">Сарын цалинтай дадлагын хөтөлбөр</div></div>
+        <div class="feature"><div class="big">30+</div><div class="desc">Оберлин, Риккёо, Чюо Гакүин гэх мэт</div></div>
+      </div>
+
+      <a href="pages/hamtyn-ajillagaa.html" class="btn-light">Солилцооны хөтөлбөр үзэх <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="content-block">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center">
+        <span class="jp">卒業生の声</span>
+        <span class="line"></span>
+        <span class="en">Alumni voices</span>
+      </div>
+      <h2>Бидний <span class="italic">бахархал</span></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-number">No. 01 · 証 言</div>
+        <blockquote>Анх энэ сургуульд ороод багш нарын заах арга зүй, харилцааны соёл нь үнэхээр таалагдсан. Ирэх жил Япон явж суралцах болсондоо маш баяртай байна.</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">Д</div>
+          <div class="info"><div class="name">Ч. Далантай</div><div class="current">Орчуулагчийн анги · 1-р курс</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-number">No. 02 · 証 言</div>
+        <blockquote>Интерншип хөтөлбөрт хамрагдан Японд ирээд жил гаруй болж байна. Сургалтын төлбөрөө бүрэн төлөх бололцоо олгосон Соёл Эрдэмд талархаж байна.</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">Г</div>
+          <div class="info"><div class="name">Гэрэлт-Од</div><div class="current">Токио, Япон · Интерншип</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-number">No. 03 · 証 言</div>
+        <blockquote>Ахлах сургуулиас эхлээд япон хэл, соёлыг сонирхож Соёл Эрдэмийг сонгосон. Энд хэлний мэдлэгээс гадна олон улсын харилцааны ур чадвар эзэмшлээ.</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">Н</div>
+          <div class="info"><div class="name">Ч. Наймангал</div><div class="current">Төгсөгч · Япон ЭСЯ-д ажилладаг</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SHILIN BULAG -->
+<section class="content-block warm">
+  <div class="container">
+    <div class="shilin-grid">
+      <div class="shilin-image">
+        <div class="caption">
+          <div class="mn">Шилийн булаг</div>
+          <div class="jp">Төв аймаг · 中央県</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">
+          <span class="jp">実地研修</span>
+          <span class="line"></span>
+          <span class="en">Field campus</span>
+        </div>
+
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: var(--space-3);">Тал нутаг дээрх <br><span class="italic">анги танхим</span></h2>
+
+        <p style="color:var(--ink-soft); font-size:1.02rem; margin-bottom:var(--space-4);">
+          Улаанбаатараас зүүн тийш 62 км, Төв аймгийн Эрдэнэ сумын Баяндаваагийн аманд байрладаг бидний өөрийн жуулчны бааз. Зуны улиралд Япон жуулчид амрахаар ирэхэд оюутнууд шууд хэлний дадлага хийдэг. Морь унах, гэр барих, тараг сүү боловсруулах — Монгол ахуйг Япон жуулчдад хүргэх, өөрсдөө ч сурах сайхан орчин.
+        </p>
+
+        <div class="shilin-features">
+          <div class="shilin-feature"><div class="num">80</div><div class="text">Хүн хүлээн авах<br>гэр буудал</div></div>
+          <div class="shilin-feature"><div class="num">150</div><div class="text">Хүн хүлээн авах<br>ресторан</div></div>
+          <div class="shilin-feature"><div class="num">62</div><div class="text">Км зайд<br>УБ-аас</div></div>
+        </div>
+
+        <a href="pages/moritoi-baaz.html" class="btn-outline">Баазын талаар →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEWS -->
+<section class="content-block" id="news">
+  <div class="container">
+    <div class="news-header">
+      <div>
+        <div class="section-label">
+          <span class="jp">最新ニュース</span>
+          <span class="line"></span>
+          <span class="en">Latest</span>
+        </div>
+        <h2 style="font-size: clamp(2rem, 4vw, 2.8rem);">Сургуулийн <span class="italic">амьдрал</span></h2>
+      </div>
+      <a href="pages/medee.html" class="btn-link">Бүх мэдээ →</a>
+    </div>
+
+    <div class="news-grid" id="dynamic-news-home">
+      <article class="news-card large">
+        <div class="news-image news-image-1"></div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-category">入 学 · ЭЛСЭЛТ</span>
+            <span class="news-date">2026 · 04 · 15</span>
+          </div>
+          <h3>2026-2027 оны хичээлийн жилийн элсэлт эхэллээ</h3>
+          <p>Соёл Эрдэм Дээд Сургуулийн 5 бакалаврын мэргэжил, магистрын хөтөлбөрт элсэх өргөдөл хүлээн авч эхэллээ. Шинэ ондоо 2+2 хөтөлбөрийг Япон улсын Велнесс Спортын их сургуультай хэрэгжүүлэх болно.</p>
+          <a href="pages/medee.html" class="read-more">Цааш унших →</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-image news-image-2"></div>
+        <div class="news-content">
+          <div class="news-meta"><span class="news-category">行 事 · ҮЙЛ ЯВДАЛ</span><span class="news-date">2026 · 03 · 28</span></div>
+          <h3>Бүнкёосай Япон соёлын наадам амжилттай зохион байгуулагдлаа</h3>
+          <a href="pages/medee.html" class="read-more">Цааш →</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-image news-image-3"></div>
+        <div class="news-content">
+          <div class="news-meta"><span class="news-category">成 果 · АМЖИЛТ</span><span class="news-date">2026 · 03 · 15</span></div>
+          <h3>Риккёо их сургуулийн тэтгэлэгт 8 оюутан хамрагдлаа</h3>
+          <a href="pages/medee.html" class="read-more">Цааш →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- PARTNERS -->
+<section class="content-block warm" style="padding: var(--space-12) 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center">
+        <span class="jp">提 携 大 学</span>
+      </div>
+      <h2 style="font-size: 1.7rem; font-weight: 500; font-style: italic;">Япон улсын 30+ түнш сургууль</h2>
+    </div>
+
+    <div class="partners-grid">
+      <div class="partner-logo">桜美林大学<span class="en">Obirin University</span></div>
+      <div class="partner-logo">立教大学<span class="en">Rikkyo University</span></div>
+      <div class="partner-logo">中央学院大学<span class="en">Chuo Gakuin</span></div>
+      <div class="partner-logo">成城大学<span class="en">Seijo University</span></div>
+      <div class="partner-logo">北海学園大学<span class="en">Hokkai Gakuen</span></div>
+      <div class="partner-logo">JICA<span class="en">Japan Int'l Coop.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос хойш тасралтгүй үйл ажиллагаа явуулж буй.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>リンク · ЛИНК</h5>
+        <ul>
+          <li><a href="pages/about.html">Сургуулийн тухай</a></li>
+          <li><a href="pages/elselt.html">Элсэлтийн журам</a></li>
+          <li><a href="pages/surgalt.html">Сургалтын хөтөлбөр</a></li>
+          <li><a href="pages/erdem.html">Эрдэм шинжилгээ</a></li>
+          <li><a href="pages/oyutny-zuvluel.html">Оюутны зөвлөл</a></li>
+          <li><a href="pages/tugsugchid.html">Төгсөгчид</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>サービス · СЕРВИС</h5>
+        <ul>
+          <li><a href="#">Moodle нэвтрэх</a></li>
+          <li><a href="pages/nomiin-san.html">Номын сан</a></li>
+          <li><a href="pages/sonin-hevlel.html">Сонин хэвлэл</a></li>
+          <li><a href="pages/elselt.html">Цахим бүртгэл</a></li>
+          <li><a href="pages/erdem.html">СИТИ Science сэтгүүл</a></li>
+          <li><a href="pages/moritoi-baaz.html">Шилийн булаг бааз</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а<br>501 тоот, Улаанбаатар</div>
+        <div class="contact-item"><strong>電話 · Утас</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール · E-mail</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль. 全著作権所有.</div>
+      <div class="socials">
+        <a href="#" class="social-link">FB</a>
+        <a href="#" class="social-link">YT</a>
+        <a href="#" class="social-link">IG</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="assets/js/identity-redirect.js"></script>
+<script src="assets/js/cms-loader.js"></script>
+</body>
+</html>
