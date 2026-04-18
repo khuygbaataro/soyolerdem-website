@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>モンゴル文化教育大学 | モンゴルで学び、働き、支援する</title>
+<meta name="description" content="1993年創立、日本出資のモンゴル文化教育大学。短期・長期留学、日本語教員募集、学術交流、シリンボラグ観光キャンプのご案内。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   B хувилбартай ижил өнгөний систем
+   ============================================ */
+:root {
+  --ink: #1a1a2e;
+  --ink-deep: #0d0d1a;
+  --ink-soft: #3a3a4e;
+  --ink-light: #6a6a7e;
+  --ink-muted: #8a8a9e;
+
+  --vermillion: #e63946;
+  --vermillion-dark: #b8232f;
+  --vermillion-soft: rgba(230, 57, 70, 0.08);
+
+  --paper: #f7f3e9;
+  --paper-warm: #f0ead9;
+  --paper-dark: #e8e0c9;
+
+  --gold: #c9a961;
+
+  --border: #d9d3c2;
+  --border-soft: #e5ddc7;
+  --white: #fffcf2;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Noto Sans JP', 'Manrope', sans-serif;
+  --font-jp: 'Shippori Mincho', 'Noto Serif JP', serif;
+
+  --max-width: 1280px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+  font-feature-settings: "palt";
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(200, 180, 140, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(230, 57, 70, 0.02) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* Япон хэл дээрх тохиргоо */
+.jp-text {
+  font-family: var(--font-jp);
+  font-feature-settings: "palt";
+}
+
+/* ============================================
+   ТИПОГРАФИ — Япон хэл дээр
+   ============================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-jp);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.en-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(247, 243, 233, 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 46px; height: 46px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  font-family: var(--font-jp);
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transform: rotate(-2deg);
+}
+
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  background: var(--vermillion);
+  bottom: 7px; right: 7px;
+  transform: rotate(45deg);
+}
+
+.logo-text { line-height: 1.1; }
+
+.logo-text .jp {
+  font-family: var(--font-jp);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+
+.logo-text .mn {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-3);
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-menu a {
+  font-family: var(--font-jp);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 0.5rem 0;
+  position: relative;
+  letter-spacing: 0.08em;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; left: 50%;
+  width: 0; height: 1.5px;
+  background: var(--vermillion);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-menu a:hover { color: var(--ink); }
+.nav-menu a:hover::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.lang-switch a { color: var(--ink-light); padding: 4px 6px; }
+.lang-switch a.active { color: var(--ink); font-weight: 700; }
+.lang-switch span { color: var(--border); }
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--vermillion);
+  transform: translateY(-2px);
+}
+
+.btn-primary .arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(3px);
+}
+
+.mobile-toggle {
+  display: none;
+  width: 28px; height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-toggle span {
+  width: 100%; height: 2px;
+  background: var(--ink);
+}
+
+/* ============================================
+   HERO — Япон хэрэглэгчдэд зориулсан
+   ============================================ */
+.hero {
+  min-height: 95vh;
+  padding: 9rem var(--space-4) var(--space-12);
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(180deg, rgba(247, 243, 233, 0.85) 0%, rgba(247, 243, 233, 0.9) 60%, var(--paper) 100%),
+    url('https://images.unsplash.com/photo-1589873900116-20cc27075c11?w=1600&q=80') center/cover;
+  filter: sepia(25%) saturate(0.85);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "モンゴル";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 24rem;
+  color: var(--ink);
+  opacity: 0.03;
+  right: -5rem;
+  bottom: -3rem;
+  font-weight: 800;
+  line-height: 0.9;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.hero-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.issue-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  max-width: 420px;
+}
+
+.issue-mark .jp-num {
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  color: var(--vermillion);
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.issue-mark .divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
+.issue-mark .en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.hero h1 {
+  font-family: var(--font-jp);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  max-width: 900px;
+}
+
+.hero h1 .big-dot {
+  color: var(--vermillion);
+  font-weight: 700;
+}
+
+.hero h1 .light {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.hero h1 .en-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.45em;
+  font-weight: 400;
+  color: var(--ink-light);
+  display: block;
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hero p.lead {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin-bottom: var(--space-6);
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-outline {
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-link {
+  color: var(--ink);
+  font-family: var(--font-jp);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.7rem 0.3rem;
+  border-bottom: 1px solid var(--ink);
+  transition: all 0.25s ease;
+  letter-spacing: 0.05em;
+}
+
+.btn-link:hover {
+  color: var(--vermillion);
+  border-bottom-color: var(--vermillion);
+}
+
+/* ============================================
+   3 MAIN PATHWAYS — Япон хэрэглэгчдэд хамгийн чухал хэсэг
+   ============================================ */
+.pathways {
+  padding: var(--space-12) 0;
+  background: var(--paper);
+  margin-top: -4rem;
+  position: relative;
+  z-index: 3;
+}
+
+.pathways-header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.pathways-header .jp-label {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.pathways-header h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.pathway-card {
+  background: var(--paper);
+  padding: var(--space-6) var(--space-4);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.pathway-card:hover {
+  transform: translateY(-6px);
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.pathway-card:hover .pathway-num,
+.pathway-card:hover .pathway-jp,
+.pathway-card:hover .pathway-link {
+  color: var(--vermillion);
+}
+
+.pathway-card:hover .pathway-desc {
+  color: rgba(247, 243, 233, 0.8);
+}
+
+.pathway-card:hover .pathway-detail li {
+  color: rgba(247, 243, 233, 0.7);
+  border-bottom-color: rgba(247, 243, 233, 0.15);
+}
+
+.pathway-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--vermillion);
+  margin-bottom: var(--space-3);
+  transition: color 0.35s ease;
+}
+
+.pathway-jp {
+  font-family: var(--font-jp);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.04em;
+  transition: color 0.35s ease;
+}
+
+.pathway-en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-light);
+  margin-bottom: var(--space-3);
+  font-weight: 400;
+}
+
+.pathway-desc {
+  font-family: var(--font-jp);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  margin-bottom: var(--space-4);
+  flex: 1;
+  transition: color 0.35s ease;
+}
+
+.pathway-detail {
+  list-style: none;
+  margin-bottom: var(--space-4);
+}
+
+.pathway-detail li {
+  font-family: var(--font-jp);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.35s ease;
+}
+
+.pathway-detail li:last-child { border-bottom: none; }
+
+.pathway-detail .key {
+  color: var(--vermillion);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.pathway-link {
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.05em;
+  transition: color 0.35s ease;
+}
+
+.pathway-card:hover .pathway-link { border-top-color: rgba(247, 243, 233, 0.2); }
+
+.pathway-stamp {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: var(--vermillion);
+  border: 1.5px solid var(--vermillion);
+  padding: 0.2rem 0.5rem;
+  transform: rotate(5deg);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  background: var(--paper);
+  transition: all 0.35s ease;
+}
+
+.pathway-card:hover .pathway-stamp {
+  background: var(--vermillion);
+  color: var(--paper);
+}
+
+/* ============================================
+   CHAIRMAN'S MESSAGE
+   ============================================ */
+.chairman-message {
+  padding: var(--space-16) 0;
+  background: var(--paper-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.chairman-message::before {
+  content: "学長メッセージ";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 12rem;
+  color: var(--ink);
+  opacity: 0.025;
+  right: -2rem;
+  bottom: -2rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.chairman-visual {
+  position: relative;
+  max-width: 380px;
+}
+
+.chairman-photo {
+  aspect-ratio: 3/4;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(26, 26, 46, 0.5)),
+    url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80') center/cover;
+  filter: grayscale(25%) sepia(15%);
+  position: relative;
+}
+
+.chairman-visual .name-plate {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-3);
+  border-left: 4px solid var(--vermillion);
+}
+
+.chairman-visual .name-plate .jp {
+  font-family: var(--font-jp);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.chairman-visual .name-plate .role {
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: rgba(247, 243, 233, 0.7);
+  margin-top: 0.3rem;
+  letter-spacing: 0.15em;
+}
+
+.chairman-visual .name-plate .mn-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--vermillion);
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(247, 243, 233, 0.2);
+}
+
+.message-content .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.message-content .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+}
+
+.message-content .section-label .line {
+  flex: 0 0 40px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.message-content .section-label .en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.message-content h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.message-content h2 .vermillion {
+  color: var(--vermillion);
+}
+
+.message-body {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 2;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.03em;
+}
+
+.message-body.drop::first-letter {
+  float: left;
+  font-family: var(--font-jp);
+  font-size: 3.5rem;
+  line-height: 0.9;
+  padding: 0.2rem 0.6rem 0 0;
+  color: var(--vermillion);
+  font-weight: 700;
+}
+
+.signature {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.signature .name {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+}
+
+.signature .role {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+}
+
+/* ============================================
+   ABOUT MONGOLIA (日本から見たモンゴル)
+   ============================================ */
+.about-mongolia {
+  padding: var(--space-16) 0;
+  background: var(--paper);
+}
+
+.mongolia-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-8);
+}
+
+.mongolia-intro .section-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.mongolia-intro .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.mongolia-intro .section-label .line {
+  width: 30px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.mongolia-intro h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.03em;
+}
+
+.mongolia-intro h2 .vermillion { color: var(--vermillion); }
+
+.mongolia-intro p {
+  font-family: var(--font-jp);
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+.mongolia-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.fact {
+  background: var(--paper-warm);
+  padding: var(--space-4);
+  border-top: 3px solid var(--vermillion);
+  text-align: center;
+}
+
+.fact .icon-jp {
+  font-family: var(--font-jp);
+  font-size: 2rem;
+  color: var(--vermillion);
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+}
+
+.fact .big {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: var(--space-1);
+  line-height: 1;
+}
+
+.fact .label {
+  font-family: var(--font-jp);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   SHILIN BULAG — Япон жуулчдад онцгой
+   ============================================ */
+.shilin-jp {
+  padding: var(--space-16) 0;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.shilin-jp::before {
+  content: "草原";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 26rem;
+  color: rgba(247, 243, 233, 0.035);
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+}
+
+.shilin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.shilin-content .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.shilin-content .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.shilin-content .section-label .line {
+  width: 40px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.shilin-content h2 {
+  font-family: var(--font-jp);
+  color: var(--paper);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+.shilin-content h2 .vermillion { color: var(--vermillion); }
+
+.shilin-content p {
+  font-family: var(--font-jp);
+  font-size: 1.05rem;
+  color: rgba(247, 243, 233, 0.8);
+  line-height: 2;
+  margin-bottom: var(--space-4);
+}
+
+.shilin-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  padding: var(--space-3) 0;
+  border-top: 1px solid rgba(247, 243, 233, 0.15);
+  border-bottom: 1px solid rgba(247, 243, 233, 0.15);
+}
+
+.shilin-spec .label {
+  font-family: var(--font-jp);
+  font-size: 0.78rem;
+  color: var(--vermillion);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.shilin-spec .value {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.shilin-spec .sub {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  color: rgba(247, 243, 233, 0.6);
+  margin-top: 0.2rem;
+}
+
+.shilin-visual {
+  position: relative;
+}
+
+.shilin-image {
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(13, 13, 26, 0.6)),
+    url('https://images.unsplash.com/photo-1518176258769-f227c798150e?w=800&q=80') center/cover;
+  position: relative;
+  filter: sepia(15%);
+}
+
+.shilin-image .stamp {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  color: var(--paper);
+  background: var(--vermillion);
+  padding: 0.5rem 1rem;
+  transform: rotate(8deg);
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  border: 2px solid var(--paper);
+}
+
+.shilin-image .caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  color: var(--paper);
+}
+
+.shilin-image .caption .jp {
+  font-family: var(--font-jp);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.shilin-image .caption .loc {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: rgba(247, 243, 233, 0.8);
+}
+
+/* ============================================
+   TEACHER RECRUITMENT — Япон багшид зориулсан
+   ============================================ */
+.recruit {
+  padding: var(--space-16) 0;
+  background: var(--paper-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.recruit::before {
+  content: "募集";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 32rem;
+  color: var(--vermillion);
+  opacity: 0.04;
+  right: -4rem;
+  top: -4rem;
+  font-weight: 800;
+  line-height: 0.9;
+  pointer-events: none;
+}
+
+.recruit-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.recruit-content .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.recruit-content .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.recruit-content .section-label .line {
+  width: 40px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.recruit-content h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+.recruit-content h2 .vermillion {
+  color: var(--vermillion);
+}
+
+.recruit-hook {
+  font-family: var(--font-jp);
+  font-size: 1.15rem;
+  color: var(--ink);
+  line-height: 1.9;
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  background: var(--paper);
+  border-left: 4px solid var(--vermillion);
+  font-weight: 500;
+}
+
+.recruit-points {
+  list-style: none;
+  margin-bottom: var(--space-4);
+}
+
+.recruit-points li {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  line-height: 1.7;
+}
+
+.recruit-points li::before {
+  content: "◉";
+  color: var(--vermillion);
+  flex-shrink: 0;
+  font-size: 0.8em;
+  margin-top: 0.4em;
+}
+
+.recruit-cta {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.recruit-visual {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-6);
+  position: relative;
+}
+
+.recruit-visual::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: var(--vermillion);
+  z-index: -1;
+}
+
+.recruit-visual .stamp {
+  font-family: var(--font-jp);
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--vermillion);
+  border: 2px solid var(--vermillion);
+  padding: 0.3rem 0.6rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.recruit-visual h3 {
+  font-family: var(--font-jp);
+  color: var(--paper);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.03em;
+}
+
+.recruit-visual p {
+  font-family: var(--font-jp);
+  color: rgba(247, 243, 233, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  margin-bottom: var(--space-3);
+}
+
+.recruit-visual .contact {
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(247, 243, 233, 0.2);
+}
+
+.recruit-visual .contact .label {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.recruit-visual .contact .email {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--paper);
+  word-break: break-all;
+}
+
+/* ============================================
+   PARTNERSHIP
+   ============================================ */
+.partnership {
+  padding: var(--space-16) 0;
+  background: var(--paper);
+}
+
+.partnership-header {
+  max-width: 720px;
+  margin: 0 auto var(--space-8);
+  text-align: center;
+}
+
+.partnership-header .section-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.partnership-header .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.partnership-header .section-label .line {
+  width: 30px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.partnership-header h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+.partnership-header h2 .vermillion { color: var(--vermillion); }
+
+.partnership-header p {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.partner-row {
+  padding: var(--space-3);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.partner-row:nth-child(3n) { border-right: none; }
+.partner-row:hover { background: var(--paper-warm); }
+
+.partner-row .num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--vermillion);
+}
+
+.partner-row .jp-name {
+  font-family: var(--font-jp);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+
+.partner-row .en-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+}
+
+.partner-row .relation {
+  font-family: var(--font-jp);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+.partner-row.featured {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.partner-row.featured .jp-name { color: var(--paper); }
+.partner-row.featured .en-name { color: rgba(247, 243, 233, 0.6); }
+.partner-row.featured .relation { color: var(--vermillion); }
+
+.partnership-footer {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+.partnership-footer .note {
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+/* ============================================
+   DONORS (寄付者ご芳名)
+   ============================================ */
+.donors {
+  padding: var(--space-16) 0;
+  background: var(--paper-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.donors::before {
+  content: "寄付";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 28rem;
+  color: var(--vermillion);
+  opacity: 0.03;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  pointer-events: none;
+  letter-spacing: 0.1em;
+}
+
+.donors-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.donors-header .section-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.donors-header .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.donors-header .section-label .line {
+  width: 30px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.donors-header h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.03em;
+}
+
+.donors-header .thanks {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.donors-list {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: var(--space-6);
+  border: 2px solid var(--ink);
+  position: relative;
+}
+
+.donors-list::before {
+  content: "御芳名";
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper-warm);
+  padding: 0 var(--space-2);
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  font-weight: 600;
+}
+
+.donor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--border);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.donor-item:last-child { border-bottom: none; }
+
+.donor-name {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.donor-amount {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--vermillion);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============================================
+   STUDENT EXCHANGE TO MONGOLIA
+   ============================================ */
+.exchange {
+  padding: var(--space-16) 0;
+  background: var(--paper);
+}
+
+.exchange-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.exchange-visual {
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(180deg, rgba(26, 26, 46, 0.2), rgba(230, 57, 70, 0.3)),
+    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80') center/cover;
+  position: relative;
+  filter: sepia(15%);
+}
+
+.exchange-visual .overlay-text {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: var(--paper);
+}
+
+.exchange-visual .overlay-text .jp {
+  font-family: var(--font-jp);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+}
+
+.exchange-visual .overlay-text .en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: rgba(247, 243, 233, 0.85);
+}
+
+.exchange-content .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.exchange-content .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.exchange-content .section-label .line {
+  width: 40px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.exchange-content h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+.exchange-content h2 .vermillion { color: var(--vermillion); }
+
+.exchange-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.exchange-type {
+  padding: var(--space-4);
+  background: var(--paper-warm);
+  border-top: 3px solid var(--vermillion);
+}
+
+.exchange-type .type-label {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  color: var(--vermillion);
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.exchange-type h3 {
+  font-family: var(--font-jp);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.05em;
+}
+
+.exchange-type .duration {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--vermillion);
+  margin-bottom: var(--space-2);
+}
+
+.exchange-type ul {
+  list-style: none;
+  margin-top: var(--space-2);
+}
+
+.exchange-type li {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.exchange-type li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--vermillion);
+  font-weight: 700;
+}
+
+/* ============================================
+   NEWS JP
+   ============================================ */
+.news-jp {
+  padding: var(--space-16) 0;
+  background: var(--paper-warm);
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.news-header .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.news-header .section-label .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+.news-header .section-label .line {
+  width: 40px;
+  height: 1px;
+  background: var(--vermillion);
+}
+
+.news-header h2 {
+  font-family: var(--font-jp);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 960px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.news-item:hover {
+  padding-left: var(--space-2);
+  background: var(--paper);
+}
+
+.news-item:hover .news-title { color: var(--vermillion); }
+
+.news-item .date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-light);
+}
+
+.news-item .cat {
+  font-family: var(--font-jp);
+  font-size: 0.75rem;
+  color: var(--vermillion);
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--vermillion);
+  text-align: center;
+}
+
+.news-item .news-title {
+  font-family: var(--font-jp);
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color 0.25s ease;
+}
+
+.news-item .arrow {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--ink-light);
+  transition: transform 0.25s ease;
+}
+
+.news-item:hover .arrow {
+  color: var(--vermillion);
+  transform: translateX(5px);
+}
+
+.news-footer {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+/* ============================================
+   FOOTER — Япон мэдээлэл
+   ============================================ */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-12) 0 var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "大学";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 20rem;
+  color: rgba(247, 243, 233, 0.02);
+  right: -2rem;
+  bottom: -4rem;
+  font-weight: 700;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.footer-brand .logo-mark {
+  background: var(--paper);
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+
+.footer-brand .logo-mark::after { background: var(--vermillion); }
+
+.footer-brand h4 {
+  font-family: var(--font-jp);
+  color: var(--paper);
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.footer-brand .mn {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: rgba(247, 243, 233, 0.5);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-3);
+}
+
+.footer-brand p {
+  font-family: var(--font-jp);
+  color: rgba(247, 243, 233, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.9;
+  max-width: 300px;
+}
+
+.footer-col h5 {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--vermillion);
+  margin-bottom: var(--space-3);
+}
+
+.footer-col h5::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--vermillion);
+  margin-top: 0.5rem;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col li { margin-bottom: 0.7rem; }
+
+.footer-col a {
+  font-family: var(--font-jp);
+  color: rgba(247, 243, 233, 0.75);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-col a:hover { color: var(--vermillion); }
+
+.contact-item {
+  font-family: var(--font-jp);
+  color: rgba(247, 243, 233, 0.75);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--vermillion);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(247, 243, 233, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-jp);
+  font-size: 0.8rem;
+  color: rgba(247, 243, 233, 0.5);
+}
+
+.footer-bottom .year {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.social-link {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(247, 243, 233, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  font-family: var(--font-jp);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(247, 243, 233, 0.7);
+}
+
+.social-link:hover {
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+  background: rgba(230, 57, 70, 0.05);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.1s; }
+.fade-up.delay-2 { animation-delay: 0.25s; }
+.fade-up.delay-3 { animation-delay: 0.4s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .nav-menu { display: none; }
+  .mobile-toggle { display: flex; }
+  .pathways-grid { grid-template-columns: 1fr; }
+  .message-grid, .shilin-grid, .exchange-container, .recruit-container { grid-template-columns: 1fr; gap: var(--space-6); }
+  .mongolia-facts { grid-template-columns: repeat(2, 1fr); }
+  .partners-list { grid-template-columns: repeat(2, 1fr); }
+  .partner-row:nth-child(3n) { border-right: 1px solid var(--border); }
+  .partner-row:nth-child(2n) { border-right: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .news-item { grid-template-columns: 100px 1fr auto; }
+  .news-item .cat { grid-column: span 2; justify-self: start; margin-top: 0.3rem; }
+  .exchange-types { grid-template-columns: 1fr; }
+  .chairman-visual { max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding-top: 7rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .mongolia-facts { grid-template-columns: 1fr; }
+  .partners-list { grid-template-columns: 1fr; }
+  .partner-row { border-right: none !important; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: var(--space-2); }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-outline, .btn-link { justify-content: center; }
+  .shilin-specs { grid-template-columns: 1fr; }
+  .news-header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .news-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .news-item .cat { justify-self: start; }
+  .donor-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .signature { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">文</div>
+      <div class="logo-text">
+        <div class="jp">モンゴル文化教育大学</div>
+        <div class="mn">Соёл Эрдэм</div>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#mongolia">モンゴルを知る</a></li>
+      <li><a href="#shilin">草原キャンプ</a></li>
+      <li><a href="#recruit">教員募集</a></li>
+      <li><a href="#partnership">提携大学</a></li>
+      <li><a href="#donors">ご支援</a></li>
+      <li><a href="#news">ニュース</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="../index.html">MN</a>
+        <span>|</span>
+        <a href="index.html" class="active">JP</a>
+        <span>|</span>
+        <a href="#">EN</a>
+      </div>
+      <a href="#pathways" class="btn-primary">留学する <span class="arrow">→</span></a>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ============================================
+     HERO — "モンゴルへ"
+     ============================================ -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="issue-mark fade-up">
+      <span class="jp-num">創立 1993 · モンゴル国</span>
+      <span class="divider"></span>
+      <span class="en">est. 1993 · Ulaanbaatar</span>
+    </div>
+
+    <h1 class="fade-up delay-1">
+      モンゴルへ<span class="big-dot">。</span><br>
+      <span class="light">学びに、働きに、出会いに。</span>
+      <span class="en-subtitle">Come to Mongolia — to learn, to work, to meet.</span>
+    </h1>
+
+    <p class="lead fade-up delay-2">
+      1993年、日本の出資により設立されたモンゴル文化教育大学は、
+      モンゴル最大の日本語教育機関として、30年以上にわたり両国の
+      教育交流を支えてきました。学生・教員・ご支援者、それぞれの
+      お立場に合わせた関わり方をご用意しております。
+    </p>
+
+    <div class="hero-ctas fade-up delay-3">
+      <a href="#pathways" class="btn-primary">3つの道をご覧ください <span class="arrow">→</span></a>
+      <a href="#mongolia" class="btn-outline">モンゴルを知る</a>
+      <a href="#" class="btn-link">学長からのご挨拶 →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     3 PATHWAYS — Япон хэрэглэгчдэд хамгийн чухал
+     ============================================ -->
+<section class="pathways" id="pathways">
+  <div class="container">
+    <div class="pathways-header">
+      <div class="jp-label">三 つ の 道</div>
+      <h2>モンゴルとの関わり方</h2>
+    </div>
+
+    <div class="pathways-grid">
+      <!-- Pathway 1: Students -->
+      <div class="pathway-card">
+        <div class="pathway-stamp">学生</div>
+        <div class="pathway-num">道 壱 / No. 01</div>
+        <div class="pathway-jp">モンゴルで学ぶ</div>
+        <div class="pathway-en">For Students</div>
+        <p class="pathway-desc">
+          日本の大学生・大学院生を対象とした、短期・長期の
+          留学プログラム。草原の国で、日本では出会えない学びを。
+        </p>
+        <ul class="pathway-detail">
+          <li><span class="key">短期</span><span>2週間 〜 2ヶ月</span></li>
+          <li><span class="key">長期</span><span>2ヶ月 〜 1年</span></li>
+          <li><span class="key">分野</span><span>言語・文化・環境</span></li>
+        </ul>
+        <span class="pathway-link">留学プログラム詳細 →</span>
+      </div>
+
+      <!-- Pathway 2: Teachers -->
+      <div class="pathway-card">
+        <div class="pathway-stamp">募集</div>
+        <div class="pathway-num">道 弐 / No. 02</div>
+        <div class="pathway-jp">モンゴルで働く</div>
+        <div class="pathway-en">For Teachers</div>
+        <p class="pathway-desc">
+          日本語教員を常時募集しております。教員経験の有無は
+          問いません。日本語と文化への情熱が、学生たちの未来を
+          変えます。
+        </p>
+        <ul class="pathway-detail">
+          <li><span class="key">職種</span><span>日本語教員</span></li>
+          <li><span class="key">条件</span><span>経験不問</span></li>
+          <li><span class="key">歓迎</span><span>大学生・院生</span></li>
+        </ul>
+        <span class="pathway-link">教員応募フォーム →</span>
+      </div>
+
+      <!-- Pathway 3: Donors -->
+      <div class="pathway-card">
+        <div class="pathway-stamp">感謝</div>
+        <div class="pathway-num">道 参 / No. 03</div>
+        <div class="pathway-jp">モンゴルを支援する</div>
+        <div class="pathway-en">For Supporters</div>
+        <p class="pathway-desc">
+          個人・法人の皆様からのご寄付により、日本語教育・
+          国際交流活動を継続・発展させることができております。
+          心より感謝申し上げます。
+        </p>
+        <ul class="pathway-detail">
+          <li><span class="key">対象</span><span>個人・法人</span></li>
+          <li><span class="key">使途</span><span>教育・交流事業</span></li>
+          <li><span class="key">税制</span><span>控除対象</span></li>
+        </ul>
+        <span class="pathway-link">ご支援方法はこちら →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     CHAIRMAN'S MESSAGE
+     ============================================ -->
+<section class="chairman-message">
+  <div class="container">
+    <div class="message-grid">
+      <div class="chairman-visual">
+        <div class="chairman-photo"></div>
+        <div class="name-plate">
+          <div class="jp">ドルジダグワ</div>
+          <div class="role">学長 ・ 学術評議会議長</div>
+          <div class="mn-name">Т. Дорждагва · President</div>
+        </div>
+      </div>
+
+      <div class="message-content">
+        <div class="section-label">
+          <span class="jp">学長ご挨拶</span>
+          <span class="line"></span>
+          <span class="en">Message</span>
+        </div>
+
+        <h2>モンゴルと日本の<br><span class="vermillion">架け橋</span>として。</h2>
+
+        <p class="message-body drop">
+          1993年の創立以来、本学は日本とモンゴルを結ぶ教育・文化交流の
+          拠点として歩んでまいりました。現在、本学には1,500名を超える
+          卒業生がおり、その約4割が日本で学び、働き、暮らしております。
+        </p>
+
+        <p class="message-body">
+          日本の皆様にとって、モンゴルはまだ遠い国かもしれません。
+          しかし、草原の広がりと、素朴で温かい人々の暮らしは、
+          現代社会が忘れかけているものを思い出させてくれます。
+          本学は、そのモンゴルへの「入口」でありたいと願っております。
+        </p>
+
+        <p class="message-body">
+          留学、教員としての就業、ご寄付によるご支援 ——
+          どのような形であれ、モンゴルとの出会いが、あなたの
+          人生を豊かにすることをお約束いたします。
+        </p>
+
+        <div class="signature">
+          <div>
+            <div class="name">Т・ドルジダグワ</div>
+            <div class="role">学長 · モンゴル文化教育大学</div>
+          </div>
+          <a href="#" class="btn-link">大学について詳しく →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     ABOUT MONGOLIA — 日本から見たモンゴル
+     ============================================ -->
+<section class="about-mongolia" id="mongolia">
+  <div class="container">
+    <div class="mongolia-intro">
+      <div class="section-label">
+        <span class="line"></span>
+        <span class="jp">モンゴルについて</span>
+        <span class="line"></span>
+      </div>
+      <h2>日本から見た、<span class="vermillion">もう一つの国</span>。</h2>
+      <p>
+        成田から5時間半。時差はわずか1時間。
+        人口わずか340万人、国土面積は日本の4倍。
+        そこには、遊牧の伝統、広大な草原、そして
+        日本に親しみを寄せる人々が暮らしています。
+      </p>
+    </div>
+
+    <div class="mongolia-facts">
+      <div class="fact">
+        <div class="icon-jp">距離</div>
+        <div class="big">5.5h</div>
+        <div class="label">成田 — ウランバートル</div>
+      </div>
+      <div class="fact">
+        <div class="icon-jp">時差</div>
+        <div class="big">—1h</div>
+        <div class="label">日本より1時間遅れ</div>
+      </div>
+      <div class="fact">
+        <div class="icon-jp">人口</div>
+        <div class="big">340万</div>
+        <div class="label">日本の約37分の1</div>
+      </div>
+      <div class="fact">
+        <div class="icon-jp">面積</div>
+        <div class="big">×4</div>
+        <div class="label">日本の4倍の広さ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     SHILIN BULAG — Япон жуулчдын зүрх
+     ============================================ -->
+<section class="shilin-jp" id="shilin">
+  <div class="container">
+    <div class="shilin-grid">
+      <div class="shilin-content">
+        <div class="section-label">
+          <span class="jp">シリンボラグ</span>
+          <span class="line"></span>
+        </div>
+
+        <h2>大学が運営する、<br><span class="vermillion">草原のキャンプ</span>。</h2>
+
+        <p>
+          ウランバートルから東へ62km、トゥブ県エルデネ郡の谷間に位置する、
+          本学直営のツーリストキャンプです。夏期には日本からのお客様が
+          多くご宿泊になり、学生たちは生きた日本語に触れる貴重な機会を
+          得ています。
+        </p>
+
+        <p>
+          乗馬、ゲル(遊牧民の家)での宿泊、馬乳酒・乳製品づくりの体験など、
+          「観光」ではなく「暮らし」としてのモンゴルを体感していただけます。
+        </p>
+
+        <div class="shilin-specs">
+          <div class="shilin-spec">
+            <div class="label">宿 泊</div>
+            <div class="value">80 名</div>
+            <div class="sub">ゲル型宿舎にて収容</div>
+          </div>
+          <div class="shilin-spec">
+            <div class="label">食 事</div>
+            <div class="value">150 名</div>
+            <div class="sub">レストラン収容人数</div>
+          </div>
+          <div class="shilin-spec">
+            <div class="label">距 離</div>
+            <div class="value">62 km</div>
+            <div class="sub">ウランバートルから東</div>
+          </div>
+          <div class="shilin-spec">
+            <div class="label">営 業</div>
+            <div class="value">夏 期</div>
+            <div class="sub">6月 〜 9月中旬</div>
+          </div>
+        </div>
+
+        <a href="#" class="btn-outline" style="border-color: var(--paper); color: var(--paper);">キャンプ詳細・ご予約 →</a>
+      </div>
+
+      <div class="shilin-visual">
+        <div class="shilin-image">
+          <div class="stamp">乗馬体験</div>
+          <div class="caption">
+            <div class="jp">シリンボラグ</div>
+            <div class="loc">Shilin Bulag · Töv Aimag</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     TEACHER RECRUITMENT
+     ============================================ -->
+<section class="recruit" id="recruit">
+  <div class="container">
+    <div class="recruit-container">
+      <div class="recruit-content">
+        <div class="section-label">
+          <span class="jp">教員募集</span>
+          <span class="line"></span>
+        </div>
+
+        <h2>日本語教員を<br><span class="vermillion">募集しております</span>。</h2>
+
+        <div class="recruit-hook">
+          モンゴルに興味のある方、学生と関わり日本語を教えたい方、
+          広大な草原で暮らしを感じたい方 —— 私たちはあなたを
+          お待ちしております。
+        </div>
+
+        <ul class="recruit-points">
+          <li>教員経験は問いません。日本語と文化への情熱があれば十分です。</li>
+          <li>大学生・大学院生の方からのご応募も歓迎いたします。</li>
+          <li>渡航・滞在サポート、宿舎ご用意いたします。</li>
+          <li>モンゴル語は不要です。キャンパス内は日本語で通じます。</li>
+        </ul>
+
+        <div class="recruit-cta">
+          <a href="mailto:info@soyolerdem.edu.mn" class="btn-primary" style="background:var(--vermillion);">応募フォームへ <span class="arrow">→</span></a>
+          <a href="#" class="btn-link">募集要項を詳しく →</a>
+        </div>
+      </div>
+
+      <div class="recruit-visual">
+        <div class="stamp">急募</div>
+        <h3>モンゴルの学生たちの<br>未来を、一緒に。</h3>
+        <p>
+          本学の学生は、皆まじめで素直、日本への憧れを強く持っております。
+          あなたの一言が、彼らの人生を変えるかもしれません。
+        </p>
+        <p>
+          モンゴルの広大な大地と、穏やかな人々の暮らしの中で、
+          あなた自身も新しい発見ができるはずです。
+        </p>
+        <div class="contact">
+          <div class="label">ご連絡先</div>
+          <div class="email">info@soyolerdem.edu.mn</div>
+          <div class="email" style="margin-top:0.5rem;">soyolerdem.daigaku@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     STUDENT EXCHANGE TO MONGOLIA
+     ============================================ -->
+<section class="exchange">
+  <div class="container">
+    <div class="exchange-container">
+      <div class="exchange-visual">
+        <div class="overlay-text">
+          <div class="jp">モンゴル<br>留学</div>
+          <div class="en">Study in Mongolia</div>
+        </div>
+      </div>
+
+      <div class="exchange-content">
+        <div class="section-label">
+          <span class="jp">留学プログラム</span>
+          <span class="line"></span>
+        </div>
+
+        <h2>2つの留学プログラムを<br><span class="vermillion">ご用意しております</span>。</h2>
+
+        <p style="font-family:var(--font-jp); font-size:1rem; color:var(--ink-soft); line-height:1.9; margin-bottom:var(--space-3);">
+          日本の大学生・大学院生の皆様を対象とした、短期・長期の
+          留学プログラムをご案内いたします。必要書類も最小限、
+          手続きも簡潔にご対応いたします。
+        </p>
+
+        <div class="exchange-types">
+          <div class="exchange-type">
+            <div class="type-label">短 期 留 学</div>
+            <h3>2ヶ月以内</h3>
+            <div class="duration">Short Term</div>
+            <ul>
+              <li>履歴書</li>
+              <li>入学申込書</li>
+            </ul>
+          </div>
+
+          <div class="exchange-type">
+            <div class="type-label">長 期 留 学</div>
+            <h3>2ヶ月 〜 1年</h3>
+            <div class="duration">Long Term</div>
+            <ul>
+              <li>履歴書</li>
+              <li>入学申込書</li>
+              <li>健康診断書</li>
+              <li>最終学歴の卒業証明書</li>
+              <li>パスポートの写し</li>
+              <li>写真4枚(証明写真)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-4);">
+          <a href="#" class="btn-outline">お問い合わせ →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     PARTNERSHIP
+     ============================================ -->
+<section class="partnership" id="partnership">
+  <div class="container">
+    <div class="partnership-header">
+      <div class="section-label">
+        <span class="line"></span>
+        <span class="jp">提 携 大 学</span>
+        <span class="line"></span>
+      </div>
+      <h2>30を超える<span class="vermillion">日本の大学</span>と。</h2>
+      <p>
+        本学は創立以来、日本の大学・教育機関との提携を重視してまいりました。
+        現在、30を超える大学・高等教育機関との協定を結び、活発な学術交流を続けております。
+      </p>
+    </div>
+
+    <div class="partners-list">
+      <div class="partner-row featured">
+        <div class="num">№ 01</div>
+        <div class="jp-name">桜美林大学</div>
+        <div class="en-name">Obirin University</div>
+        <div class="relation">2006年 〜 学生交換 ・ 共同研究</div>
+      </div>
+      <div class="partner-row">
+        <div class="num">№ 02</div>
+        <div class="jp-name">立教大学</div>
+        <div class="en-name">Rikkyo University</div>
+        <div class="relation">2016年 〜 環境実習</div>
+      </div>
+      <div class="partner-row">
+        <div class="num">№ 03</div>
+        <div class="jp-name">中央学院大学</div>
+        <div class="en-name">Chuo Gakuin University</div>
+        <div class="relation">2017年 〜 文化交流</div>
+      </div>
+      <div class="partner-row">
+        <div class="num">№ 04</div>
+        <div class="jp-name">成城大学</div>
+        <div class="en-name">Seijo University</div>
+        <div class="relation">学生交換プログラム</div>
+      </div>
+      <div class="partner-row">
+        <div class="num">№ 05</div>
+        <div class="jp-name">北海学園大学</div>
+        <div class="en-name">Hokkai Gakuen University</div>
+        <div class="relation">学生交換プログラム</div>
+      </div>
+      <div class="partner-row">
+        <div class="num">№ 06</div>
+        <div class="jp-name">JICA</div>
+        <div class="en-name">国際協力機構</div>
+        <div class="relation">技術協力 ・ 研修</div>
+      </div>
+    </div>
+
+    <div class="partnership-footer">
+      <div class="note">※ 他にも 24 を超える大学・機関との協定あり</div>
+      <a href="#" class="btn-link">提携機関の全リストを見る →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     DONORS (寄付者ご芳名)
+     ============================================ -->
+<section class="donors" id="donors">
+  <div class="container">
+    <div class="donors-header">
+      <div class="section-label">
+        <span class="line"></span>
+        <span class="jp">ご 支 援 者 ・ 感 謝</span>
+        <span class="line"></span>
+      </div>
+      <h2>皆様のご支援に、<br>心より感謝申し上げます。</h2>
+      <p class="thanks">
+        本学の日本語教育プログラムを長年にわたりご支援くださいました
+        個人・法人の皆様に、心より感謝申し上げます。
+        皆様のお陰で、日本語教育と国際交流活動を継続・発展させる
+        ことができております。
+      </p>
+    </div>
+
+    <div class="donors-list">
+      <div class="donor-item">
+        <div class="donor-name">中部工業株式会社</div>
+        <div class="donor-amount">3,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">TML グループ</div>
+        <div class="donor-amount">15,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">エイネン株式会社(岡山)</div>
+        <div class="donor-amount">2,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">東京ガス 首都圏西導管安全保安協力連合会</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">島田勝子 様</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">福山建設株式会社</div>
+        <div class="donor-amount">500,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">川田妙子 様</div>
+        <div class="donor-amount">300,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">オゲレット 様</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">オホビシャルト ご夫妻</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">東樵 三郎 様(北海道大学名誉教授)</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">水 正忠 様(北海道林野総合研究所所長)</div>
+        <div class="donor-amount">1,000,000 円</div>
+      </div>
+      <div class="donor-item">
+        <div class="donor-name">その他 皆様</div>
+        <div class="donor-amount">1,320,000 円</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:var(--space-6);">
+      <a href="#" class="btn-primary">ご寄付のご案内 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     NEWS
+     ============================================ -->
+<section class="news-jp" id="news">
+  <div class="container">
+    <div class="news-header">
+      <div>
+        <div class="section-label">
+          <span class="jp">最 新 ニ ュ ー ス</span>
+          <span class="line"></span>
+        </div>
+        <h2>お知らせ・活動報告</h2>
+      </div>
+      <a href="#" class="btn-link">全ての記事 →</a>
+    </div>
+
+    <div class="news-list">
+      <div class="news-item">
+        <div class="date">2026.04.15</div>
+        <div class="cat">入学案内</div>
+        <div class="news-title">2026-2027年度の入学受付を開始いたしました</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="news-item">
+        <div class="date">2026.03.28</div>
+        <div class="cat">文化行事</div>
+        <div class="news-title">「文教祭」日本文化祭が無事開催されました</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="news-item">
+        <div class="date">2026.03.15</div>
+        <div class="cat">学術交流</div>
+        <div class="news-title">立教大学奨学金に、本学学生8名が採用されました</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="news-item">
+        <div class="date">2026.02.20</div>
+        <div class="cat">提携大学</div>
+        <div class="news-title">ウェルネススポーツ大学との 2+2 プログラム調印式</div>
+        <div class="arrow">→</div>
+      </div>
+      <div class="news-item">
+        <div class="date">2026.02.10</div>
+        <div class="cat">学術発表</div>
+        <div class="news-title">CITI Science 第5号を発刊いたしました</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">文</div>
+        <h4>モンゴル文化教育大学</h4>
+        <div class="mn">Соёл Эрдэм Дээд Сургууль · est. 1993</div>
+        <p>日本とモンゴルの教育・文化交流の架け橋として、30年以上。日本語教育を通じて、両国の未来を紡いでまいります。</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>ご案内</h5>
+        <ul>
+          <li><a href="#">大学について</a></li>
+          <li><a href="#">学長ご挨拶</a></li>
+          <li><a href="#">提携大学</a></li>
+          <li><a href="#">学術・研究活動</a></li>
+          <li><a href="#">CITI Science</a></li>
+          <li><a href="#">ニュース・お知らせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>関わる</h5>
+        <ul>
+          <li><a href="#">留学する(学生)</a></li>
+          <li><a href="#">教員として働く</a></li>
+          <li><a href="#">ご寄付・ご支援</a></li>
+          <li><a href="#">シリンボラグ観光</a></li>
+          <li><a href="#">共同研究について</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>お問い合わせ</h5>
+        <div class="contact-item">
+          <strong>ご住所</strong>
+          モンゴル国 ウランバートル市<br>
+          スフバータル区 第1ホロー<br>
+          オリンピック通り 15A · 501号室
+        </div>
+        <div class="contact-item">
+          <strong>お電話</strong>
+          +976 70118584<br>
+          +976 95266868
+        </div>
+        <div class="contact-item">
+          <strong>メール</strong>
+          info@soyolerdem.edu.mn<br>
+          soyolerdem.daigaku@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> モンゴル文化教育大学 · 全著作権所有</div>
+      <div class="socials">
+        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+        <a href="#" class="social-link" aria-label="YouTube">YT</a>
+        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================
+     SCRIPTS
+     ============================================ -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.pathway-card, .fact, .exchange-type, .partner-row, .donor-item, .news-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    observer.observe(el);
+  });
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.boxShadow = '0 2px 20px rgba(26, 26, 46, 0.05)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

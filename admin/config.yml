@@ -1,0 +1,202 @@
+# ==============================================================
+# СОЁЛ ЭРДЭМ CMS — Decap CMS тохиргоо
+# Энэ файл бол админ хэсгийн бүх логик. GitHub-руу холбогдсон.
+# ==============================================================
+
+backend:
+  name: git-gateway
+  branch: main                    # GitHub repo-ийн үндсэн салбар
+  commit_messages:
+    create: 'Шинэ {{collection}} нэмэв: "{{slug}}"'
+    update: '{{collection}} шинэчлэв: "{{slug}}"'
+    delete: '{{collection}} устгав: "{{slug}}"'
+    uploadMedia: 'Зураг оруулав: "{{path}}"'
+
+# Зураг байрших хавтас
+media_folder: "content/images"
+public_folder: "/content/images"
+
+# Админы хэлийг монгол болгох
+locale: 'en'  # Decap одоогоор монгол хэл дэмждэггүй, гэхдээ label-ууд монгол байна
+
+# Редакцийн урьдчилан үзэх (preview) асаах
+publish_mode: editorial_workflow  # Хадгалахын өмнө drafts → in review → published
+
+# ==============================================================
+# КОЛЛЕКЦУУД — 5 төрлийн контент
+# ==============================================================
+collections:
+
+  # ────────────────────────────────────────────
+  # 1. МЭДЭЭ МЭДЭЭЛЭЛ
+  # ────────────────────────────────────────────
+  - name: "medee"
+    label: "📰 Мэдээ мэдээлэл"
+    label_singular: "мэдээ"
+    folder: "content/medee"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: "Онцолсон мэдээ"
+        field: featured
+        pattern: true
+      - label: "2026 оны"
+        field: date
+        pattern: '2026'
+    fields:
+      - { label: "Гарчиг", name: "title", widget: "string", hint: "Мэдээний гарчиг" }
+      - { label: "Огноо", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD" }
+      - label: "Ангилал"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Элсэлт (入学)", value: "elselt" }
+          - { label: "Үйл явдал (行事)", value: "event" }
+          - { label: "Амжилт (成果)", value: "success" }
+          - { label: "Интерншип (インターン)", value: "intern" }
+          - { label: "Эрдэм шинжилгээ (学術)", value: "research" }
+          - { label: "Хамтын ажиллагаа (提携)", value: "partnership" }
+          - { label: "Төгсөлт (卒業)", value: "graduation" }
+        default: "event"
+      - { label: "Онцолсон мэдээ мөн үү?", name: "featured", widget: "boolean", default: false, hint: "Нүүр хуудсанд том байдлаар харуулах" }
+      - { label: "Нүүр зураг", name: "cover", widget: "image", required: false, hint: "Зөв хэмжээ: 1600×1000px" }
+      - { label: "Богино тайлбар", name: "summary", widget: "text", hint: "2-3 өгүүлбэр. Мэдээний тоймд харагдана" }
+      - { label: "Бүтэн нийтлэл", name: "body", widget: "markdown", hint: "Дэлгэрэнгүй агуулга" }
+      - label: "Хэл"
+        name: "lang"
+        widget: "select"
+        options: ["mn", "jp", "en"]
+        default: "mn"
+
+  # ────────────────────────────────────────────
+  # 2. СОНИН ХЭВЛЭЛ (PDF дугаарууд)
+  # ────────────────────────────────────────────
+  - name: "sonin"
+    label: "📖 Сонин хэвлэл"
+    label_singular: "дугаар"
+    folder: "content/sonin"
+    create: true
+    slug: "{{issue_number}}-{{slug}}"
+    summary: "№ {{issue_number}} · {{title}}"
+    sortable_fields: ['issue_number', 'date']
+    fields:
+      - { label: "Дугаарын дугаар", name: "issue_number", widget: "number", min: 1, hint: "Ж: 47" }
+      - { label: "Гарчиг (Англи)", name: "title", widget: "string", hint: "Ж: Sound of Spring" }
+      - { label: "Гарчиг (Япон)", name: "title_jp", widget: "string", required: false, hint: "Ж: 春" }
+      - { label: "Огноо", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - label: "Улирал"
+        name: "season"
+        widget: "select"
+        options:
+          - { label: "Хавар (春)", value: "spring" }
+          - { label: "Зун (夏)", value: "summer" }
+          - { label: "Намар (秋)", value: "autumn" }
+          - { label: "Өвөл (冬)", value: "winter" }
+      - { label: "PDF файл", name: "pdf", widget: "file", hint: "Сонингийн PDF хувилбар" }
+      - { label: "Нүүрний зураг", name: "cover", widget: "image", required: false }
+      - { label: "Богино тайлбар", name: "description", widget: "text", hint: "Энэ дугаарт юу багтсан тухай" }
+
+  # ────────────────────────────────────────────
+  # 3. ТӨГСӨГЧДИЙН ЖАГСААЛТ
+  # ────────────────────────────────────────────
+  - name: "tugsugchid"
+    label: "🎓 Төгсөгчид"
+    label_singular: "төгсөгч"
+    folder: "content/tugsugchid"
+    create: true
+    slug: "{{year_graduated}}-{{slug}}"
+    summary: "{{year_graduated}} · {{name}} — {{position}}"
+    sortable_fields: ['year_graduated', 'name']
+    fields:
+      - { label: "Нэр", name: "name", widget: "string", hint: "Ж: Б. Батсайхан" }
+      - { label: "Төгссөн он", name: "year_graduated", widget: "number", min: 1996 }
+      - label: "Мэргэжил (төгссөн)"
+        name: "major"
+        widget: "select"
+        options:
+          - { label: "Гадаад хэлний орчуулга (Япон)", value: "orchuulga" }
+          - { label: "Олон улс, орон судлал", value: "olonuls" }
+          - { label: "Аялал жуулчлалын менежмент", value: "ayalal" }
+          - { label: "Программ хангамж", value: "program" }
+          - { label: "Эдийн засаг", value: "ediin" }
+          - { label: "Магистр", value: "magistr" }
+      - { label: "Одоогийн албан тушаал", name: "position", widget: "string", hint: "Ж: Ахлах инженер" }
+      - { label: "Ажлын газар", name: "company", widget: "string", hint: "Ж: Rakuten, Токио" }
+      - label: "Салбар"
+        name: "industry"
+        widget: "select"
+        options:
+          - { label: "Боловсрол (教育)", value: "education" }
+          - { label: "Хэвлэл мэдээлэл (メディア)", value: "media" }
+          - { label: "Аялал жуулчлал (観光)", value: "tourism" }
+          - { label: "Олон улс (国際)", value: "international" }
+          - { label: "Бизнес (ビジネス)", value: "business" }
+          - { label: "Технологи (IT)", value: "it" }
+      - { label: "Хөрөг зураг", name: "photo", widget: "image", required: false }
+      - { label: "Ярилцлага / тайлбар", name: "body", widget: "markdown", required: false, hint: "Төгсөгчийн тухай дэлгэрэнгүй" }
+      - { label: "Онцлох төгсөгч мөн үү?", name: "featured", widget: "boolean", default: false }
+
+  # ────────────────────────────────────────────
+  # 4. ЭРДЭМ ШИНЖИЛГЭЭНИЙ БҮТЭЭЛ
+  # ────────────────────────────────────────────
+  - name: "erdem"
+    label: "🔬 Эрдэм шинжилгээ"
+    label_singular: "бүтээл"
+    folder: "content/erdem"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    summary: "Vol. {{volume}} · {{title}}"
+    sortable_fields: ['date', 'volume']
+    fields:
+      - { label: "Бүтээлийн гарчиг", name: "title", widget: "string" }
+      - { label: "Зохиогч", name: "author", widget: "string", hint: "Ж: Б. Оюун" }
+      - { label: "Зохиогчийн цол", name: "author_title", widget: "string", hint: "Ж: Хэл шинжлэлийн доктор" }
+      - { label: "CITI Science Дугаар (Volume)", name: "volume", widget: "number", min: 1, hint: "Ж: 5" }
+      - { label: "Хэвлэгдсэн огноо", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - label: "Чиглэл"
+        name: "field"
+        widget: "select"
+        options:
+          - { label: "Хэл шинжлэл", value: "linguistics" }
+          - { label: "Соёлын судалгаа", value: "culture" }
+          - { label: "Түүх", value: "history" }
+          - { label: "Эдийн засаг", value: "economy" }
+          - { label: "Боловсрол", value: "education" }
+          - { label: "Утга зохиол", value: "literature" }
+          - { label: "Олон улс", value: "international" }
+      - { label: "Хураангуй (Abstract)", name: "abstract", widget: "text" }
+      - { label: "Бүтэн бүтээл (PDF)", name: "pdf", widget: "file", required: false }
+      - { label: "Түлхүүр үгс", name: "keywords", widget: "list", required: false, hint: "Ж: япон хэл, орчуулга, соёл" }
+
+  # ────────────────────────────────────────────
+  # 5. АЖЛЫН БАЙР, ЭЛСЭЛТИЙН ЗАР
+  # ────────────────────────────────────────────
+  - name: "ajlyn-bair"
+    label: "💼 Ажлын байр · Элсэлт"
+    label_singular: "зар"
+    folder: "content/ajlyn-bair"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{type}} · {{title}}"
+    sortable_fields: ['date', 'type']
+    fields:
+      - { label: "Гарчиг", name: "title", widget: "string", hint: "Ж: Япон хэлний багш яаралтай" }
+      - label: "Төрөл"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Ажлын байр", value: "ajil" }
+          - { label: "Элсэлтийн зар", value: "elselt" }
+          - { label: "Тэтгэлэг", value: "tetgeleg" }
+          - { label: "Дадлагын зар", value: "dadlaga" }
+      - { label: "Нийтэлсэн огноо", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Хүчинтэй хугацаа", name: "deadline", widget: "datetime", format: "YYYY-MM-DD", required: false }
+      - { label: "Цалин / Тэтгэмж", name: "salary", widget: "string", required: false, hint: "Ж: ¥160,000/сар" }
+      - { label: "Байршил", name: "location", widget: "string", required: false, hint: "Ж: Токио, Япон" }
+      - { label: "Богино тайлбар", name: "summary", widget: "text" }
+      - { label: "Шаардлага, дэлгэрэнгүй", name: "body", widget: "markdown" }
+      - { label: "Холбоо барих", name: "contact", widget: "string", hint: "И-мэйл / утас" }
+      - { label: "Идэвхтэй байх уу?", name: "active", widget: "boolean", default: true, hint: "Сайтанд харагдах уу үгүй юу" }
+      - { label: "Яаралтай мөн үү?", name: "urgent", widget: "boolean", default: false }

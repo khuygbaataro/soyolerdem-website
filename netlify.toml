@@ -1,0 +1,17 @@
+# Netlify тохиргоо — автоматаар deploy хийхэд ашиглана
+[build]
+  publish = "."
+  command = ""
+
+# Админ хуудсанд автомат нэвтрэлтийн script шингээх
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+# Identity widget-ийг автоматаар ачаалах
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

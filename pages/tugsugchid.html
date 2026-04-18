@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Төгсөгчид — Соёл Эрдэм</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.career-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
+.career-card { padding: var(--space-4); background: var(--paper-warm); border-top: 4px solid var(--vermillion); transition: all 0.3s; }
+.career-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(26,26,46,0.08); }
+.career-card .percent { font-family: var(--font-serif); font-size: 3rem; font-style: italic; color: var(--vermillion); line-height: 1; margin-bottom: var(--space-2); }
+.career-card .jp { font-family: var(--font-jp); font-size: 0.78rem; color: var(--vermillion); letter-spacing: 0.2em; font-weight: 600; margin-bottom: var(--space-2); }
+.career-card h4 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 500; font-style: italic; margin-bottom: var(--space-2); }
+.career-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; }
+.alumni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
+.alumni-card { padding: var(--space-4); background: var(--paper); border: 1px solid var(--border); }
+.alumni-card .year { font-family: var(--font-serif); font-style: italic; color: var(--vermillion); font-size: 1rem; margin-bottom: 0.5rem; }
+.alumni-card h4 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; }
+.alumni-card .position { font-family: var(--font-jp); font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.3rem; letter-spacing: 0.05em; }
+.alumni-card .company { font-size: 0.88rem; color: var(--ink-soft); margin-top: var(--space-2); padding-top: var(--space-2); border-top: 1px dashed var(--border); }
+@media (max-width: 1024px) { .career-grid { grid-template-columns: 1fr 1fr; } .alumni-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .career-grid, .alumni-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="about.html">Сургуулийн тухай</a></li>
+      <li><a href="surgalt.html">Сургалт</a></li>
+      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="oyutan.html">Оюутан</a></li>
+      <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="bg-text">卒業</div>
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Нүүр</a><span class="separator">/</span><a href="oyutan.html">Оюутан</a><span class="separator">/</span><span class="current">Төгсөгчид</span></div>
+    <div class="page-title-block fade-up">
+      <div class="jp-title">卒 業 生 · КАРЬЕРЫН ЗАМНАЛ</div>
+      <h1>Бидний <span class="italic">төгсөгчид</span>.</h1>
+      <p class="lead">1500+ төгсөгчдийн 40% нь Япон улсад, үлдсэн нь Монголд, дэлхийн өнцөг булан бүрт амжилттай ажиллаж байна.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">1,500<span class="plus">+</span></div><div class="label">нийт төгсөгч</div><div class="label-jp">卒 業 生 総 数</div></div>
+      <div class="stat"><div class="num">40<span class="plus">%</span></div><div class="label">Япон улсад ажиллаж, амьдарч байгаа</div><div class="label-jp">日 本 在 住</div></div>
+      <div class="stat"><div class="num">95<span class="plus">%</span></div><div class="label">ажил эрхэлдэг</div><div class="label-jp">就 職 率</div></div>
+      <div class="stat"><div class="num">20<span class="plus">+</span></div><div class="label">улсад амжилттай</div><div class="label-jp">世 界 中</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-block">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">進 路 · ЗАМНАЛ</span><span class="line"></span></div>
+      <h2>Ажиллаж буй <span class="italic">салбарууд</span></h2>
+    </div>
+
+    <div class="career-grid">
+      <div class="career-card fade-on-scroll">
+        <div class="percent">28%</div>
+        <div class="jp">教 育</div>
+        <h4>Боловсрол</h4>
+        <p>Япон хэлний багш, орчуулагч, их дээд сургуулийн багш, дотоод гадаадын сургалтын төвд ажиллана.</p>
+      </div>
+      <div class="career-card fade-on-scroll">
+        <div class="percent">22%</div>
+        <div class="jp">メ デ ィ ア</div>
+        <h4>Хэвлэл мэдээлэл</h4>
+        <p>Сэтгүүлч, телевизийн нэвтрүүлэгч, сонин хэвлэл, хэвлэлийн редактор, контент бүтээгч.</p>
+      </div>
+      <div class="career-card fade-on-scroll">
+        <div class="percent">18%</div>
+        <div class="jp">観 光</div>
+        <h4>Аялал жуулчлал</h4>
+        <p>Зочид буудал, жуулчны агентлагын ажилтан, аялал зохион байгуулагч, хөтөч, агаарын тээврийн ажилтан.</p>
+      </div>
+      <div class="career-card fade-on-scroll">
+        <div class="percent">32%</div>
+        <div class="jp">国 際</div>
+        <h4>Олон улсын байгууллага</h4>
+        <p>ЭСЯ-д, Япон компаниуд, олон улсын банк, ТББ, дипломат ажилтан, олон улсын худалдаа.</p>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top: var(--space-12);">
+      <div class="section-label center"><span class="line"></span><span class="jp">卒 業 生 の 声</span><span class="line"></span></div>
+      <h2>Амжилттай <span class="italic">төгсөгчид</span></h2>
+    </div>
+
+    <!-- CMS-ээс автоматаар ачаалагдах төгсөгчид -->
+    <div class="alumni-grid" id="dynamic-graduates">
+      <!-- Default (fallback) data — CMS-ээс ачаалахгүй тохиолдолд -->
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2010 онд төгссөн</div>
+        <h4>Ч. Наймангал</h4>
+        <div class="position">Япон улсын Элчин сайдын яам</div>
+        <div class="company">Олон улс судлалын тэнхим төгсөгч. Дипломат албанд 10+ жил ажиллаж байна.</div>
+      </div>
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2015 онд төгссөн</div>
+        <h4>Гэрэлт-Од</h4>
+        <div class="position">TML Group · Токио</div>
+        <div class="company">Орчуулгын тэнхим төгсөгч. 2016 оноос Япон улсад бизнес эрхэлж байна.</div>
+      </div>
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2018 онд төгссөн</div>
+        <h4>Б. Цэцэг</h4>
+        <div class="position">Nomad TV · Ахлах сэтгүүлч</div>
+        <div class="company">Хэвлэл мэдээллийн чиглэлээр ажиллаж буй залуу төгсөгч.</div>
+      </div>
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2020 онд төгссөн</div>
+        <h4>Б. Батболд</h4>
+        <div class="position">Sapporo Hotel · Ерөнхий менежер</div>
+        <div class="company">Аялал жуулчлалын чиглэлээр Япон улсад зочид буудалд ерөнхий менежерээр ажилладаг.</div>
+      </div>
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2019 онд төгссөн</div>
+        <h4>Д. Энхтуяа</h4>
+        <div class="position">Japan Airlines · Нислэгийн үйлчлэгч</div>
+        <div class="company">Аялал жуулчлалын тэнхим төгсөгч. Японы агаарын тээврийн компанид ажилладаг.</div>
+      </div>
+      <div class="alumni-card fade-on-scroll">
+        <div class="year">2022 онд төгссөн</div>
+        <h4>Н. Мөнхөө</h4>
+        <div class="position">Rakuten · IT программ хөгжүүлэгч</div>
+        <div class="company">Програм хангамжийн мэргэжлээр төгсөөд Rakuten компанид IT инженерээр ажилладаг.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
+        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
+        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="../assets/js/identity-redirect.js"></script>
+<script src="../assets/js/cms-loader.js"></script>
+</body>
+</html>

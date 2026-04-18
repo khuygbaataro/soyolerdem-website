@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сургалт — Соёл Эрдэм Дээд Сургууль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+<style>
+.page-header-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-8); align-items: end; }
+.quick-links { display: flex; flex-direction: column; gap: 0.8rem; padding: var(--space-3); background: var(--paper-warm); border-left: 3px solid var(--vermillion); position: relative; }
+.quick-links::before { content: "直通"; position: absolute; top: -0.5rem; right: 1rem; font-family: var(--font-jp); background: var(--paper); color: var(--vermillion); padding: 0.2rem 0.6rem; font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 600; }
+.quick-links .label { font-family: var(--font-jp); font-size: 0.78rem; color: var(--vermillion); letter-spacing: 0.2em; font-weight: 600; margin-bottom: 0.4rem; }
+.quick-link { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px dashed var(--border); font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+.quick-link:last-child { border-bottom: none; }
+.quick-link:hover { color: var(--vermillion); padding-left: 0.3rem; }
+
+.programs-list { max-width: 1100px; margin: 0 auto; }
+.program-row { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--border); }
+.program-row:first-child { padding-top: 0; }
+.program-row:last-child { border-bottom: none; }
+.program-row.featured { background: var(--ink); color: var(--paper); margin: var(--space-4) calc(var(--space-4) * -1); padding: var(--space-6) var(--space-4); border: none; position: relative; }
+.program-row.featured::after { content: "注目"; position: absolute; top: 1.5rem; right: 1.5rem; font-family: var(--font-jp); background: var(--vermillion); color: var(--paper); padding: 0.3rem 0.8rem; letter-spacing: 0.2em; font-size: 0.75rem; font-weight: 700; transform: rotate(8deg); }
+.program-row.featured h3, .program-row.featured .val { color: var(--paper); }
+.program-row.featured .program-desc { color: rgba(247, 243, 233, 0.8); }
+.program-row.featured .val { color: rgba(247, 243, 233, 0.85); }
+.program-row.featured .career-tag { background: rgba(247, 243, 233, 0.08); color: var(--paper); border-color: rgba(247, 243, 233, 0.2); }
+
+.program-num { font-family: var(--font-serif); font-size: 4.5rem; font-weight: 300; color: var(--vermillion); font-style: italic; line-height: 0.9; margin-bottom: 0.5rem; }
+.program-jp { font-family: var(--font-jp); font-size: 0.9rem; color: var(--ink-muted); letter-spacing: 0.3em; font-weight: 600; }
+
+.program-meta-top { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap; align-items: baseline; }
+.program-code { font-size: 0.78rem; color: var(--ink-light); letter-spacing: 0.1em; padding: 0.3rem 0.7rem; border: 1px solid var(--border); font-weight: 600; }
+.program-dept { font-family: var(--font-jp); font-size: 0.78rem; color: var(--vermillion); letter-spacing: 0.15em; font-weight: 600; }
+
+.program-row h3 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; line-height: 1.15; margin-bottom: var(--space-3); }
+.program-desc { font-size: 1rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: var(--space-3); max-width: 680px; }
+
+.program-ees { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem 1.5rem; padding: var(--space-2) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: var(--space-3); max-width: 560px; }
+.program-ees .key { font-family: var(--font-jp); font-size: 0.78rem; color: var(--vermillion); letter-spacing: 0.12em; font-weight: 600; }
+.program-ees .val { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+
+.career-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.career-tag { font-size: 0.82rem; padding: 0.4rem 0.8rem; background: var(--paper-warm); border: 1px solid var(--border); color: var(--ink-soft); }
+
+.platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.platform-card { background: rgba(247, 243, 233, 0.03); border: 1px solid rgba(247, 243, 233, 0.12); padding: var(--space-4); transition: all 0.3s ease; }
+.platform-card:hover { background: rgba(247, 243, 233, 0.06); border-color: var(--vermillion); transform: translateY(-4px); }
+.platform-card h3 { color: var(--paper); font-size: 1.8rem; margin-bottom: 0.5rem; }
+.platform-card .jp { font-family: var(--font-jp); font-size: 0.8rem; color: var(--vermillion); letter-spacing: 0.15em; margin-bottom: var(--space-3); font-weight: 600; }
+.platform-card p { font-size: 0.92rem; color: rgba(247, 243, 233, 0.75); line-height: 1.7; margin-bottom: var(--space-3); }
+.platform-card .login { display: flex; justify-content: space-between; padding-top: var(--space-2); border-top: 1px solid rgba(247, 243, 233, 0.15); font-size: 0.88rem; font-weight: 600; color: var(--vermillion); }
+
+@media (max-width: 1024px) {
+  .page-header-grid { grid-template-columns: 1fr; }
+  .program-row { grid-template-columns: 1fr; }
+  .platforms-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="about.html">Сургуулийн тухай</a></li>
+      <li><a href="surgalt.html" class="current">Сургалт</a></li>
+      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="oyutan.html">Оюутан</a></li>
+      <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="bg-text">学部</div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Нүүр</a><span class="separator">/</span><span class="current">Сургалт</span>
+    </div>
+
+    <div class="page-header-grid">
+      <div class="page-title-block fade-up">
+        <div class="jp-title">学 部 · 専 攻 · 修 士</div>
+        <h1>Сургалтын<br><span class="italic">хөтөлбөр</span>.</h1>
+        <p class="lead">5 бакалаврын мэргэжил, магистрын хөтөлбөр, Moodle онлайн систем, Cisco сертификат, Шилийн булаг дадлага.</p>
+      </div>
+
+      <div class="quick-links fade-up delay-1">
+        <div class="label">ТҮРГЭН НЭВТРЭЛТ</div>
+        <a href="#moodle" class="quick-link"><span>Moodle систем</span><span>→</span></a>
+        <a href="#programs" class="quick-link"><span>5 бакалавр</span><span>→</span></a>
+        <a href="#master" class="quick-link"><span>Магистр</span><span>→</span></a>
+        <a href="#practice" class="quick-link"><span>Шилийн булаг дадлага</span><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="stat"><div class="num">5</div><div class="label">бакалавр</div></div>
+      <div class="stat"><div class="num">1</div><div class="label">магистр</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">жил</div></div>
+      <div class="stat"><div class="num">120</div><div class="label">кредит</div></div>
+      <div class="stat"><div class="num">48</div><div class="label">хичээл</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROGRAMS -->
+<section class="content-block" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">学 士 課 程</span><span class="line"></span></div>
+      <h2>5 <span class="italic">бакалаврын</span> мэргэжил</h2>
+    </div>
+
+    <div class="programs-list">
+      <div class="program-row">
+        <div><div class="program-num">01</div><div class="program-jp">第 一</div></div>
+        <div>
+          <div class="program-meta-top"><span class="program-code">023101</span><span class="program-dept">外 国 語 翻 訳 学 科</span></div>
+          <h3>Гадаад хэлний орчуулга (Япон)</h3>
+          <p class="program-desc">Манай сургуулийн хамгийн уламжлалт бөгөөд хүчтэй мэргэжил. Япон хэлний орчуулга, хэлмэрчлэлийн нарийвчилсан мэдлэг олгохын зэрэгцээгээр Япон соёл, бизнесийн орчин, ёс зүй зэргийг гүнзгий судалдаг.</p>
+          <div class="program-ees">
+            <span class="key">ЭЕШ 1</span><span class="val">Англи хэл, Нийгэм судлал</span>
+            <span class="key">ЭЕШ 2</span><span class="val">Математик, Монгол хэл</span>
+          </div>
+          <div class="career-tags">
+            <span class="career-tag">Орчуулагч</span>
+            <span class="career-tag">Багш</span>
+            <span class="career-tag">Япон компани</span>
+            <span class="career-tag">Дипломат</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-row">
+        <div><div class="program-num">02</div><div class="program-jp">第 二</div></div>
+        <div>
+          <div class="program-meta-top"><span class="program-code">022203</span><span class="program-dept">国 際 地 域 学 科</span></div>
+          <h3>Олон улс, орон судлал (Япон)</h3>
+          <p class="program-desc">Япон улсын соёл, түүх, нийгэм, эдийн засгийг гүнзгий судлах мэргэжил. Олон улсын хамтын ажиллагаа, дипломат чиглэлд мэргэжилтэн бэлтгэхэд зориулагдсан.</p>
+          <div class="program-ees">
+            <span class="key">ЭЕШ 1</span><span class="val">Англи хэл, Орос хэл</span>
+            <span class="key">ЭЕШ 2</span><span class="val">Нийгэм судлал, Түүх</span>
+          </div>
+          <div class="career-tags">
+            <span class="career-tag">Дипломат</span>
+            <span class="career-tag">ЭСЯ</span>
+            <span class="career-tag">Судлаач</span>
+            <span class="career-tag">ОУ байгууллага</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-row">
+        <div><div class="program-num">03</div><div class="program-jp">第 三</div></div>
+        <div>
+          <div class="program-meta-top"><span class="program-code">041304</span><span class="program-dept">観 光 経 営 学 科</span></div>
+          <h3>Аялал жуулчлалын менежмент</h3>
+          <p class="program-desc">Шилийн булаг жуулчны баазтай хосолсон практик сургалттай нэгэн онцлог мэргэжил. Зуны улиралд баазад дадлага хийж, Япон жуулчидтай шууд харилцах боломжтой.</p>
+          <div class="program-ees">
+            <span class="key">ЭЕШ 1</span><span class="val">Математик</span>
+            <span class="key">ЭЕШ 2</span><span class="val">Англи хэл, Нийгэм судлал</span>
+          </div>
+          <div class="career-tags">
+            <span class="career-tag">Жуулчны агентлаг</span>
+            <span class="career-tag">Зочид буудал</span>
+            <span class="career-tag">Агаарын тээвэр</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-row featured">
+        <div><div class="program-num" style="color:var(--vermillion);">04</div><div class="program-jp" style="color:rgba(247,243,233,0.5);">第 四 · 注 目</div></div>
+        <div>
+          <div class="program-meta-top"><span class="program-code" style="border-color:rgba(247,243,233,0.2);color:rgba(247,243,233,0.5);">061302</span><span class="program-dept">情 報 工 学 科 · 2+2</span></div>
+          <h3>Программ хангамж</h3>
+          <p class="program-desc">Япон хэл + Coding = Шинэ зууны мэргэжил. Японы Велнесс Спортын их сургуультай хамтарсан 2+2 хөтөлбөрөөр суралцах боломжтой. Cisco сүлжээ, xCloud олон улсын сертификатын сургалт багтсан.</p>
+          <div class="program-ees">
+            <span class="key">ЭЕШ 1</span><span class="val">Математик, Физик</span>
+            <span class="key">ЭЕШ 2</span><span class="val">Нийгэм судлал, Түүх</span>
+          </div>
+          <div class="career-tags">
+            <span class="career-tag">Japan IT инженер</span>
+            <span class="career-tag">Сүлжээний инженер</span>
+            <span class="career-tag">Программ хөгжүүлэгч</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-row">
+        <div><div class="program-num">05</div><div class="program-jp">第 五</div></div>
+        <div>
+          <div class="program-meta-top"><span class="program-code">031101</span><span class="program-dept">経 済 学 科</span></div>
+          <h3>Эдийн засаг</h3>
+          <p class="program-desc">Монгол-Японы бизнесийн харилцаа, гадаад худалдаа, макро болон микро эдийн засгийн чиглэлээр мэргэжлийн боловсон хүчин бэлтгэнэ.</p>
+          <div class="program-ees">
+            <span class="key">ЭЕШ 1</span><span class="val">Математик</span>
+            <span class="key">ЭЕШ 2</span><span class="val">Нийгэм судлал, Англи хэл</span>
+          </div>
+          <div class="career-tags">
+            <span class="career-tag">Банкны салбар</span>
+            <span class="career-tag">Худалдаа</span>
+            <span class="career-tag">Япон корпораци</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MASTER -->
+<section class="content-block warm" id="master">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-label"><span class="jp">修 士 課 程</span><span class="line"></span><span class="en">Master's</span></div>
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: var(--space-3);">Магистрын <span class="italic">хөтөлбөр</span></h2>
+        <p class="prose">Шинжлэх ухааны болон боловсролын доктор, магистрын зэрэгтэй, профессор, дэд профессор цолтой эрдэмтэн багш нар удирдан явуулдаг 2 жилийн хөтөлбөр.</p>
+        <ul style="list-style: none; margin-top: var(--space-4);">
+          <li style="padding: var(--space-2) 0 var(--space-2) 3rem; border-bottom: 1px dashed var(--border); font-size: 0.95rem; position: relative;"><span style="position: absolute; left: 0; top: var(--space-2); font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; color: var(--vermillion);">01</span>Олон улсын утга зохиолын хэл шинжлэл, Япон-Монголын харьцуулсан судалгаа</li>
+          <li style="padding: var(--space-2) 0 var(--space-2) 3rem; font-size: 0.95rem; position: relative;"><span style="position: absolute; left: 0; top: var(--space-2); font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; color: var(--vermillion);">02</span>Олон улсын болон бүс нутгийн судалгаа</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--ink); color: var(--paper); padding: var(--space-6); aspect-ratio: 4/5; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: inline-block; font-family: var(--font-jp); font-size: 0.82rem; color: var(--vermillion); border: 2px solid var(--vermillion); padding: 0.3rem 0.7rem; letter-spacing: 0.2em; font-weight: 700; margin-bottom: var(--space-3);">修 士</div>
+          <h3 style="color: var(--paper); font-size: 1.8rem; font-style: italic;">Судалгаа, эрдэм шинжилгээнд чиглэсэн 2 жилийн хөтөлбөр.</h3>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); padding-top: var(--space-3); border-top: 1px solid rgba(247,243,233,0.15);">
+          <div><div style="font-family: var(--font-jp); font-size: 0.7rem; color: var(--vermillion); letter-spacing: 0.2em; margin-bottom: 0.3rem;">期 間</div><div style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;">2 жил</div></div>
+          <div><div style="font-family: var(--font-jp); font-size: 0.7rem; color: var(--vermillion); letter-spacing: 0.2em; margin-bottom: 0.3rem;">専 攻</div><div style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;">2 чиглэл</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ONLINE LEARNING -->
+<section class="content-block dark" id="moodle">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">オ ン ラ イ ン 学 習</span><span class="line"></span></div>
+      <h2 style="color: var(--paper);">Онлайн сургалтын <span class="italic">систем</span></h2>
+      <p style="color: rgba(247,243,233,0.75);">Moodle нэгдсэн систем, Cisco, xCloud сертификатын сургалтууд.</p>
+    </div>
+
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--vermillion); margin-bottom: var(--space-3);">01</div>
+        <h3>Moodle</h3>
+        <div class="jp">学 習 管 理 シ ス テ ム</div>
+        <p>Хичээлийн материал, даалгавар, дүн авах, багштай харилцах — бүх үйл ажиллагаа нэг платформ дээр.</p>
+        <a href="#" class="login"><span>Нэвтрэх</span><span>→</span></a>
+      </div>
+
+      <div class="platform-card">
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--vermillion); margin-bottom: var(--space-3);">02</div>
+        <h3>Cisco</h3>
+        <div class="jp">ネ ッ ト ワ ー ク 認 定</div>
+        <p>Сүлжээний инженерийн олон улсын стандартад нийцсэн Cisco Networking Academy сургалтууд. CCNA, Network Security.</p>
+        <a href="#" class="login"><span>Нэвтрэх</span><span>→</span></a>
+      </div>
+
+      <div class="platform-card">
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--vermillion); margin-bottom: var(--space-3);">03</div>
+        <h3>xCloud</h3>
+        <div class="jp">ク ラ ウ ド 技 術</div>
+        <p>Cloud computing, DevOps, орчин үеийн хөгжүүлэлтийн технологи. Олон улсын стандартын сертификат.</p>
+        <a href="#" class="login"><span>Нэвтрэх</span><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col">
+        <h5>リンク · ЛИНК</h5>
+        <ul>
+          <li><a href="about.html">Сургуулийн тухай</a></li>
+          <li><a href="elselt.html">Элсэлтийн журам</a></li>
+          <li><a href="surgalt.html">Сургалт</a></li>
+          <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+          <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li>
+          <li><a href="tugsugchid.html">Төгсөгчид</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>サービス · СЕРВИС</h5>
+        <ul>
+          <li><a href="#">Moodle нэвтрэх</a></li>
+          <li><a href="nomiin-san.html">Номын сан</a></li>
+          <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li>
+          <li><a href="elselt.html">Цахим бүртгэл</a></li>
+          <li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話 · Утас</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="../assets/js/identity-redirect.js"></script>
+<script src="../assets/js/cms-loader.js"></script>
+</body>
+</html>

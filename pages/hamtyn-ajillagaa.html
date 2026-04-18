@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хамтын ажиллагаа — Соёл Эрдэм</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.partners-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; border-top: 2px solid var(--ink); }
+.partners-table th { text-align: left; padding: var(--space-2); font-family: var(--font-jp); color: var(--vermillion); font-size: 0.78rem; letter-spacing: 0.15em; border-bottom: 1px solid var(--border); font-weight: 600; }
+.partners-table td { padding: var(--space-2); border-bottom: 1px solid var(--border); font-size: 0.92rem; vertical-align: top; }
+.partners-table tr:hover { background: var(--paper-warm); }
+.partners-table .jp-name { font-family: var(--font-jp); font-weight: 600; color: var(--ink); }
+.partners-table .year { font-family: var(--font-serif); font-style: italic; color: var(--vermillion); font-weight: 500; white-space: nowrap; }
+.partners-table .num { font-family: var(--font-serif); font-style: italic; color: var(--vermillion); font-size: 0.9rem; }
+
+.exchange-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin: var(--space-6) 0; }
+.exchange-card { padding: var(--space-4); background: var(--paper); border-top: 3px solid var(--vermillion); }
+.exchange-card h4 { font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; margin-bottom: var(--space-2); }
+.exchange-card ul { list-style: none; padding: 0; margin-top: var(--space-3); }
+.exchange-card li { padding: 0.5rem 0 0.5rem 1.2rem; border-bottom: 1px dashed var(--border); font-size: 0.92rem; position: relative; }
+.exchange-card li:last-child { border-bottom: none; }
+.exchange-card li::before { content: "◉"; position: absolute; left: 0; color: var(--vermillion); font-size: 0.7em; top: 0.75rem; }
+@media (max-width: 640px) { .exchange-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="about.html">Сургуулийн тухай</a></li>
+      <li><a href="surgalt.html">Сургалт</a></li>
+      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="oyutan.html">Оюутан</a></li>
+      <li><a href="hamtyn-ajillagaa.html" class="current">Хамтын ажиллагаа</a></li>
+      <li><a href="medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="bg-text">提携</div>
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Нүүр</a><span class="separator">/</span><span class="current">Хамтын ажиллагаа</span></div>
+    <div class="page-title-block fade-up">
+      <div class="jp-title">提 携 大 学 · 国 際 交 流</div>
+      <h1>Олон улсын <span class="italic">хамтын ажиллагаа</span>.</h1>
+      <p class="lead">30 гаруй Япон түнш сургууль, 2006 оноос хойш 100+ оюутан Япон руу солилцоонд хамрагдсан. Бидний олон улсын харилцаа.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">30</div><div class="label">Япон түнш сургууль</div><div class="label-jp">提 携 大 学</div></div>
+      <div class="stat"><div class="num">100</div><div class="label">солилцооны оюутан</div><div class="label-jp">留 学 生</div></div>
+      <div class="stat"><div class="num">20</div><div class="label">жил тасралтгүй</div><div class="label-jp">継 続</div></div>
+      <div class="stat"><div class="num">40</div><div class="label">% төгсөгчид Японд</div><div class="label-jp">日 本 在 住</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-block">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">交 換 留 学 プ ロ グ ラ ム</span><span class="line"></span></div>
+      <h2>Солилцооны <span class="italic">хөтөлбөр</span></h2>
+      <p>2006 оноос хойш Оберлин их сургуультай хамтран эхлүүлсэн оюутан солилцооны хөтөлбөр.</p>
+    </div>
+
+    <div class="exchange-grid">
+      <div class="exchange-card fade-on-scroll">
+        <div style="font-family: var(--font-jp); font-size: 0.8rem; color: var(--vermillion); letter-spacing: 0.2em; font-weight: 600; margin-bottom: 0.5rem;">第 一 · 2006 ОНООС</div>
+        <h4>Оберлин — ахлах хамтрагч</h4>
+        <p style="color: var(--ink-soft); line-height: 1.7; font-size: 0.95rem;">Япон улсын Оберлин их сургуультай 20 жилийн турш оюутан солилцооны хөтөлбөрийг тасралтгүй хэрэгжүүлж байна. Жил бүр 5-10 оюутан хөтөлбөртэй хамрагдана.</p>
+        <ul>
+          <li>Сургалтын төлбөрийн 50-100% хөнгөлөлт</li>
+          <li>Япон хэлний сургалт</li>
+          <li>Байрны дэмжлэг</li>
+          <li>Япон улсын соёл, ахуйтай танилцах хөтөлбөр</li>
+        </ul>
+      </div>
+
+      <div class="exchange-card fade-on-scroll">
+        <div style="font-family: var(--font-jp); font-size: 0.8rem; color: var(--vermillion); letter-spacing: 0.2em; font-weight: 600; margin-bottom: 0.5rem;">第 二 · 2014 ОНООС</div>
+        <h4>Интерншип хөтөлбөр</h4>
+        <p style="color: var(--ink-soft); line-height: 1.7; font-size: 0.95rem;">Монгол улсад анх удаа Соёл Эрдэм дээд сургуулиас эхлүүлсэн цалинтай дадлагын хөтөлбөр. 3 сараас 1 жилийн хугацаатайгаар Япон руу явна.</p>
+        <ul>
+          <li>¥160,000 сарын цалин</li>
+          <li>Халуун рашаан, зочид буудал, жижиг дунд үйлдвэр</li>
+          <li>3-12 сарын хугацаа</li>
+          <li>Сургалтын төлбөрөө төлөх бололцоо</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-block warm">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">提 携 一 覧</span><span class="line"></span></div>
+      <h2>Япон <span class="italic">түнш сургуулиуд</span></h2>
+      <p>30+ Япон их, дээд сургууль болон боловсролын байгууллагуудтай гэрээтэй хамтран ажилладаг.</p>
+    </div>
+
+    <div style="max-width: 1100px; margin: 0 auto; background: var(--paper); padding: var(--space-4);">
+      <table class="partners-table">
+        <thead>
+          <tr>
+            <th style="width: 50px;">№</th>
+            <th>СУРГУУЛЬ · 大 学</th>
+            <th>ТӨРӨЛ · 内 容</th>
+            <th>ОНЦЛОХ ТАЛ</th>
+            <th style="width: 100px;">ОНООС</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">01</td><td><span class="jp-name">桜美林大学</span><br><small style="color: var(--ink-light); font-style: italic;">Oberlin University</small></td><td>Оюутан солилцоо</td><td>Ахлах хамтрагч</td><td class="year">2006</td></tr>
+          <tr><td class="num">02</td><td><span class="jp-name">立教大学</span><br><small style="color: var(--ink-light); font-style: italic;">Rikkyo University</small></td><td>Байгаль орчны дадлага</td><td>Тэтгэлэг</td><td class="year">2016</td></tr>
+          <tr><td class="num">03</td><td><span class="jp-name">中央学院大学</span><br><small style="color: var(--ink-light); font-style: italic;">Chuo Gakuin</small></td><td>Соёлын солилцоо</td><td>Япон хэлний сургалт</td><td class="year">2017</td></tr>
+          <tr><td class="num">04</td><td><span class="jp-name">成城大学</span><br><small style="color: var(--ink-light); font-style: italic;">Seijo University</small></td><td>Оюутан солилцоо</td><td>Магистр хөтөлбөр</td><td class="year">2018</td></tr>
+          <tr><td class="num">05</td><td><span class="jp-name">北海学園大学</span><br><small style="color: var(--ink-light); font-style: italic;">Hokkai Gakuen</small></td><td>Оюутан солилцоо</td><td>Хоккайдо бүс</td><td class="year">2019</td></tr>
+          <tr><td class="num">06</td><td><span class="jp-name">ウェルネス</span><br><small style="color: var(--ink-light); font-style: italic;">Wellness Sport University</small></td><td>2+2 хөтөлбөр ★</td><td>Программ хангамж</td><td class="year">2026</td></tr>
+          <tr><td class="num">07</td><td><span class="jp-name">JICA</span><br><small style="color: var(--ink-light); font-style: italic;">Japan Int'l Cooperation</small></td><td>Техник туслалцаа</td><td>Сургалт, судалгаа</td><td class="year">1998</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85rem; color: var(--ink-light); text-align: center; margin-top: var(--space-3);">※ Дээрх нь гол түнш сургуулиуд. Нийт 30+ Япон сургуультай гэрээтэй ажиллаж байна.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-block dark">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <div class="section-label center"><span class="line"></span><span class="jp">学 生 の 声</span><span class="line"></span></div>
+      <h2 style="color: var(--paper); font-size: clamp(2rem, 4vw, 2.8rem);">Хамтран ажилласан <span class="italic">оюутан</span></h2>
+      <blockquote style="font-family: var(--font-serif); font-style: italic; font-size: 1.3rem; color: var(--paper); line-height: 1.5; margin: var(--space-4) 0; padding: 0 var(--space-4); position: relative;">
+        <span style="font-family: var(--font-jp); font-size: 3rem; color: var(--vermillion); opacity: 0.5; position: absolute; left: 0; top: -1rem;">「</span>
+        Интерншипэд хамрагдан Японд ирээд жил гаруй болж байна. Тэр хөтөлбөрт хамрагдах боломж олгож өгснөөр хичнээн их ажиллаад ч, эх орон, аав ээждээсээ гурван жил хол байсан ч сургалтын төлбөрөө бүрэн төлж буй бололцоо олгосон Соёл Эрдэмд баярлалаа гэж хэлэхийг хүсч байна.
+        <span style="font-family: var(--font-jp); font-size: 3rem; color: var(--vermillion); opacity: 0.5;">」</span>
+      </blockquote>
+      <div style="font-family: var(--font-serif); font-weight: 600; font-size: 1.1rem; color: var(--paper);">— Гэрэлт-Од</div>
+      <div style="font-size: 0.9rem; color: rgba(247,243,233,0.6); margin-top: 0.3rem;">Токио, Япон · Интерншипээр ажиллаж байгаа</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
+        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
+        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="../assets/js/identity-redirect.js"></script>
+<script src="../assets/js/cms-loader.js"></script>
+</body>
+</html>

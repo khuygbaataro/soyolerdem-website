@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мэдээ мэдээлэл — Соёл Эрдэм</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.news-filter { display: flex; gap: var(--space-2); margin-bottom: var(--space-6); padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.filter-btn { padding: 0.5rem 1rem; font-family: var(--font-sans); font-size: 0.85rem; border: 1px solid var(--border); background: var(--paper); color: var(--ink-soft); cursor: pointer; transition: all 0.25s; font-weight: 500; }
+.filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.news-list-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-4); }
+.main-story { grid-row: span 2; background: var(--paper); }
+.main-story .img { aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(26,26,46,0.5), rgba(230,57,70,0.3)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200') center/cover; }
+.main-story .content { padding: var(--space-4) 0; }
+.main-story h2 { font-family: var(--font-serif); font-size: 2rem; font-weight: 500; line-height: 1.2; margin: var(--space-2) 0 var(--space-3); }
+.main-story p { color: var(--ink-soft); line-height: 1.65; font-size: 0.95rem; margin-bottom: var(--space-3); }
+.side-story { background: var(--paper); padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.25s; }
+.side-story:hover h3 { color: var(--vermillion); }
+.side-story .img { aspect-ratio: 16/10; background-size: cover; background-position: center; filter: sepia(10%); }
+.side-story .img-2 { background: linear-gradient(135deg, rgba(26,26,46,0.5), rgba(201,169,97,0.3)), url('https://images.unsplash.com/photo-1549737221-bef65e2604a6?w=800') center/cover; }
+.side-story .img-3 { background: linear-gradient(135deg, rgba(230,57,70,0.4), rgba(26,26,46,0.6)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800') center/cover; }
+.side-story .img-4 { background: linear-gradient(135deg, rgba(26,26,46,0.6), rgba(230,57,70,0.4)), url('https://images.unsplash.com/photo-1589873900116-20cc27075c11?w=800') center/cover; }
+.side-story .img-5 { background: linear-gradient(135deg, rgba(26,26,46,0.5), rgba(230,57,70,0.35)), url('https://images.unsplash.com/photo-1518176258769-f227c798150e?w=800') center/cover; }
+.side-story .content { padding-top: var(--space-2); }
+.side-story h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 500; line-height: 1.3; margin: 0.4rem 0; transition: color 0.25s; }
+.side-story p { font-size: 0.88rem; color: var(--ink-light); }
+.news-meta { display: flex; gap: var(--space-2); align-items: center; font-size: 0.8rem; }
+.news-meta .cat { font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.15em; font-weight: 600; }
+.news-meta .date { font-family: var(--font-serif); font-style: italic; color: var(--ink-light); }
+.news-row { display: grid; grid-template-columns: 120px 140px 1fr auto; gap: var(--space-3); align-items: center; padding: var(--space-3) 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.25s; }
+.news-row:hover { padding-left: 1rem; background: var(--paper-warm); }
+.news-row .date { font-family: var(--font-serif); font-style: italic; color: var(--ink-light); font-size: 0.9rem; }
+.news-row .cat { font-family: var(--font-jp); font-size: 0.72rem; color: var(--vermillion); letter-spacing: 0.15em; padding: 0.25rem 0.6rem; border: 1px solid var(--vermillion); text-align: center; font-weight: 600; }
+.news-row h4 { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 500; line-height: 1.4; transition: color 0.25s; }
+.news-row:hover h4 { color: var(--vermillion); }
+@media (max-width: 1024px) {
+  .news-list-grid { grid-template-columns: 1fr 1fr; }
+  .main-story { grid-row: auto; grid-column: span 2; }
+  .news-row { grid-template-columns: 1fr; gap: 0.4rem; padding: var(--space-2) 0; }
+}
+@media (max-width: 640px) {
+  .news-list-grid { grid-template-columns: 1fr; }
+  .main-story { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="about.html">Сургуулийн тухай</a></li>
+      <li><a href="surgalt.html">Сургалт</a></li>
+      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="oyutan.html">Оюутан</a></li>
+      <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="medee.html" class="current">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="bg-text">新聞</div>
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Нүүр</a><span class="separator">/</span><span class="current">Мэдээ мэдээлэл</span></div>
+    <div class="page-title-block fade-up">
+      <div class="jp-title">最 新 ニ ュ ー ス</div>
+      <h1>Сургуулийн <span class="italic">амьдрал</span>.</h1>
+      <p class="lead">Соёл Эрдэм дээд сургуулийн сүүлийн үеийн мэдээ, үйл явдал, амжилт, зарлалууд.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-block">
+  <div class="container">
+    <div class="news-filter">
+      <button class="filter-btn active">Бүгд</button>
+      <button class="filter-btn">Элсэлт</button>
+      <button class="filter-btn">Үйл явдал</button>
+      <button class="filter-btn">Амжилт</button>
+      <button class="filter-btn">Эрдэм шинжилгээ</button>
+      <button class="filter-btn">Хамтын ажиллагаа</button>
+    </div>
+
+    <!-- CMS-ээс автоматаар ачаалагдах мэдээнүүд -->
+    <div class="news-list-grid" id="dynamic-news">
+      <div style="grid-column: span 3; text-align: center; padding: 4rem 2rem; color: var(--ink-light); font-family: var(--font-serif); font-style: italic;">
+        Мэдээг ачаалж байна... <br>
+        <small style="font-size: 0.8rem; opacity: 0.7;">CMS холбогдсны дараа автомат шинэчлэгдэнэ</small>
+      </div>
+    </div>
+
+    <h2 style="margin-top: var(--space-8); font-size: 1.8rem; font-weight: 500;">Бусад <span class="italic">мэдээ</span></h2>
+    <div style="margin-top: var(--space-3);">
+      <div class="news-row">
+        <div class="date">2026 · 01 · 28</div>
+        <div class="cat">提 携</div>
+        <h4>Велнесс Спорт их сургуультай 2+2 хөтөлбөрийн гэрээ байгуулагдлаа</h4>
+        <span style="color: var(--ink-light);">→</span>
+      </div>
+      <div class="news-row">
+        <div class="date">2026 · 01 · 15</div>
+        <div class="cat">講 演</div>
+        <h4>Оберлин их сургуулийн профессорын лекц зохион байгуулагдлаа</h4>
+        <span style="color: var(--ink-light);">→</span>
+      </div>
+      <div class="news-row">
+        <div class="date">2025 · 12 · 20</div>
+        <div class="cat">卒 業</div>
+        <h4>2025 оны төгсөлтийн ёслол боллоо — 78 оюутан бакалавр зэрэг хамгаалав</h4>
+        <span style="color: var(--ink-light);">→</span>
+      </div>
+      <div class="news-row">
+        <div class="date">2025 · 11 · 18</div>
+        <div class="cat">シ リ ン</div>
+        <h4>Шилийн булаг жуулчны бааз өвөлжилтийн бэлтгэл ажлаа хийлээ</h4>
+        <span style="color: var(--ink-light);">→</span>
+      </div>
+      <div class="news-row">
+        <div class="date">2025 · 10 · 30</div>
+        <div class="cat">ハ イ キ ン グ</div>
+        <h4>Богд уулын явган аялалд 200+ оюутан, багш оролцлоо</h4>
+        <span style="color: var(--ink-light);">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
+        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
+        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="../assets/js/identity-redirect.js"></script>
+<script src="../assets/js/cms-loader.js"></script>
+</body>
+</html>

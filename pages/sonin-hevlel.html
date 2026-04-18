@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сонин хэвлэл — Соёл Эрдэм</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="about.html">Сургуулийн тухай</a></li>
+      <li><a href="surgalt.html">Сургалт</a></li>
+      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="oyutan.html">Оюутан</a></li>
+      <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="bg-text">新聞</div>
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Нүүр</a><span class="separator">/</span><span class="current">Сонин хэвлэл</span></div>
+    <div class="page-title-block fade-up">
+      <div class="jp-title">大 学 新 聞 · СУРГУУЛИЙН СОНИН</div>
+      <h1>Бидний <span class="italic">сонин</span>.</h1>
+      <p class="lead">Соёл Эрдэм Дээд Сургуулийн сонин хэвлэлийн дугаарууд. Flipbook хэлбэрээр онлайн унших боломжтой.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-block">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">最 新 号</span><span class="line"></span></div>
+      <h2>Сүүлийн <span class="italic">дугаарууд</span></h2>
+    </div>
+
+    <!-- CMS-ээс автоматаар ачаалагдах сонингууд -->
+    <div id="dynamic-sonin" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+      <!-- Fallback (анх ачаалсан үед харагдах static мэдээ) -->
+      <div class="fade-on-scroll" style="cursor: pointer; transition: all 0.3s;">
+        <div style="aspect-ratio: 3/4; background: linear-gradient(145deg, var(--ink), var(--vermillion)); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 10px 30px rgba(26,26,46,0.15);">
+          <div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.75rem; letter-spacing: 0.3em; font-weight: 600; opacity: 0.7;">№ 47 · 2026</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); color: var(--paper); font-size: 2.8rem; font-weight: 500; line-height: 0.95; font-style: italic;">Sound of<br>Spring</div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.8rem; letter-spacing: 0.2em; margin-top: var(--space-2); opacity: 0.8;">47 号 · 春</div>
+          </div>
+        </div>
+        <div style="padding: var(--space-3) 0;">
+          <div style="font-family: var(--font-jp); color: var(--vermillion); font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 600;">2026 · 04</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; margin: 0.5rem 0;">47 дахь дугаар</h3>
+          <p style="font-size: 0.9rem; color: var(--ink-soft);">Хаврын улирлын үйл явдлууд, элсэлтийн зарлалууд.</p>
+          <a href="#" class="btn-link" style="margin-top: var(--space-2); display: inline-block;">Унших → Flipbook</a>
+        </div>
+      </div>
+
+      <div class="fade-on-scroll" style="cursor: pointer; transition: all 0.3s;">
+        <div style="aspect-ratio: 3/4; background: linear-gradient(145deg, #4a6741, var(--ink)); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 10px 30px rgba(26,26,46,0.15);">
+          <div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.75rem; letter-spacing: 0.3em; font-weight: 600; opacity: 0.7;">№ 46 · 2025</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); color: var(--paper); font-size: 2.8rem; font-weight: 500; line-height: 0.95; font-style: italic;">Autumn<br>Colors</div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.8rem; letter-spacing: 0.2em; margin-top: var(--space-2); opacity: 0.8;">46 号 · 秋</div>
+          </div>
+        </div>
+        <div style="padding: var(--space-3) 0;">
+          <div style="font-family: var(--font-jp); color: var(--vermillion); font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 600;">2025 · 10</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; margin: 0.5rem 0;">46 дахь дугаар</h3>
+          <p style="font-size: 0.9rem; color: var(--ink-soft);">Намрын Явган аяллын тусгай дугаар.</p>
+          <a href="#" class="btn-link" style="margin-top: var(--space-2); display: inline-block;">Унших → Flipbook</a>
+        </div>
+      </div>
+
+      <div class="fade-on-scroll" style="cursor: pointer; transition: all 0.3s;">
+        <div style="aspect-ratio: 3/4; background: linear-gradient(145deg, #2a4a6b, var(--ink)); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 10px 30px rgba(26,26,46,0.15);">
+          <div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.75rem; letter-spacing: 0.3em; font-weight: 600; opacity: 0.7;">№ 45 · 2025</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); color: var(--paper); font-size: 2.8rem; font-weight: 500; line-height: 0.95; font-style: italic;">Summer<br>Camp</div>
+            <div style="font-family: var(--font-jp); color: var(--paper); font-size: 0.8rem; letter-spacing: 0.2em; margin-top: var(--space-2); opacity: 0.8;">45 号 · 夏</div>
+          </div>
+        </div>
+        <div style="padding: var(--space-3) 0;">
+          <div style="font-family: var(--font-jp); color: var(--vermillion); font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 600;">2025 · 06</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; margin: 0.5rem 0;">45 дахь дугаар</h3>
+          <p style="font-size: 0.9rem; color: var(--ink-soft);">Шилийн булаг зуны дадлагын дурсамж.</p>
+          <a href="#" class="btn-link" style="margin-top: var(--space-2); display: inline-block;">Унших → Flipbook</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: var(--space-8);">
+      <a href="#" class="btn-outline">Бүх архив үзэх →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
+        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
+        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="../assets/js/identity-redirect.js"></script>
+<script src="../assets/js/cms-loader.js"></script>
+</body>
+</html>
