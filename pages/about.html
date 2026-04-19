@@ -6,7 +6,7 @@
 <title>Сургуулийн тухай — Соёл Эрдэм Дээд Сургууль</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/main.css">
 <style>
 .timeline { max-width: 720px; margin: var(--space-6) auto 0; }
@@ -18,7 +18,142 @@
 .mission-box::before { content: "使命"; position: absolute; font-family: var(--font-jp); font-size: 8rem; color: var(--vermillion); opacity: 0.08; right: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; line-height: 1; pointer-events: none; }
 .mission-box .label { font-family: var(--font-jp); color: var(--vermillion); font-size: 0.85rem; letter-spacing: 0.3em; font-weight: 600; margin-bottom: var(--space-2); }
 .mission-box h3 { font-family: var(--font-serif); color: var(--paper); font-size: 2rem; font-weight: 500; font-style: italic; line-height: 1.3; }
+
+/* Principles Grid */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.principle-card {
+  padding: var(--space-4);
+  background: var(--paper-warm);
+  border-top: 3px solid var(--vermillion);
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.principle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(26, 26, 46, 0.08);
+}
+
+.principle-card .jp {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.principle-card .letter {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.principle-card .letter .accent {
+  color: var(--vermillion);
+}
+
+.principle-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* Sub-pages Grid */
+.subpages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.subpage-card {
+  background: var(--paper);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 240px;
+}
+
+.subpage-card:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-4px);
+  border-color: var(--ink);
+}
+
+.subpage-card:hover h3,
+.subpage-card:hover .arrow-icon { color: var(--paper); }
+
+.subpage-card:hover p { color: rgba(247, 243, 233, 0.8); }
+
+.subpage-card:hover .jp { color: var(--vermillion); }
+
+.subpage-card .number {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--vermillion);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.subpage-card .jp {
+  font-family: var(--font-jp);
+  color: var(--ink-light);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.subpage-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.subpage-card p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.subpage-card .arrow-icon {
+  margin-top: var(--space-2);
+  font-size: 1.1rem;
+  color: var(--vermillion);
+}
+
+@media (max-width: 1024px) {
+  .principles-grid, .subpages-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
+  .principles-grid, .subpages-grid { grid-template-columns: 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
 }
 </style>
@@ -59,33 +194,125 @@
   </div>
 </section>
 
+
+<!-- SUB-PAGES NAVIGATION -->
 <section class="content-block">
   <div class="container">
-    <div class="two-col">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">詳 細</span><span class="line"></span></div>
+      <h2>Дэлгэрэнгүй <span class="italic">мэдээлэл</span></h2>
+      <p>Манай сургуулийн тухай дэлгэрэнгүй танилцах 4 хэсэг</p>
+    </div>
+
+    <div class="subpages-grid">
+      <a href="about/founder.html" class="subpage-card fade-on-scroll">
+        <div class="number">01</div>
+        <div class="jp">創 立 者</div>
+        <h3>Үүсгэн байгуулагч</h3>
+        <p>Хармони Центр (Япон) 1993 онд сургуулийг байгуулсан нь — эх сурвалж, тэр түүх.</p>
+        <span class="arrow-icon">→</span>
+      </a>
+
+      <a href="about/ceo.html" class="subpage-card fade-on-scroll">
+        <div class="number">02</div>
+        <div class="jp">学 長</div>
+        <h3>Захирлын мэндчилгээ</h3>
+        <p>Захирал Т. Дорждагва-аас шинэ оюутнууд, эцэг эхчүүдэд илгээсэн захидал.</p>
+        <span class="arrow-icon">→</span>
+      </a>
+
+      <a href="about/management.html" class="subpage-card fade-on-scroll">
+        <div class="number">03</div>
+        <div class="jp">組 織</div>
+        <h3>Бүтэц зохион байгуулалт</h3>
+        <p>Удирдах зөвлөл, эрдмийн зөвлөл, 6 тэнхимийн албан ёсны бүтэц.</p>
+        <span class="arrow-icon">→</span>
+      </a>
+
+      <a href="about/accreditation.html" class="subpage-card fade-on-scroll">
+        <div class="number">04</div>
+        <div class="jp">認 定</div>
+        <h3>Магадлан итгэмжлэл</h3>
+        <p>2003, 2010, 2020 онуудад магадлан итгэмжлэгдсэн. 2025 онд 4 дэх удаагаа.</p>
+        <span class="arrow-icon">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- MISSION / VISION / VALUES -->
+<section class="content-block warm">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center"><span class="line"></span><span class="jp">理 念</span><span class="line"></span></div>
+      <h2>Бидний <span class="italic">үзэл санаа</span></h2>
+      <p>Эрхэм зорилго, алсын хараа, уриа, үнэт зүйлс</p>
+    </div>
+
+    <!-- Mission Box -->
+    <div class="mission-box">
+      <div class="label">使 命 · ERHEM ZORILGO</div>
+      <h3>"Монгол болон Япон улсын зах зээлд хүлээн зөвшөөрөгдөхүйц мэргэжилтэн бэлтгэнэ."</h3>
+    </div>
+
+    <!-- Vision + Slogan -->
+    <div class="two-col" style="margin: var(--space-8) 0;">
       <div>
-        <div class="section-label"><span class="jp">学 長 メ ッ セ ー ジ</span><span class="line"></span><span class="en">Message</span></div>
-        <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: var(--space-3);">Захирлын <span class="italic">мэндчилгээ</span></h2>
-
-        <p class="prose drop-cap">Япон улсын хөрөнгө оруулалттай "Соёл Эрдэм" дээд сургууль 1993 онд анх байгуулагдсан. Манай сургуулийг сонгосон сонголт тань ирээдүйдээ хийсэн асар том хөрөнгө оруулалт гэдэгт итгэлтэй байна.</p>
-
-        <p class="prose">Манай сургуулийн эрхэм зорилго бол Монгол улсын хувийн их дээд сургуулиудын түүчээ нь болж, чадварлаг боловсон хүчин бэлтгэх явдал юм. Соёл Эрдэм дээд сургууль нь Японы их дээд сургуулиудтай хамтран ажиллаж оюутан солилцооны хөтөлбөр хэрэгжүүлсээр байгаа билээ.</p>
-
-        <p class="prose">Интерншип хөтөлбөрт хамрагдсанаараа Япон хэлний мэдлэгээ сайжруулан орчин үеийн Япон улсын дэвшилтэт технологи, эдийн засгийн байдал, хүмүүсийн аж амьдрал, ёс заншил зэрэгтэй танилцах том боломж нээгдэж байна.</p>
-
-        <div style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 2px solid var(--ink);">
-          <div style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; font-style: italic;">Т. Дорждагва</div>
-          <div style="font-size: 0.88rem; color: var(--ink-light); margin-top: 0.3rem;">Захирал · Эрдмийн зөвлөлийн дарга</div>
-        </div>
+        <div style="font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.3em; font-size: 0.82rem; font-weight: 600; margin-bottom: var(--space-2);">ビ ジ ョ ン · АЛСЫН ХАРАА</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500; font-style: italic; margin-bottom: var(--space-3); line-height: 1.3;">Монгол улсдаа <span style="color: var(--vermillion);">тэргүүлэгч</span> сургууль болно.</h3>
+        <p style="color: var(--ink-soft); font-size: 1.02rem; line-height: 1.75;">
+          Япон хэл, программ хангамжийн хосолсон сургалт, гадаад хамтын ажиллагаагаар Монгол улсдаа тэргүүлэгч сургууль болох нь бидний алсын хараа.
+        </p>
       </div>
 
-      <div>
-        <div style="aspect-ratio: 4/5; background: linear-gradient(180deg, transparent 50%, rgba(26, 26, 46, 0.4)), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80') center/cover; filter: grayscale(30%) sepia(10%);"></div>
+      <div style="background: var(--ink); color: var(--paper); padding: var(--space-6); position: relative; overflow: hidden;">
+        <div style="position: absolute; font-family: var(--font-jp); font-size: 10rem; color: var(--vermillion); opacity: 0.1; right: -1rem; bottom: -2rem; font-weight: 800; line-height: 1;">標 語</div>
+        <div style="position: relative; z-index: 2;">
+          <div style="font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.3em; font-size: 0.82rem; font-weight: 600; margin-bottom: var(--space-3);">УРИА · 標 語</div>
+          <h3 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 500; font-style: italic; color: var(--paper); line-height: 1.1;">Чанартай<br>сургалт —<br><span style="color: var(--vermillion);">Япон соёл.</span></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Principles / Values -->
+    <div style="text-align: center; margin-top: var(--space-8);">
+      <div style="font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.3em; font-size: 0.82rem; font-weight: 600; margin-bottom: var(--space-2);">価 値 観 · ҮНЭТ ЗҮЙЛС</div>
+      <h2 style="font-size: clamp(2rem, 4vw, 2.8rem);">Дөрвөн <span class="italic">зарчим</span></h2>
+      <p style="color: var(--ink-soft); max-width: 560px; margin: var(--space-3) auto 0;">С·Э·А·С — Сургуулийн үндсэн философийг илэрхийлэх 4 зарчим</p>
+    </div>
+
+    <div class="principles-grid">
+      <div class="principle-card fade-on-scroll">
+        <div class="jp">第 一 · ЭХНИЙ</div>
+        <div class="letter"><span class="accent">С</span></div>
+        <h4>Соёл уламжлалаа<br>дээдэлсэн</h4>
+      </div>
+
+      <div class="principle-card fade-on-scroll">
+        <div class="jp">第 二 · ХОЁРДУГААР</div>
+        <div class="letter"><span class="accent">Э</span></div>
+        <h4>Эрдэм мэдлэгийг<br>эрхэмлэсэн</h4>
+      </div>
+
+      <div class="principle-card fade-on-scroll">
+        <div class="jp">第 三 · ГУРАВДУГААР</div>
+        <div class="letter"><span class="accent">А</span></div>
+        <h4>Амьдрах арга ухаанд<br>суралцсан</h4>
+      </div>
+
+      <div class="principle-card fade-on-scroll">
+        <div class="jp">第 四 · ДӨРӨВДҮГЭЭР</div>
+        <div class="letter"><span class="accent">С</span></div>
+        <h4>Сурлагын<br>хоцрогдолгүй</h4>
       </div>
     </div>
   </div>
 </section>
 
-<section class="content-block warm">
+
+<!-- HISTORY TIMELINE -->
+<section class="content-block">
   <div class="container">
     <div class="section-header">
       <div class="section-label center"><span class="line"></span><span class="jp">大 学 の 歴 史</span><span class="line"></span></div>
@@ -139,7 +366,7 @@
       <div class="timeline-item">
         <div class="timeline-year">2023</div>
         <div class="timeline-content">
-          <h4>30 жилийн ой</h4>
+          <h4>30 жилийн ой + НЕБ Ахлах сургууль</h4>
           <p>Түүхт 30 жилийн ойн баяраа тэмдэглэн, Соёл Эрдэм Ахлах Сургуулийг дэргэдээ үүсгэн байгуулсан.</p>
         </div>
       </div>
@@ -147,26 +374,17 @@
         <div class="timeline-year">2025</div>
         <div class="timeline-content">
           <h4>4 дэх удаагаа магадлан итгэмжлэгдэж байна</h4>
-          <p>БМИҮЗ-өөс 4 дэх удаагаа магадлан итгэмжлэх ажиллагаа явагдаж байна.</p>
+          <p>БМИҮЗ-өөс 4 дэх удаагаа магадлан итгэмжлэх ажиллагаа явагдаж байна. Мөн Велнесс Спорт их сургуультай 2+2 хөтөлбөр эхэллээ.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="content-block">
-  <div class="container">
-    <div class="mission-box">
-      <div class="label">エ ラ フ ザ リ ル ガ · ERHEM ZORILGO</div>
-      <h3>"Соёл уламжлалаа дээдэлсэн,<br>Эрдэм мэдлэгийг эрхэмлэсэн,<br>Амьдрах арга ухаанд суралцсан,<br>Сурлагын хоцрогдолгүй суралцагч бэлтгэх."</h3>
-    </div>
-
-    <div style="text-align: center; max-width: 680px; margin: var(--space-6) auto 0;">
-      <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: var(--space-3);">Бидний <span class="italic">үнэт зүйлс</span></h2>
-      <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">Бид одоогийн байдлаар 1500 гаруй оюутныг төгсгөж, нийт төгсөгчдийн маань 40 орчим хувь нь Япон улсад суралцаж, ажиллаж, амьдарч байна. Монгол, Япон улсын зах зээлд хүлээн зөвшөөрөгдөхүйц мэргэжилтэн бэлтгэнэ гэсэн зорилготой ажилладаг.</p>
+    <div style="text-align: center; margin-top: var(--space-6);">
+      <a href="about/accreditation.html" class="btn-outline">Магадлан итгэмжлэлийн дэлгэрэнгүй →</a>
     </div>
   </div>
 </section>
+
 
 <footer>
   <div class="container">
@@ -178,13 +396,16 @@
         <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
       </div>
       <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
-        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
-        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
-        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
+        <li><a href="about.html">Сургуулийн тухай</a></li>
+        <li><a href="about/founder.html">Үүсгэн байгуулагч</a></li>
+        <li><a href="about/ceo.html">Захирлын мэндчилгээ</a></li>
+        <li><a href="about/management.html">Бүтэц зохион байгуулалт</a></li>
+        <li><a href="bagsh-nar.html">Багш нар</a></li>
       </ul></div>
       <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
-        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
-        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+        <li><a href="https://tw.xcloud.mn" target="_blank">Багшийн вэб</a></li>
+        <li><a href="https://sw-beta.xcloud.mn" target="_blank">Оюутны вэб</a></li>
+        <li><a href="nomiin-san.html">Номын сан</a></li>
       </ul></div>
       <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
         <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
@@ -199,8 +420,5 @@
   </div>
 </footer>
 <script src="../assets/js/main.js"></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="../assets/js/identity-redirect.js"></script>
-<script src="../assets/js/cms-loader.js"></script>
 </body>
 </html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Үүсгэн байгуулагч — Соёл Эрдэм Дээд Сургууль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/main.css">
+
+<style>
+.founder-hero {
+  background: var(--paper);
+  padding: 10rem 0 var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+.founder-hero::before {
+  content: "創 立 者";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 18rem;
+  color: var(--ink);
+  opacity: 0.04;
+  right: -3rem;
+  bottom: -2rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.founder-photo-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+}
+
+.founder-photo {
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, transparent 50%, rgba(26, 26, 46, 0.4)),
+    url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80') center/cover;
+  filter: grayscale(30%) sepia(15%);
+}
+
+.founder-stamp {
+  position: absolute;
+  top: 2rem;
+  right: -1rem;
+  background: var(--vermillion);
+  color: var(--paper);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-jp);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  transform: rotate(8deg);
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+}
+
+.founder-info {
+  max-width: 540px;
+}
+
+.founder-eyebrow {
+  display: inline-block;
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  letter-spacing: 0.3em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.founder-info h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.05;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.founder-info h1 .highlight {
+  color: var(--vermillion);
+  font-weight: 600;
+}
+
+.founder-role {
+  font-family: var(--font-jp);
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 2px solid var(--ink);
+}
+
+.founder-lead {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.story-section {
+  padding: var(--space-12) 0;
+  background: var(--paper-warm);
+  position: relative;
+}
+
+.story-section::before {
+  content: "物 語";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 18rem;
+  color: var(--ink);
+  opacity: 0.03;
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-8);
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.story-sidebar {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+
+.story-sidebar .label {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  color: var(--vermillion);
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.story-sidebar h2 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: var(--space-3);
+}
+
+.story-sidebar .divider {
+  width: 40px;
+  height: 2px;
+  background: var(--vermillion);
+  margin: var(--space-2) 0;
+}
+
+.story-content .prose p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin-bottom: var(--space-3);
+}
+
+.story-content .highlight-box {
+  margin: var(--space-4) 0;
+  padding: var(--space-4);
+  background: var(--paper);
+  border-left: 3px solid var(--vermillion);
+  position: relative;
+}
+
+.story-content .highlight-box::before {
+  content: "「";
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-family: var(--font-jp);
+  font-size: 3rem;
+  color: var(--vermillion);
+  line-height: 1;
+  opacity: 0.4;
+}
+
+.story-content .highlight-box p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+  padding-left: var(--space-2);
+}
+
+.achievement-list {
+  margin: var(--space-4) 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border);
+}
+
+.achievement-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.achievement-item:last-child { border-bottom: none; }
+
+.achievement-year {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--vermillion);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.achievement-text {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.quote-section {
+  padding: var(--space-12) 0;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.quote-section::before {
+  content: "言 葉";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 22rem;
+  color: var(--vermillion);
+  opacity: 0.08;
+  right: -3rem;
+  bottom: -5rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-section blockquote {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-section blockquote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--paper);
+  line-height: 1.4;
+  margin-bottom: var(--space-4);
+}
+
+.quote-section cite {
+  display: block;
+  font-style: normal;
+  color: var(--vermillion);
+  font-family: var(--font-jp);
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .founder-grid, .story-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .story-sidebar { position: static; }
+  .founder-stamp { right: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="../../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="../about.html" class="current">Сургуулийн тухай</a></li>
+      <li><a href="../surgalt.html">Сургалт</a></li>
+      <li><a href="../erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="../oyutan.html">Оюутан</a></li>
+      <li><a href="../hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="../medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../../index.html" class="active">MN</a><span>|</span><a href="../../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="../elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="founder-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">Нүүр</a><span class="separator">/</span>
+      <a href="../about.html">Сургуулийн тухай</a><span class="separator">/</span>
+      <span class="current">Үүсгэн байгуулагч</span>
+    </div>
+
+    <div class="founder-grid" style="margin-top: var(--space-4);">
+      <div class="founder-photo-wrap fade-up">
+        <div class="founder-photo"></div>
+        <div class="founder-stamp">創 立 1993</div>
+      </div>
+
+      <div class="founder-info fade-up delay-1">
+        <div class="founder-eyebrow">創 立 者 · БАЙГУУЛАГЧ</div>
+        <h1>Үүсгэн <span class="highlight">байгуулагч</span>.</h1>
+        <div class="founder-role">САН · СУРГУУЛИЙН ҮҮСГЭН БАЙГУУЛАГЧ<br>ХАРМОНИ ЦЕНТР · HARMONY CENTER JAPAN</div>
+        <p class="founder-lead">
+          1993 онд Япон улсын "Хармони Центр" олон нийтийн байгууллагын санаачилгаар Монгол улсад Япон хэлний сургалт явуулах зорилгоор "Соёл" дамжааг байгуулсан нь өнөөгийн Соёл Эрдэм Дээд Сургуулийн үндэс суурь нь болсон билээ.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <aside class="story-sidebar">
+        <div class="label">物 語 · ТҮҮХ</div>
+        <h2>Бидний <em>эх сурвалж</em>.</h2>
+        <div class="divider"></div>
+        <p style="color: var(--ink-light); font-size: 0.95rem; line-height: 1.7; margin-top: var(--space-2);">Япон-Монголын боловсролын гүүр байгуулах гэсэн нэгэн хүний мөрөөдлөөс эхэлсэн 30+ жилийн түүх.</p>
+      </aside>
+
+      <div class="story-content">
+        <div class="prose">
+          <p class="drop-cap">
+            Хармони Центр нь Япон улсад байгуулагдсан, Ази орнуудтай соёлын боловсролын харилцааг хөгжүүлэхийг зорилгоо болгосон нэр хүндтэй байгууллага юм. 1990-ээд оны эхээр Монгол улсын шинэ ардчилалт нийгэм төлөвшин буй үед Хармони Центрийн удирдлагууд Монголын залуусыг Япон улсын дэвшилтэт боловсрол, технологитой танилцуулах санааг санаачилсан.
+          </p>
+
+          <p>
+            Уг санаачилгын үр дүнд 1993 онд Улаанбаатар хотод анх Япон хэлний "Соёл" дамжаа нээгдсэн. Тухайн үед 20 орчим оюутан элсэж, Япон улсын мэргэжилтэй багш нар удирдан явуулсан.
+          </p>
+
+          <div class="highlight-box">
+            <p>Монгол улсад Япон хэл, соёлыг түгээх, Япон-Монголын боловсролын гүүр байгуулах — энэ бол анхны зорилго байсан.</p>
+          </div>
+
+          <p>
+            1996 онд Хармони Центрийн 100% хөрөнгө оруулалтаар "Соёл Эрдэм Дээд Сургууль" нэртэйгээр дээд сургуулийн зэрэгт албан ёсоор бүртгэгдсэн. Энэ нь Монгол улсад Японы хөрөнгө оруулалттай байгуулагдсан анхны дээд боловсролын байгууллага юм.
+          </p>
+
+          <p>
+            Өнөөдөр 30+ жилийн хөгжлийн замналаа туулаад, 1500+ төгсөгчтэй, Япон улсын 30 гаруй их дээд сургуультай хамтын ажиллагаатай Монголын тэргүүлэх Япон хэлний боловсролын төв болсон билээ.
+          </p>
+        </div>
+
+        <div class="achievement-list">
+          <div style="font-family: var(--font-jp); font-size: 0.82rem; color: var(--vermillion); letter-spacing: 0.2em; font-weight: 600; margin-bottom: var(--space-2);">主 な 実 績 · ГОЛ АМЖИЛТУУД</div>
+
+          <div class="achievement-item">
+            <span class="achievement-year">1993</span>
+            <span class="achievement-text">Япон хэлний "Соёл" дамжаа нээгдсэн</span>
+          </div>
+          <div class="achievement-item">
+            <span class="achievement-year">1996</span>
+            <span class="achievement-text">Соёл Эрдэм Дээд Сургууль албан ёсоор бүртгэгдсэн</span>
+          </div>
+          <div class="achievement-item">
+            <span class="achievement-year">2006</span>
+            <span class="achievement-text">Оберлин их сургуультай оюутан солилцооны анхны гэрээ</span>
+          </div>
+          <div class="achievement-item">
+            <span class="achievement-year">2014</span>
+            <span class="achievement-text">Монгол улсад анх удаа Япон интерншип хөтөлбөр</span>
+          </div>
+          <div class="achievement-item">
+            <span class="achievement-year">2023</span>
+            <span class="achievement-text">30 жилийн ойгоороо НЕБ Соёл Эрдэм Ахлах Сургууль байгуулав</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="container">
+    <blockquote>
+      <p>"Боловсрол бол хоёр соёлыг холбосон гүүр. Манай сургууль энэхүү гүүрийг 30+ жилийн турш барьсаар байна."</p>
+      <cite>— ХАРМОНИ ЦЕНТР, 1996</cite>
+    </blockquote>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="../about.html">Сургуулийн тухай</a></li>
+        <li><a href="founder.html">Үүсгэн байгуулагч</a></li>
+        <li><a href="ceo.html">Захирлын мэндчилгээ</a></li>
+        <li><a href="management.html">Бүтэц зохион байгуулалт</a></li>
+        <li><a href="accreditation.html">Магадлан итгэмжлэл</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="https://tw.xcloud.mn" target="_blank">Багшийн вэб</a></li>
+        <li><a href="https://sw-beta.xcloud.mn" target="_blank">Оюутны вэб</a></li>
+        <li><a href="../nomiin-san.html">Номын сан</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

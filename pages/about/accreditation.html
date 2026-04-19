@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магадлан итгэмжлэл — Соёл Эрдэм Дээд Сургууль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/main.css">
+
+<style>
+.accred-timeline {
+  padding: var(--space-12) 0;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.accred-timeline::before {
+  content: "認 定";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 22rem;
+  color: var(--ink);
+  opacity: 0.03;
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.timeline-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 140px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--vermillion) 10%, var(--vermillion) 90%, transparent);
+}
+
+.timeline-year-block {
+  display: grid;
+  grid-template-columns: 120px 40px 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  align-items: start;
+}
+
+.timeline-year-block .year {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--vermillion);
+  line-height: 0.9;
+  text-align: right;
+}
+
+.timeline-year-block .dot {
+  width: 20px;
+  height: 20px;
+  background: var(--vermillion);
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--paper);
+}
+
+.timeline-year-block.current .dot {
+  background: var(--ink);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--paper), 0 0 0 8px rgba(26, 26, 46, 0.1); }
+  50% { box-shadow: 0 0 0 4px var(--paper), 0 0 0 16px rgba(26, 26, 46, 0); }
+}
+
+.timeline-card {
+  background: var(--paper-warm);
+  padding: var(--space-4);
+  border-left: 3px solid var(--vermillion);
+}
+
+.timeline-card .label {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.timeline-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  font-style: italic;
+}
+
+.timeline-card p {
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.timeline-card .meta {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--border);
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+
+.timeline-year-block.current .timeline-card {
+  border-left-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.timeline-year-block.current .timeline-card p,
+.timeline-year-block.current .timeline-card .meta {
+  color: rgba(247, 243, 233, 0.8);
+}
+
+.timeline-year-block.current .timeline-card .meta {
+  border-top-color: rgba(247, 243, 233, 0.2);
+}
+
+.timeline-year-block.current .timeline-card h3 {
+  color: var(--paper);
+}
+
+/* Certificates Section */
+.certs-section {
+  padding: var(--space-12) 0;
+  background: var(--paper-warm);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.cert-card {
+  background: var(--paper);
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.1);
+}
+
+.cert-image {
+  aspect-ratio: 1 / 1.414;
+  background: linear-gradient(135deg, #f5eecf, #e8dcb0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  position: relative;
+  border: 2px solid var(--gold);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+}
+
+.cert-image::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--gold);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cert-image .seal {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--vermillion);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vermillion);
+  font-family: var(--font-jp);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-3);
+  transform: rotate(-8deg);
+  background: var(--paper);
+}
+
+.cert-image .cert-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: var(--space-2);
+  line-height: 1.3;
+}
+
+.cert-image .cert-year {
+  font-family: var(--font-jp);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--vermillion);
+  letter-spacing: 0.15em;
+}
+
+.cert-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.cert-card .desc {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+.cert-card .valid {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--border);
+  font-size: 0.82rem;
+  color: var(--vermillion);
+  font-weight: 600;
+}
+
+/* Info Box */
+.info-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--space-8) var(--space-6);
+  margin: var(--space-6) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-box::before {
+  content: "品 質";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 15rem;
+  color: var(--vermillion);
+  opacity: 0.1;
+  right: -2rem;
+  bottom: -3rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.info-box-content {
+  max-width: 650px;
+  position: relative;
+  z-index: 2;
+}
+
+.info-box .label {
+  font-family: var(--font-jp);
+  color: var(--vermillion);
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.info-box h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--paper);
+  margin-bottom: var(--space-3);
+  line-height: 1.2;
+}
+
+.info-box p {
+  color: rgba(247, 243, 233, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .timeline-year-block { grid-template-columns: 1fr; gap: 0.5rem; }
+  .timeline-year-block .year { text-align: left; font-size: 2rem; }
+  .timeline-line { display: none; }
+  .cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="../../index.html" class="logo">
+      <div class="logo-mark">СЭ</div>
+      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="../about.html" class="current">Сургуулийн тухай</a></li>
+      <li><a href="../surgalt.html">Сургалт</a></li>
+      <li><a href="../erdem.html">Эрдэм шинжилгээ</a></li>
+      <li><a href="../oyutan.html">Оюутан</a></li>
+      <li><a href="../hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+      <li><a href="../medee.html">Мэдээ</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../../index.html" class="active">MN</a><span>|</span><a href="../../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
+      <a href="../elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
+      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="bg-text">認定</div>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../../index.html">Нүүр</a><span class="separator">/</span>
+      <a href="../about.html">Сургуулийн тухай</a><span class="separator">/</span>
+      <span class="current">Магадлан итгэмжлэл</span>
+    </div>
+    <div class="page-title-block fade-up">
+      <div class="jp-title">認 定 · ЧАНАРЫН БАТАЛГАА</div>
+      <h1>Магадлан <span class="italic">итгэмжлэл</span>.</h1>
+      <p class="lead">Боловсролын магадлан итгэмжлэлийн үндэсний зөвлөл (БМИҮЗ)-өөс 2003, 2010, 2020 онуудад магадлан итгэмжлэгдсэн, 2025 онд 4 дэх удаагаа магадлан итгэмжлүүлэх ажиллагаа явагдаж байна.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TIMELINE -->
+<section class="accred-timeline">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center">
+        <span class="line"></span>
+        <span class="jp">認 定 の 歴 史</span>
+        <span class="line"></span>
+      </div>
+      <h2>Магадлан итгэмжлэлийн <span class="italic">түүхэн замнал</span></h2>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-year-block">
+        <div class="year">2003</div>
+        <div class="dot"></div>
+        <div class="timeline-card">
+          <div class="label">第 一 回 · АНХНЫ</div>
+          <h3>1-р удаагийн магадлан итгэмжлэл</h3>
+          <p>БМИҮЗ-өөс анх удаа магадлан итгэмжлэгдсэн. Монгол улсын 47 дахь магадлан итгэмжлэгдсэн дээд боловсролын байгууллага болсон.</p>
+          <div class="meta">Магадлан итгэмжлэгдсэн огноо · 2003</div>
+        </div>
+      </div>
+
+      <div class="timeline-year-block">
+        <div class="year">2010</div>
+        <div class="dot"></div>
+        <div class="timeline-card">
+          <div class="label">第 二 回 · ХОЁРДУГААР</div>
+          <h3>2-р удаагийн магадлан итгэмжлэл</h3>
+          <p>Боловсролын чанар, сургалтын хөтөлбөр, эрдэм шинжилгээний үйл ажиллагааг үнэлэн амжилттай магадлан итгэмжлэгдсэн.</p>
+          <div class="meta">Магадлан итгэмжлэгдсэн огноо · 2010</div>
+        </div>
+      </div>
+
+      <div class="timeline-year-block">
+        <div class="year">2020</div>
+        <div class="dot"></div>
+        <div class="timeline-card">
+          <div class="label">第 三 回 · ГУРАВДУГААР</div>
+          <h3>3-р удаагийн магадлан итгэмжлэл</h3>
+          <p>Боловсролын салбарт үйл ажиллагаа явуулах эрхтэйгээр 10 жилийн хугацаатайгаар магадлан итгэмжлэгдсэн. 2025/06/30 хүртэл хүчинтэй.</p>
+          <div class="meta">Хүчинтэй хугацаа · 2020 – 2025.06.30</div>
+        </div>
+      </div>
+
+      <div class="timeline-year-block current">
+        <div class="year">2025</div>
+        <div class="dot"></div>
+        <div class="timeline-card">
+          <div class="label" style="color: var(--vermillion);">第 四 回 · ОДОО ЯВАГДАЖ БУЙ</div>
+          <h3>4 дэх удаагаа магадлан итгэмжлүүлэх ажил</h3>
+          <p>2025 онд БМИҮЗ-өөс 4 дэх удаагаа магадлан итгэмжлүүлэх ажиллагаа явагдаж байна. Энэ нь манай сургуулийн чанарын баталгааны тасралтгүй нь нотлох баримт.</p>
+          <div class="meta">Төлөв · ЯВАГДАЖ БАЙНА</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CERTIFICATES -->
+<section class="certs-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label center">
+        <span class="line"></span>
+        <span class="jp">証 明 書</span>
+        <span class="line"></span>
+      </div>
+      <h2>Магадлан итгэмжлэлийн <span class="italic">гэрчилгээнүүд</span></h2>
+      <p>3 удаагийн магадлан итгэмжлэлийн албан ёсны гэрчилгээ</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card fade-on-scroll">
+        <div class="cert-image">
+          <div class="seal">認 定</div>
+          <div class="cert-title">Магадлан<br>итгэмжлэл</div>
+          <div class="cert-year">2003</div>
+        </div>
+        <h4>1-р удаагийн гэрчилгээ</h4>
+        <div class="desc">Анхны магадлан итгэмжлэл. БМИҮЗ-ийн шийдвэр.</div>
+        <div class="valid">Архивт хадгалагдаж буй</div>
+      </div>
+
+      <div class="cert-card fade-on-scroll">
+        <div class="cert-image">
+          <div class="seal">認 定</div>
+          <div class="cert-title">Магадлан<br>итгэмжлэл</div>
+          <div class="cert-year">2010</div>
+        </div>
+        <h4>2-р удаагийн гэрчилгээ</h4>
+        <div class="desc">Давтан магадлан итгэмжлэгдсэн. Сургалтын хөтөлбөрийн чанар.</div>
+        <div class="valid">Архивт хадгалагдаж буй</div>
+      </div>
+
+      <div class="cert-card fade-on-scroll">
+        <div class="cert-image">
+          <div class="seal">認 定</div>
+          <div class="cert-title">10 жил<br>хүчинтэй</div>
+          <div class="cert-year">2020</div>
+        </div>
+        <h4>3-р удаагийн гэрчилгээ</h4>
+        <div class="desc">Одоо хүчинтэй. 2025/06/30 хүртэл хүчинтэй.</div>
+        <div class="valid">Хүчинтэй · 2025.06.30 хүртэл</div>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: var(--space-4); color: var(--ink-light); font-size: 0.88rem; font-style: italic;">
+      ※ Гэрчилгээний жинхэнэ зургийг дараа орлуулна
+    </p>
+  </div>
+</section>
+
+
+<!-- INFO BOX -->
+<section class="content-block">
+  <div class="container">
+    <div class="info-box">
+      <div class="info-box-content">
+        <div class="label">品 質 保 証 · ЧАНАРЫН БАТАЛГАА</div>
+        <h3>Магадлан итгэмжлэл гэж юу вэ?</h3>
+        <p>
+          Магадлан итгэмжлэл бол Монгол улсын Боловсролын магадлан итгэмжлэлийн үндэсний зөвлөл (БМИҮЗ)-ийн зүгээс боловсролын байгууллагын сургалтын хөтөлбөр, багш ажилчид, материаллаг бааз, эрдэм шинжилгээний үйл ажиллагаа зэрэг бүх нарийвчилсан хэсгийг үнэлж, олон улсын стандартад нийцэж байгаа эсэхийг баталгаажуулах процесс юм. Соёл Эрдэм Дээд Сургууль 3 удаа амжилттай магадлан итгэмжлэгдсэн, 4 дэх удаагаа шалгагдаж байна.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark">СЭ</div>
+        <h4>Соёл Эрдэм</h4>
+        <div class="jp">モンゴル文化教育大学</div>
+        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+      </div>
+      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
+        <li><a href="../about.html">Сургуулийн тухай</a></li>
+        <li><a href="founder.html">Үүсгэн байгуулагч</a></li>
+        <li><a href="ceo.html">Захирлын мэндчилгээ</a></li>
+        <li><a href="management.html">Бүтэц зохион байгуулалт</a></li>
+        <li><a href="accreditation.html">Магадлан итгэмжлэл</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
+        <li><a href="https://tw.xcloud.mn" target="_blank">Багшийн вэб</a></li>
+        <li><a href="https://sw-beta.xcloud.mn" target="_blank">Оюутны вэб</a></li>
+        <li><a href="../nomiin-san.html">Номын сан</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
+        <div class="contact-item"><strong>住所</strong>СБД, 1-р хороо, Олимпын 15а, 501</div>
+        <div class="contact-item"><strong>電話</strong>+976 70118584</div>
+        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
+      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
