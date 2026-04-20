@@ -141,47 +141,6 @@ nav {
   flex-shrink: 0;
 }
 
-.logo-mark {
-  width: 46px; height: 46px;
-  background: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--paper);
-  font-family: var(--font-jp);
-  font-weight: 600;
-  font-size: 1.1rem;
-  position: relative;
-  transform: rotate(-2deg);
-}
-
-.logo-mark::after {
-  content: "";
-  position: absolute;
-  width: 14px; height: 14px;
-  background: var(--vermillion);
-  bottom: 7px; right: 7px;
-  transform: rotate(45deg);
-}
-
-.logo-text { line-height: 1.1; }
-
-.logo-text .jp {
-  font-family: var(--font-jp);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink);
-  letter-spacing: 0.08em;
-}
-
-.logo-text .mn {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  margin-top: 2px;
-}
-
 .nav-menu {
   display: flex;
   list-style: none;
@@ -1741,14 +1700,6 @@ footer::before {
   position: relative;
 }
 
-.footer-brand .logo-mark {
-  background: var(--paper);
-  color: var(--ink);
-  margin-bottom: var(--space-3);
-}
-
-.footer-brand .logo-mark::after { background: var(--vermillion); }
-
 .footer-brand h4 {
   font-family: var(--font-jp);
   color: var(--paper);
@@ -1927,11 +1878,7 @@ footer::before {
 <nav>
   <div class="nav-container">
     <a href="../index.html" class="logo">
-      <div class="logo-mark">文</div>
-      <div class="logo-text">
-        <div class="jp">モンゴル文化教育大学</div>
-        <div class="mn">Соёл Эрдэм</div>
-      </div>
+      <img src="../assets/images/logo.png" alt="Соёл Эрдэм Дээд Сургууль" class="logo-img">
     </a>
 
     <ul class="nav-menu">
@@ -2551,9 +2498,7 @@ footer::before {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-mark">文</div>
-        <h4>モンゴル文化教育大学</h4>
-        <div class="mn">Соёл Эрдэм Дээд Сургууль · est. 1993</div>
+        <img src="../assets/images/logo.png" alt="Соёл Эрдэм Дээд Сургууль" class="logo-img-footer">
         <p>日本とモンゴルの教育・文化交流の架け橋として、30年以上。日本語教育を通じて、両国の未来を紡いでまいります。</p>
       </div>
 

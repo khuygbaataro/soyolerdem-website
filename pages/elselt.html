@@ -1,200 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="mn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Элсэлт — Соёл Эрдэм Дээд Сургууль</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
-<style>
-.step-list { counter-reset: step; margin: var(--space-6) 0; }
-.step-item { display: grid; grid-template-columns: 100px 1fr; gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px dashed var(--border); counter-increment: step; position: relative; }
-.step-item::before { content: counter(step, decimal-leading-zero); font-family: var(--font-serif); font-style: italic; font-size: 3rem; color: var(--vermillion); font-weight: 300; line-height: 1; }
-.step-item h4 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink); }
-.step-item p { color: var(--ink-soft); line-height: 1.7; font-size: 0.95rem; }
-.docs-box { background: var(--paper-warm); padding: var(--space-4); border-left: 3px solid var(--vermillion); margin-top: var(--space-4); }
-.docs-box h4 { font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.2em; font-size: 0.85rem; font-weight: 600; margin-bottom: var(--space-2); }
-.docs-box ul { list-style: none; padding: 0; }
-.docs-box li { padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; position: relative; }
-.docs-box li:last-child { border-bottom: none; }
-.docs-box li::before { content: "◉"; position: absolute; left: 0; color: var(--vermillion); font-size: 0.7em; top: 0.9rem; }
-.cta-box { background: var(--ink); color: var(--paper); padding: var(--space-8) var(--space-6); text-align: center; margin: var(--space-6) 0; position: relative; overflow: hidden; }
-.cta-box::before { content: "入学"; position: absolute; font-family: var(--font-jp); font-size: 22rem; color: var(--vermillion); opacity: 0.08; right: -3rem; top: 50%; transform: translateY(-50%); font-weight: 800; line-height: 1; pointer-events: none; }
-.cta-box h3 { color: var(--paper); font-family: var(--font-serif); font-size: 2.4rem; font-weight: 500; font-style: italic; margin-bottom: var(--space-3); position: relative; z-index: 2; }
-.cta-box p { color: rgba(247,243,233,0.8); max-width: 560px; margin: 0 auto var(--space-4); position: relative; z-index: 2; }
-@media (max-width: 640px) { .step-item { grid-template-columns: 1fr; gap: 0.5rem; } .step-item::before { font-size: 2rem; } }
-</style>
-</head>
-<body>
-<nav>
-  <div class="nav-container">
-    <a href="../index.html" class="logo">
-      <div class="logo-mark">СЭ</div>
-      <div class="logo-text"><div class="mn">Соёл Эрдэм</div><div class="jp">モンゴル文化教育大学</div></div>
-    </a>
-    <ul class="nav-menu">
-      <li><a href="about.html">Сургуулийн тухай</a></li>
-      <li><a href="surgalt.html">Сургалт</a></li>
-      <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
-      <li><a href="oyutan.html">Оюутан</a></li>
-      <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
-      <li><a href="medee.html">Мэдээ</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-switch"><a href="../index.html" class="active">MN</a><span>|</span><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a></div>
-      <a href="elselt.html" class="btn-primary">Элсэх <span class="arrow">→</span></a>
-      <button class="mobile-toggle"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-
-<section class="page-header">
-  <div class="bg-text">入学</div>
-  <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Нүүр</a><span class="separator">/</span><span class="current">Элсэлт</span></div>
-    <div class="page-title-block fade-up">
-      <div class="jp-title">入 学 の ご 案 内</div>
-      <h1>Элсэлт <span class="italic">2026-2027</span>.</h1>
-      <p class="lead">5 бакалаврын мэргэжил, магистрын хөтөлбөрт элсэх элсэгч нарт зориулсан нарийвчилсан мэдээлэл.</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-block">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label center"><span class="line"></span><span class="jp">手 続 き の 流 れ</span><span class="line"></span></div>
-      <h2>Элсэлтийн <span class="italic">дараалал</span></h2>
-    </div>
-
-    <div class="step-list">
-      <div class="step-item">
-        <div></div>
-        <div>
-          <h4>Цахим бүртгэл</h4>
-          <p>Хүсэлтээ <strong>elselt.soyolerdem.edu.mn</strong> сайт руу орж цахимаар бөглөж илгээнэ үү. Зайнаас аймаг, орон нутгаас элсэгч нар энэ аргыг сонгодог.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Элсэлт — Соёл Эрдэм Дээд Сургууль</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+      .step-list {
+        counter-reset: step;
+        margin: var(--space-6) 0;
+      }
+      .step-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: var(--space-4);
+        padding: var(--space-4) 0;
+        border-bottom: 1px dashed var(--border);
+        counter-increment: step;
+        position: relative;
+      }
+      .step-item::before {
+        content: counter(step, decimal-leading-zero);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 3rem;
+        color: var(--vermillion);
+        font-weight: 300;
+        line-height: 1;
+      }
+      .step-item h4 {
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+      }
+      .step-item p {
+        color: var(--ink-soft);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .docs-box {
+        background: var(--paper-warm);
+        padding: var(--space-4);
+        border-left: 3px solid var(--vermillion);
+        margin-top: var(--space-4);
+      }
+      .docs-box h4 {
+        font-family: var(--font-jp);
+        color: var(--vermillion);
+        letter-spacing: 0.2em;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: var(--space-2);
+      }
+      .docs-box ul {
+        list-style: none;
+        padding: 0;
+      }
+      .docs-box li {
+        padding: 0.6rem 0 0.6rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.95rem;
+        position: relative;
+      }
+      .docs-box li:last-child {
+        border-bottom: none;
+      }
+      .docs-box li::before {
+        content: "◉";
+        position: absolute;
+        left: 0;
+        color: var(--vermillion);
+        font-size: 0.7em;
+        top: 0.9rem;
+      }
+      .cta-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: var(--space-8) var(--space-6);
+        text-align: center;
+        margin: var(--space-6) 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-box::before {
+        content: "入学";
+        position: absolute;
+        font-family: var(--font-jp);
+        font-size: 22rem;
+        color: var(--vermillion);
+        opacity: 0.08;
+        right: -3rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 800;
+        line-height: 1;
+        pointer-events: none;
+      }
+      .cta-box h3 {
+        color: var(--paper);
+        font-family: var(--font-serif);
+        font-size: 2.4rem;
+        font-weight: 500;
+        font-style: italic;
+        margin-bottom: var(--space-3);
+        position: relative;
+        z-index: 2;
+      }
+      .cta-box p {
+        color: rgba(247, 243, 233, 0.8);
+        max-width: 560px;
+        margin: 0 auto var(--space-4);
+        position: relative;
+        z-index: 2;
+      }
+      @media (max-width: 640px) {
+        .step-item {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+        .step-item::before {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/images/logo.png" alt="Соёл Эрдэм Дээд Сургууль" class="logo-img">
+        </a>
+        <ul class="nav-menu">
+          <li><a href="about.html">Сургуулийн тухай</a></li>
+          <li><a href="surgalt.html">Сургалт</a></li>
+          <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+          <li><a href="oyutan.html">Оюутан</a></li>
+          <li><a href="hamtyn-ajillagaa.html">Хамтын ажиллагаа</a></li>
+          <li><a href="medee.html">Мэдээ</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="lang-switch">
+            <a href="../index.html" class="active">MN</a><span>|</span
+            ><a href="../jp/index.html">JP</a><span>|</span><a href="#">EN</a>
+          </div>
+          <a href="elselt.html" class="btn-primary"
+            >Элсэх <span class="arrow">→</span></a
+          >
+          <button class="mobile-toggle">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-      <div class="step-item">
-        <div></div>
-        <div>
-          <h4>Биечлэн ирж бүртгүүлэх</h4>
-          <p>Улаанбаатарт оршин суудаг элсэгч нар манай сургуулийн элсэлтийн комисст (СБД, Олимпын гудамж 15а, 501 тоот) хүрэлцэн ирж бүртгүүлэх боломжтой.</p>
+    </nav>
+
+    <section class="page-header">
+      <div class="bg-text">入学</div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Нүүр</a><span class="separator">/</span
+          ><span class="current">Элсэлт</span>
+        </div>
+        <div class="page-title-block fade-up">
+          <div class="jp-title">入 学 の ご 案 内</div>
+          <h1>Элсэлт <span class="italic">2026-2027</span>.</h1>
+          <p class="lead">
+            5 бакалаврын мэргэжил, магистрын хөтөлбөрт элсэх элсэгч нарт
+            зориулсан нарийвчилсан мэдээлэл.
+          </p>
         </div>
       </div>
-      <div class="step-item">
-        <div></div>
-        <div>
-          <h4>Баримт бичгийг нягтлах</h4>
-          <p>ЭЕШ-ийн оноо, ахлах сургуулийн үнэмлэх, иргэний үнэмлэх, цээж зураг зэрэг шаардлагатай баримт бичгүүдийг нягтлуулах.</p>
+    </section>
+
+    <section class="content-block">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label center">
+            <span class="line"></span><span class="jp">手 続 き の 流 れ</span
+            ><span class="line"></span>
+          </div>
+          <h2>Элсэлтийн <span class="italic">дараалал</span></h2>
+        </div>
+
+        <div class="step-list">
+          <div class="step-item">
+            <div></div>
+            <div>
+              <h4>Цахим бүртгэл</h4>
+              <p>
+                Хүсэлтээ <strong>elselt.soyolerdem.edu.mn</strong> сайт руу орж
+                цахимаар бөглөж илгээнэ үү. Зайнаас аймаг, орон нутгаас элсэгч
+                нар энэ аргыг сонгодог.
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div></div>
+            <div>
+              <h4>Биечлэн ирж бүртгүүлэх</h4>
+              <p>
+                Улаанбаатарт оршин суудаг элсэгч нар манай сургуулийн элсэлтийн
+                комисст (СБД, Олимпын гудамж 15а, 501 тоот) хүрэлцэн ирж
+                бүртгүүлэх боломжтой.
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div></div>
+            <div>
+              <h4>Баримт бичгийг нягтлах</h4>
+              <p>
+                ЭЕШ-ийн оноо, ахлах сургуулийн үнэмлэх, иргэний үнэмлэх, цээж
+                зураг зэрэг шаардлагатай баримт бичгүүдийг нягтлуулах.
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div></div>
+            <div>
+              <h4>Ярилцлага, шаардлагатай бол шалгалт</h4>
+              <p>
+                Мэргэжлээс хамаарч ярилцлага буюу нэмэлт шалгалт авах тохиолдол
+                бий. Комисс таньтай эцсийн ярилцлага хийнэ.
+              </p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div></div>
+            <div>
+              <h4>Шийдвэр гарах, гэрээ байгуулах</h4>
+              <p>
+                Элсэлтийн комиссын шийдвэрийн дагуу элссэн оюутан сургалтын
+                гэрээ байгуулж, төлбөрөө төлсний дараа хичээлээ эхлүүлнэ.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="docs-box">
+          <h4>必 要 書 類 · ШААРДЛАГАТАЙ БАРИМТ БИЧИГ</h4>
+          <ul>
+            <li>Элсэлтийн өргөдөл (цахимаар илгээх)</li>
+            <li>ЭЕШ-ийн дүн, сертификатын хуулбар</li>
+            <li>
+              Бүрэн дунд боловсролын үнэмлэхний нотариатаар баталгаажуулсан
+              хуулбар
+            </li>
+            <li>Иргэний үнэмлэхний хуулбар</li>
+            <li>4×6 хэмжээтэй цээж зураг 4 хувь</li>
+            <li>Эрүүл мэндийн тодорхойлолт</li>
+          </ul>
         </div>
       </div>
-      <div class="step-item">
-        <div></div>
-        <div>
-          <h4>Ярилцлага, шаардлагатай бол шалгалт</h4>
-          <p>Мэргэжлээс хамаарч ярилцлага буюу нэмэлт шалгалт авах тохиолдол бий. Комисс таньтай эцсийн ярилцлага хийнэ.</p>
+    </section>
+
+    <section class="content-block warm">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label center">
+            <span class="line"></span><span class="jp">合 格 基 準</span
+            ><span class="line"></span>
+          </div>
+          <h2>ЭЕШ-ийн <span class="italic">босго оноо</span></h2>
+        </div>
+
+        <div
+          style="
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--paper);
+            padding: var(--space-4);
+            border-top: 4px solid var(--vermillion);
+          "
+        >
+          <table
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              font-family: var(--font-sans);
+            "
+          >
+            <thead>
+              <tr style="border-bottom: 2px solid var(--ink)">
+                <th
+                  style="
+                    text-align: left;
+                    padding: var(--space-2);
+                    font-family: var(--font-jp);
+                    color: var(--vermillion);
+                    font-size: 0.8rem;
+                    letter-spacing: 0.15em;
+                  "
+                >
+                  МЭРГЭЖИЛ
+                </th>
+                <th
+                  style="
+                    text-align: left;
+                    padding: var(--space-2);
+                    font-family: var(--font-jp);
+                    color: var(--vermillion);
+                    font-size: 0.8rem;
+                    letter-spacing: 0.15em;
+                  "
+                >
+                  ЭЕШ 1
+                </th>
+                <th
+                  style="
+                    text-align: left;
+                    padding: var(--space-2);
+                    font-family: var(--font-jp);
+                    color: var(--vermillion);
+                    font-size: 0.8rem;
+                    letter-spacing: 0.15em;
+                  "
+                >
+                  ЭЕШ 2
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px dashed var(--border)">
+                <td style="padding: var(--space-2); font-weight: 500">
+                  Гадаад хэлний орчуулга
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Англи/Нийгэм
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Математик/Монгол
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px dashed var(--border)">
+                <td style="padding: var(--space-2); font-weight: 500">
+                  Олон улс судлал
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Англи/Орос
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Нийгэм/Түүх
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px dashed var(--border)">
+                <td style="padding: var(--space-2); font-weight: 500">
+                  Аялал жуулчлал
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Математик
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Англи/Нийгэм
+                </td>
+              </tr>
+              <tr
+                style="
+                  border-bottom: 1px dashed var(--border);
+                  background: rgba(230, 57, 70, 0.05);
+                "
+              >
+                <td style="padding: var(--space-2); font-weight: 500">
+                  Программ хангамж ★
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Математик/Физик
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Нийгэм/Түүх
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-2); font-weight: 500">
+                  Эдийн засаг
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Математик
+                </td>
+                <td style="padding: var(--space-2); color: var(--ink-soft)">
+                  Нийгэм/Англи
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p
+            style="
+              margin-top: var(--space-3);
+              padding-top: var(--space-2);
+              border-top: 1px solid var(--border);
+              font-size: 0.85rem;
+              color: var(--ink-light);
+              text-align: center;
+            "
+          >
+            ★ Программ хангамжийн мэргэжилд
+            <strong>Велнесс Спорт их сургуультай 2+2</strong> хөтөлбөр хэрэгжинэ
+            · Босго оноо: Төрийн захиргааны төв байгууллагын үндэсний босго оноо
+          </p>
         </div>
       </div>
-      <div class="step-item">
-        <div></div>
-        <div>
-          <h4>Шийдвэр гарах, гэрээ байгуулах</h4>
-          <p>Элсэлтийн комиссын шийдвэрийн дагуу элссэн оюутан сургалтын гэрээ байгуулж, төлбөрөө төлсний дараа хичээлээ эхлүүлнэ.</p>
+    </section>
+
+    <section class="content-block">
+      <div class="container">
+        <div class="cta-box">
+          <h3>Цахимаар бүртгэх хэсэг</h3>
+          <p>
+            Элсэлтийн цахим бүртгэл ажиллаж байна. Танд асуух зүйл байвал
+            биечлэн эсвэл утсаар холбогдоно уу.
+          </p>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: var(--space-2);
+              flex-wrap: wrap;
+              position: relative;
+              z-index: 2;
+            "
+          >
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScEqpQLXs8H-G66irh0ZU4g8j-AaRG5Pk84x1v2kWBVnXhBPA/viewform"
+              class="btn-light"
+              >Цахим элсэлт</a
+            >
+            <a
+              href="mailto:info@soyolerdem.edu.mn"
+              class="btn-outline"
+              style="border-color: var(--paper); color: var(--paper)"
+              >И-мэйл илгээх</a
+            >
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="docs-box">
-      <h4>必 要 書 類 · ШААРДЛАГАТАЙ БАРИМТ БИЧИГ</h4>
-      <ul>
-        <li>Элсэлтийн өргөдөл (цахимаар илгээх)</li>
-        <li>ЭЕШ-ийн дүн, сертификатын хуулбар</li>
-        <li>Бүрэн дунд боловсролын үнэмлэхний нотариатаар баталгаажуулсан хуулбар</li>
-        <li>Иргэний үнэмлэхний хуулбар</li>
-        <li>4×6 хэмжээтэй цээж зураг 4 хувь</li>
-        <li>Эрүүл мэндийн тодорхойлолт</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="content-block warm">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label center"><span class="line"></span><span class="jp">合 格 基 準</span><span class="line"></span></div>
-      <h2>ЭЕШ-ийн <span class="italic">босго оноо</span></h2>
-    </div>
-
-    <div style="max-width: 900px; margin: 0 auto; background: var(--paper); padding: var(--space-4); border-top: 4px solid var(--vermillion);">
-      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-sans);">
-        <thead>
-          <tr style="border-bottom: 2px solid var(--ink);">
-            <th style="text-align: left; padding: var(--space-2); font-family: var(--font-jp); color: var(--vermillion); font-size: 0.8rem; letter-spacing: 0.15em;">МЭРГЭЖИЛ</th>
-            <th style="text-align: left; padding: var(--space-2); font-family: var(--font-jp); color: var(--vermillion); font-size: 0.8rem; letter-spacing: 0.15em;">ЭЕШ 1</th>
-            <th style="text-align: left; padding: var(--space-2); font-family: var(--font-jp); color: var(--vermillion); font-size: 0.8rem; letter-spacing: 0.15em;">ЭЕШ 2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom: 1px dashed var(--border);"><td style="padding: var(--space-2); font-weight: 500;">Гадаад хэлний орчуулга</td><td style="padding: var(--space-2); color: var(--ink-soft);">Англи/Нийгэм</td><td style="padding: var(--space-2); color: var(--ink-soft);">Математик/Монгол</td></tr>
-          <tr style="border-bottom: 1px dashed var(--border);"><td style="padding: var(--space-2); font-weight: 500;">Олон улс судлал</td><td style="padding: var(--space-2); color: var(--ink-soft);">Англи/Орос</td><td style="padding: var(--space-2); color: var(--ink-soft);">Нийгэм/Түүх</td></tr>
-          <tr style="border-bottom: 1px dashed var(--border);"><td style="padding: var(--space-2); font-weight: 500;">Аялал жуулчлал</td><td style="padding: var(--space-2); color: var(--ink-soft);">Математик</td><td style="padding: var(--space-2); color: var(--ink-soft);">Англи/Нийгэм</td></tr>
-          <tr style="border-bottom: 1px dashed var(--border); background: rgba(230,57,70,0.05);"><td style="padding: var(--space-2); font-weight: 500;">Программ хангамж ★</td><td style="padding: var(--space-2); color: var(--ink-soft);">Математик/Физик</td><td style="padding: var(--space-2); color: var(--ink-soft);">Нийгэм/Түүх</td></tr>
-          <tr><td style="padding: var(--space-2); font-weight: 500;">Эдийн засаг</td><td style="padding: var(--space-2); color: var(--ink-soft);">Математик</td><td style="padding: var(--space-2); color: var(--ink-soft);">Нийгэм/Англи</td></tr>
-        </tbody>
-      </table>
-      <p style="margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--ink-light); text-align: center;">★ Программ хангамжийн мэргэжилд <strong>Велнесс Спорт их сургуультай 2+2</strong> хөтөлбөр хэрэгжинэ · Босго оноо: Төрийн захиргааны төв байгууллагын үндэсний босго оноо</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-block">
-  <div class="container">
-    <div class="cta-box">
-      <h3>Өнөөдөр л өргөдөл өгнө үү</h3>
-      <p>Элсэлтийн цахим бүртгэл ажиллаж байна. Танд асуух зүйл байвал биечлэн эсвэл утсаар холбогдоно уу.</p>
-      <div style="display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap; position: relative; z-index: 2;">
-        <a href="#" class="btn-light">Цахим өргөдөл → elselt.soyolerdem.edu.mn</a>
-        <a href="mailto:info@soyolerdem.edu.mn" class="btn-outline" style="border-color: var(--paper); color: var(--paper);">И-мэйл илгээх</a>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="../assets/images/logo.png" alt="Соёл Эрдэм Дээд Сургууль" class="logo-img-footer">
+            <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
+          </div>
+          <div class="footer-col">
+            <h5>リンク · ЛИНК</h5>
+            <ul>
+              <li><a href="about.html">Сургуулийн тухай</a></li>
+              <li><a href="elselt.html">Элсэлт</a></li>
+              <li><a href="surgalt.html">Сургалт</a></li>
+              <li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
+              <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li>
+              <li><a href="tugsugchid.html">Төгсөгчид</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>サービス · СЕРВИС</h5>
+            <ul>
+              <li><a href="#">Moodle</a></li>
+              <li><a href="nomiin-san.html">Номын сан</a></li>
+              <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li>
+              <li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>連絡先 · ХОЛБОО БАРИХ</h5>
+            <div class="contact-item">
+              <strong>住所 · Хаяг</strong>СБД, 1-р хороо<br />Олимпын гудамж
+              15а, 501 тоот
+            </div>
+            <div class="contact-item">
+              <strong>電話</strong>+976 70118584<br />+976 95266868
+            </div>
+            <div class="contact-item">
+              <strong>メール</strong>info@soyolerdem.edu.mn
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            © <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль
+          </div>
+          <div class="socials">
+            <a href="#" class="social-link">FB</a
+            ><a href="#" class="social-link">YT</a
+            ><a href="#" class="social-link">IG</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo-mark">СЭ</div>
-        <h4>Соёл Эрдэм</h4>
-        <div class="jp">モンゴル文化教育大学</div>
-        <p>Монгол-Японы боловсролын гүүр. 1993 оноос.</p>
-      </div>
-      <div class="footer-col"><h5>リンク · ЛИНК</h5><ul>
-        <li><a href="about.html">Сургуулийн тухай</a></li><li><a href="elselt.html">Элсэлт</a></li>
-        <li><a href="surgalt.html">Сургалт</a></li><li><a href="erdem.html">Эрдэм шинжилгээ</a></li>
-        <li><a href="oyutny-zuvluel.html">Оюутны зөвлөл</a></li><li><a href="tugsugchid.html">Төгсөгчид</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>サービス · СЕРВИС</h5><ul>
-        <li><a href="#">Moodle</a></li><li><a href="nomiin-san.html">Номын сан</a></li>
-        <li><a href="sonin-hevlel.html">Сонин хэвлэл</a></li><li><a href="moritoi-baaz.html">Шилийн булаг</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>連絡先 · ХОЛБОО БАРИХ</h5>
-        <div class="contact-item"><strong>住所 · Хаяг</strong>СБД, 1-р хороо<br>Олимпын гудамж 15а, 501 тоот</div>
-        <div class="contact-item"><strong>電話</strong>+976 70118584<br>+976 95266868</div>
-        <div class="contact-item"><strong>メール</strong>info@soyolerdem.edu.mn</div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© <span class="year">1993—2026</span> Соёл Эрдэм Дээд Сургууль</div>
-      <div class="socials"><a href="#" class="social-link">FB</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">IG</a></div>
-    </div>
-  </div>
-</footer>
-<script src="../assets/js/main.js"></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="../assets/js/identity-redirect.js"></script>
-<script src="../assets/js/cms-loader.js"></script>
-</body>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="../assets/js/identity-redirect.js"></script>
+    <script src="../assets/js/cms-loader.js"></script>
+  </body>
 </html>
