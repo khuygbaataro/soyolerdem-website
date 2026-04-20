@@ -19,15 +19,7 @@
 .magazine-hero h2 { color: var(--paper); font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: var(--space-3); }
 .magazine-hero p { color: rgba(247,243,233,0.8); line-height: 1.7; font-size: 1rem; }
 
-.research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
-.research-card { padding: var(--space-4); background: var(--paper); border: 1px solid var(--border); cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; }
-.research-card:hover { transform: translateY(-4px); border-color: var(--ink); box-shadow: 0 20px 40px rgba(26,26,46,0.08); }
-.research-card .volume { font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--vermillion); margin-bottom: var(--space-2); }
-.research-card h4 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; line-height: 1.3; margin-bottom: var(--space-2); }
-.research-card .author { font-size: 0.85rem; color: var(--ink-light); margin-bottom: var(--space-2); }
-.research-card .date { font-family: var(--font-jp); font-size: 0.8rem; color: var(--vermillion); letter-spacing: 0.15em; margin-top: auto; padding-top: var(--space-2); border-top: 1px solid var(--border); font-weight: 600; }
-@media (max-width: 1024px) { .magazine-hero, .research-grid { grid-template-columns: 1fr; } .magazine-cover { max-width: 320px; margin: 0 auto; } .research-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { .magazine-hero { grid-template-columns: 1fr; } .magazine-cover { max-width: 320px; margin: 0 auto; } }
 
 /* ==================================================
    RESEARCH POLICY INTRO + 6 BOTI CARDS
@@ -55,57 +47,284 @@
 
 .research-closing { margin-top: var(--space-6); padding: var(--space-4) var(--space-5); background: var(--paper-warm); border-left: 3px solid var(--vermillion); font-size: 1rem; line-height: 1.8; color: var(--ink-soft); }
 
-/* Боти карт жагсаалт */
-.boti-section { background: var(--paper-warm); padding: var(--space-10) 0; }
-.boti-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-4); }
-.boti-heading { text-align: center; margin-bottom: var(--space-6); }
-.boti-heading .jp { font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.3em; font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: var(--space-2); }
-.boti-heading h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 500; margin-bottom: var(--space-2); }
-.boti-heading h2 em { font-style: italic; color: var(--vermillion); }
-.boti-heading p { color: var(--ink-soft); max-width: 640px; margin: 0 auto; font-size: 0.98rem; line-height: 1.6; }
-
-.boti-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
-.boti-card { cursor: pointer; transition: transform 0.35s ease; display: flex; flex-direction: column; gap: var(--space-2); text-align: left; background: none; border: none; padding: 0; font: inherit; color: inherit; }
-.boti-card:hover { transform: translateY(-6px); }
-.boti-card:hover .boti-cover { box-shadow: 0 28px 50px rgba(26,26,46,0.25); }
-
-.boti-cover {
-  aspect-ratio: 3/4;
-  background: linear-gradient(150deg, #1a1a2e 0%, #2a2a48 60%, var(--vermillion) 100%);
-  padding: var(--space-4);
+/* ============================================
+   БОТИ SECTION — EDITORIAL REDESIGN
+   ============================================ */
+.boti-section {
+  background: linear-gradient(180deg, var(--paper-warm) 0%, #ebe3cf 100%);
+  padding: var(--space-10) 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 14px 28px rgba(26,26,46,0.18);
-  transition: box-shadow 0.35s ease;
 }
-.boti-cover::before {
-  content: "学 術";
+.boti-section::before {
+  content: "全 集";
   position: absolute;
+  top: 40px;
+  right: -40px;
   font-family: var(--font-jp);
-  font-size: 9rem;
-  color: rgba(255,255,255,0.06);
-  right: -1.5rem;
-  top: -1rem;
+  font-size: 18rem;
+  color: rgba(26,26,46,0.035);
   font-weight: 800;
   line-height: 0.85;
   pointer-events: none;
   letter-spacing: -0.05em;
 }
-.boti-cover-inner { position: relative; z-index: 2; color: #fff; display: flex; flex-direction: column; height: 100%; }
-.boti-kicker { font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.18em; opacity: 0.75; font-weight: 600; text-transform: uppercase; }
-.boti-subtitle { font-family: var(--font-serif); font-style: italic; font-size: 1rem; opacity: 0.85; margin-top: 0.3rem; line-height: 1.3; }
-.boti-volume-big { font-family: var(--font-serif); font-size: 3.4rem; font-weight: 500; font-style: italic; line-height: 1; margin-top: auto; letter-spacing: -0.02em; }
-.boti-year-small { font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; opacity: 0.75; margin-top: 0.2rem; }
-.boti-tag { font-family: var(--font-jp); font-size: 0.72rem; letter-spacing: 0.35em; color: var(--vermillion); background: rgba(255,255,255,0.96); align-self: flex-start; padding: 0.35rem 0.8rem; margin-top: var(--space-3); font-weight: 700; }
+.boti-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--space-4); position: relative; z-index: 2; }
+.boti-heading { text-align: center; margin-bottom: var(--space-8); }
+.boti-heading .jp { font-family: var(--font-jp); color: var(--vermillion); letter-spacing: 0.4em; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: var(--space-3); }
+.boti-heading h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4.5vw, 3rem); font-weight: 500; margin-bottom: var(--space-3); letter-spacing: -0.015em; color: var(--ink); }
+.boti-heading h2 em { font-style: italic; color: var(--vermillion); }
+.boti-heading .boti-lead { color: var(--ink-soft); max-width: 620px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+.boti-heading .boti-divider-line {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-top: var(--space-4);
+}
+.boti-heading .boti-divider-line span { width: 30px; height: 1px; background: var(--ink-soft); opacity: 0.4; }
+.boti-heading .boti-divider-line em {
+  font-family: var(--font-jp); font-size: 0.65rem; letter-spacing: 0.3em;
+  color: var(--ink-soft); font-style: normal; font-weight: 600;
+}
 
-.boti-card h4 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; margin: 0; color: var(--ink); line-height: 1.3; }
-.boti-meta { font-family: var(--font-jp); font-size: 0.78rem; color: var(--ink-light); letter-spacing: 0.08em; margin: 0; }
+.boti-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6) var(--space-5);
+}
+
+.boti-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+.boti-card:hover { transform: translateY(-10px); }
+.boti-card:hover .boti-cover {
+  box-shadow: -8px 28px 60px rgba(26,26,46,0.32), 0 0 0 1px rgba(230,57,70,0.2);
+}
+.boti-card:hover .boti-cover::after { opacity: 1; transform: translate(0, 0); }
+.boti-card:hover .boti-meta-arrow { color: var(--vermillion); gap: 14px; }
+
+.boti-cover {
+  aspect-ratio: 3/4.25;
+  background:
+    radial-gradient(ellipse at top left, rgba(230,57,70,0.12) 0%, transparent 55%),
+    linear-gradient(165deg, #0e0e1c 0%, #1a1a2e 40%, #2a2345 75%, #3a2850 100%);
+  padding: var(--space-4) var(--space-4) var(--space-4) calc(var(--space-4) + 10px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: -4px 16px 34px rgba(26,26,46,0.22);
+  transition: box-shadow 0.5s ease;
+}
+
+/* Book spine (left edge) */
+.boti-cover::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 8px;
+  background: linear-gradient(to right, var(--vermillion) 0%, rgba(230,57,70,0.7) 60%, transparent 100%);
+  box-shadow: inset -1px 0 0 rgba(0,0,0,0.25);
+  z-index: 3;
+}
+
+/* Hover reveal "Нээх →" */
+.boti-cover::after {
+  content: "НЭЭХ  →";
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  background: var(--vermillion);
+  opacity: 0;
+  transform: translate(8px, -8px);
+  transition: all 0.4s ease;
+  font-weight: 700;
+  z-index: 4;
+}
+
+/* Large kanji watermark — subtle */
+.boti-cover-inner {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.boti-cover-inner::before {
+  content: "誌";
+  position: absolute;
+  font-family: var(--font-jp);
+  font-size: 16rem;
+  color: rgba(255,255,255,0.04);
+  right: -2.5rem;
+  top: 38%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  line-height: 0.85;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  z-index: 0;
+}
+
+.boti-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  opacity: 0.55;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.boti-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  opacity: 0.92;
+  margin-top: 0.8rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  max-width: 9.5rem;
+}
+
+.boti-divider {
+  width: 28px;
+  height: 1.5px;
+  background: var(--vermillion);
+  margin: var(--space-3) 0 var(--space-2);
+  position: relative;
+}
+.boti-divider::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background: var(--vermillion);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.boti-volume-big {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+  margin-top: auto;
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+
+.boti-year-small {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.65;
+  margin-top: 0.35rem;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.boti-tag {
+  font-family: var(--font-jp);
+  font-size: 0.66rem;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.55);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-weight: 600;
+  display: block;
+}
+
+/* NEW ribbon for latest issue */
+.boti-card.is-latest .boti-cover::after { content: ""; display: none; }
+.boti-card.is-latest:hover .boti-cover::after { display: block; content: "НЭЭХ  →"; }
+.boti-ribbon {
+  position: absolute;
+  top: 14px;
+  right: -4px;
+  background: var(--vermillion);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(230,57,70,0.35);
+}
+.boti-ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  border-top: 4px solid rgba(180,30,50,0.8);
+  border-right: 4px solid transparent;
+}
+
+/* Card footer (below cover) */
+.boti-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+
+.boti-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.boti-meta {
+  font-family: var(--font-jp);
+  font-size: 0.72rem;
+  color: var(--ink-light);
+  letter-spacing: 0.22em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.boti-meta-arrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
 
 @media (max-width: 1024px) {
   .directions-core, .directions-table, .boti-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .directions-core, .directions-table, .boti-grid { grid-template-columns: 1fr; }
+  .boti-section::before { font-size: 12rem; }
+  .boti-volume-big { font-size: 2.6rem; }
 }
 
 /* ==================================================
@@ -255,7 +474,6 @@
     <div class="page-title-block fade-up">
       <div class="jp-title">学 術 · 研 究 活 動</div>
       <h1>Эрдэм <span class="italic">шинжилгээ</span>.</h1>
-      <p class="lead">Шинжлэх ухааны болон боловсролын доктор, магистрын зэрэгтэй, профессор, дэд профессор цолтой эрдэмтэн багш нарын судалгааны үйл ажиллагаа.</p>
     </div>
   </div>
 </section>
@@ -349,24 +567,34 @@
     <div class="boti-heading">
       <span class="jp">全 集 · 学 術 誌</span>
       <h2>Эрдэм шинжилгээний <em>бичиг</em></h2>
-      <p>Боть бүр дээр дарж номын хуудас хэлбэрээр уншина уу. Баруун-зүүн сумаар хуудас эргүүлнэ.</p>
+      <p class="boti-lead">Боть бүр дээр дарж номын хуудас хэлбэрээр уншина уу. Баруун-зүүн сумаар хуудас эргүүлнэ.</p>
+      <div class="boti-divider-line">
+        <span></span>
+        <em>SEDS · 全 六 集</em>
+        <span></span>
+      </div>
     </div>
 
     <div class="boti-grid">
-      <button type="button" class="boti-card"
+      <button type="button" class="boti-card is-latest"
               data-pdf="/content/research-journals/pdfs/erdem-2025-1.pdf"
               data-pdf-title="Эрдэм шинжилгээний бичиг 1(01) 2025">
+        <span class="boti-ribbon">ШИНЭ</span>
         <div class="boti-cover">
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">1(01)</div>
             <div class="boti-year-small">2025</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 1(01)</h4>
-        <p class="boti-meta">2025 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2025 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
 
       <button type="button" class="boti-card"
@@ -376,13 +604,17 @@
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">2(02)</div>
             <div class="boti-year-small">2024</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 2(02)</h4>
-        <p class="boti-meta">2024 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2024 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
 
       <button type="button" class="boti-card"
@@ -392,13 +624,17 @@
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">1(01)</div>
             <div class="boti-year-small">2024</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 1(01)</h4>
-        <p class="boti-meta">2024 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2024 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
 
       <button type="button" class="boti-card"
@@ -408,13 +644,17 @@
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">1(01)</div>
             <div class="boti-year-small">2023</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 1(01)</h4>
-        <p class="boti-meta">2023 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2023 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
 
       <button type="button" class="boti-card"
@@ -424,13 +664,17 @@
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">1(01)</div>
             <div class="boti-year-small">2022</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 1(01)</h4>
-        <p class="boti-meta">2022 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2022 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
 
       <button type="button" class="boti-card"
@@ -440,13 +684,17 @@
           <div class="boti-cover-inner">
             <span class="boti-kicker">Соёл Эрдэм · SEDS</span>
             <div class="boti-subtitle">Эрдэм шинжилгээний бичиг</div>
+            <div class="boti-divider"></div>
             <div class="boti-volume-big">1(01)</div>
             <div class="boti-year-small">2021</div>
             <span class="boti-tag">学 術 誌</span>
           </div>
         </div>
         <h4>Эрдэм шинжилгээний бичиг 1(01)</h4>
-        <p class="boti-meta">2021 · PDF</p>
+        <div class="boti-meta-row">
+          <span class="boti-meta">2021 · PDF</span>
+          <span class="boti-meta-arrow">Унших →</span>
+        </div>
       </button>
     </div>
   </div>
@@ -474,60 +722,6 @@
           <a href="#" class="btn-outline" style="border-color: var(--paper); color: var(--paper);">Бүх дугаар</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="content-block warm">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label center"><span class="line"></span><span class="jp">最 新 の 論 文</span><span class="line"></span></div>
-      <h2>Сүүлийн <span class="italic">бүтээлүүд</span></h2>
-      <p>Багш, судлаачдын эрдэм шинжилгээний бүтээлүүд, хэвлэгдсэн судалгаа.</p>
-    </div>
-
-    <!-- CMS-ээс автоматаар ачаалагдах эрдэм шинжилгээний бүтээлүүд -->
-    <div class="research-grid" id="dynamic-research">
-      <div class="research-card">
-        <div class="volume">Vol. 05 · Articles</div>
-        <h4>Монгол-Япон хэл дээрх хэлцүүдийн харьцуулсан судалгаа</h4>
-        <div class="author">Б. Оюун · Хэл шинжлэлийн доктор</div>
-        <div class="date">2026 · 01 · 15</div>
-      </div>
-      <div class="research-card">
-        <div class="volume">Vol. 05 · Articles</div>
-        <h4>XX зууны Япон-Монголын соёлын солилцооны түүхэн үндэс</h4>
-        <div class="author">Д. Мөнхзул · Түүхийн доктор</div>
-        <div class="date">2026 · 01 · 15</div>
-      </div>
-      <div class="research-card">
-        <div class="volume">Vol. 05 · Articles</div>
-        <h4>Монгол дахь Япон хөрөнгө оруулалтын эдийн засгийн нөлөө</h4>
-        <div class="author">Б. Батсайхан · Эдийн засгийн доктор</div>
-        <div class="date">2026 · 01 · 15</div>
-      </div>
-      <div class="research-card">
-        <div class="volume">Vol. 04 · 2025</div>
-        <h4>Орчин үеийн Япон уран зохиолд Монголын дүрслэл</h4>
-        <div class="author">Г. Сараа · Утга зохиолын доктор</div>
-        <div class="date">2025 · 06 · 10</div>
-      </div>
-      <div class="research-card">
-        <div class="volume">Vol. 04 · 2025</div>
-        <h4>Япон хэл сурахад Монгол хэлтэй тулгардаг бэрхшээл</h4>
-        <div class="author">Р. Түвшинжаргал · Сурган хүмүүжүүлэхийн магистр</div>
-        <div class="date">2025 · 06 · 10</div>
-      </div>
-      <div class="research-card">
-        <div class="volume">Vol. 04 · 2025</div>
-        <h4>Дижитал эрин дэх Япон-Монгол боловсролын харилцаа</h4>
-        <div class="author">Н. Амарсанаа · Боловсролын магистр</div>
-        <div class="date">2025 · 06 · 10</div>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: var(--space-6);">
-      <a href="#" class="btn-outline">Бүх бүтээлүүд үзэх →</a>
     </div>
   </div>
 </section>
