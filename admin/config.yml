@@ -139,7 +139,36 @@ collections:
       - { label: "Онцлох төгсөгч мөн үү?", name: "featured", widget: "boolean", default: false }
 
   # ────────────────────────────────────────────
-  # 4. ЭРДЭМ ШИНЖИЛГЭЭНИЙ БҮТЭЭЛ
+  # 4. ЭРДЭМ ШИНЖИЛГЭЭНИЙ БОТЬ СЭТГҮҮЛ (PDF flipbook)
+  # ────────────────────────────────────────────
+  - name: "research-journals"
+    label: "📚 Эрдэм шинжилгээний бичиг (боть)"
+    label_singular: "боть"
+    folder: "content/research-journals"
+    create: true
+    slug: "{{year}}-{{issue_number}}"
+    summary: "Боть {{issue_number}}({{volume}}) · {{year}}"
+    sortable_fields: ['year', 'issue_number']
+    fields:
+      - { label: "Гарчиг", name: "title", widget: "string", default: "Эрдэм шинжилгээний бичиг", hint: "Картын доор харагдана. Ж: Эрдэм шинжилгээний бичиг 1(01)" }
+      - { label: "Үндсэн дугаар", name: "issue_number", widget: "number", min: 1, default: 1, hint: "Ж: 1" }
+      - { label: "Дотоод дугаар (Volume)", name: "volume", widget: "string", default: "01", hint: "Ж: 01, 02" }
+      - { label: "Он", name: "year", widget: "number", min: 2000, max: 2100, default: 2025 }
+      - { label: "Хэвлэгдсэн огноо", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - label: "PDF файл (ЗАЙЛШГҮЙ — ганц файл)"
+        name: "pdf"
+        widget: "file"
+        required: true
+        hint: "Боть сэтгүүлийн PDF хувилбар. Энэ файл дээр дарсан үед ном хэлбэрээр уншигдана."
+        media_folder: "/content/research-journals/pdfs"
+        public_folder: "/content/research-journals/pdfs"
+      - { label: "Нүүрний зураг (заавал биш)", name: "cover", widget: "image", required: false, hint: "Хэрэв байхгүй бол автоматаар сумие загвартай нүүр харагдана" }
+      - { label: "Богино тайлбар", name: "description", widget: "text", required: false, hint: "Энэ ботид юу багтсан тухай 2-3 өгүүлбэр" }
+      - { label: "Хэвлэгдсэн хуудасны тоо", name: "pages", widget: "number", required: false, min: 1 }
+      - { label: "Жагсаалтын эрэмбэ", name: "order", widget: "number", default: 0, hint: "Бага тоотой нь эхэнд харагдана" }
+
+  # ────────────────────────────────────────────
+  # 5. ЭРДЭМ ШИНЖИЛГЭЭНИЙ БҮТЭЭЛ (articles)
   # ────────────────────────────────────────────
   - name: "erdem"
     label: "🔬 Эрдэм шинжилгээ"
