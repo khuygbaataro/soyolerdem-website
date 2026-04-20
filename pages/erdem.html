@@ -8,67 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/main.css">
 <style>
-/* ==================================================
-   RESEARCH HERO + GROUP CARDS (SESSION 2 + 3)
-   ================================================== */
-
-/* Hero */
-.research-hero { background: var(--paper-warm); padding: 80px 0; }
-.research-hero-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-4); text-align: center; }
-.research-hero-title { font-family: var(--font-serif); font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 500; color: var(--ink); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: var(--space-3); }
-.research-hero-lead { font-family: var(--font-sans); font-size: 1.125rem; color: var(--ink-soft); line-height: 1.6; max-width: 600px; margin: 0 auto var(--space-6); }
-
-.research-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 640px; margin: 0 auto var(--space-6); }
-.research-stat { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
-.research-stat-number { font-family: var(--font-serif); font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 500; color: var(--vermillion); line-height: 1; }
-.research-stat-label { font-family: var(--font-sans); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); }
-
-.research-ctas { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.btn-research-primary, .btn-research-secondary { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; padding: 0.85rem 1.5rem; text-decoration: none; letter-spacing: 0.02em; transition: all 0.3s ease; display: inline-block; }
-.btn-research-primary { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
-.btn-research-primary:hover { background: var(--ink-deep); border-color: var(--ink-deep); }
-.btn-research-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-.btn-research-secondary:hover { background: var(--ink); color: var(--paper); }
-
-/* Groups */
-.research-groups { background: var(--paper); padding: 80px 0; }
-.research-groups-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-4); }
-.research-groups-heading { font-family: var(--font-serif); font-size: clamp(1.75rem, 3.5vw, 2.25rem); font-weight: 500; color: var(--ink); text-align: center; margin-bottom: var(--space-6); letter-spacing: -0.01em; }
-.research-groups-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.research-group-card { position: relative; display: flex; flex-direction: column; gap: var(--space-2); padding: 32px 28px; background: var(--white); border: 1px solid var(--border-soft); border-top: 3px solid var(--border-soft); text-decoration: none; color: inherit; transition: all 0.3s ease; }
-.research-group-card:hover { transform: translateY(-4px); }
-.research-group-mark { display: block; width: 16px; height: 16px; background: var(--border-soft); }
-.research-group-title { font-family: var(--font-serif); font-size: 1.375rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin: 0; }
-.research-group-desc { font-family: var(--font-sans); font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; margin: 0; }
-.research-group-badge { align-self: flex-start; margin-top: auto; padding: 4px 10px; font-family: var(--font-sans); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-
-.research-group-card[data-group="purple"] { border-top-color: var(--research-purple); }
-.research-group-card[data-group="purple"] .research-group-mark { background: var(--research-purple); }
-.research-group-card[data-group="purple"] .research-group-badge { background: var(--research-purple-bg); color: var(--research-purple); }
-.research-group-card[data-group="purple"]:hover { border-color: var(--research-purple); }
-
-.research-group-card[data-group="teal"] { border-top-color: var(--research-teal); }
-.research-group-card[data-group="teal"] .research-group-mark { background: var(--research-teal); }
-.research-group-card[data-group="teal"] .research-group-badge { background: var(--research-teal-bg); color: var(--research-teal); }
-.research-group-card[data-group="teal"]:hover { border-color: var(--research-teal); }
-
-.research-group-card[data-group="coral"] { border-top-color: var(--research-coral); }
-.research-group-card[data-group="coral"] .research-group-mark { background: var(--research-coral); }
-.research-group-card[data-group="coral"] .research-group-badge { background: var(--research-coral-bg); color: var(--research-coral); }
-.research-group-card[data-group="coral"]:hover { border-color: var(--research-coral); }
-
-@media (max-width: 1024px) {
-  .research-groups-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
-  .research-hero { padding: 48px 0; }
-  .research-groups { padding: 48px 0; }
-  .research-stats { grid-template-columns: 1fr; gap: var(--space-3); }
-  .research-ctas { flex-direction: column; align-items: stretch; }
-  .btn-research-primary, .btn-research-secondary { text-align: center; }
-  .research-groups-grid { grid-template-columns: 1fr; }
-}
-
 .magazine-hero { background: var(--ink); color: var(--paper); padding: var(--space-8); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: center; position: relative; overflow: hidden; }
 .magazine-hero::before { content: "科学"; position: absolute; font-family: var(--font-jp); font-size: 20rem; color: rgba(230,57,70,0.08); right: -3rem; top: -2rem; font-weight: 800; line-height: 1; pointer-events: none; }
 .magazine-cover { aspect-ratio: 3/4; background: linear-gradient(135deg, var(--vermillion), var(--ink-deep)); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 2; }
@@ -317,63 +256,6 @@
       <div class="jp-title">学 術 · 研 究 活 動</div>
       <h1>Эрдэм <span class="italic">шинжилгээ</span>.</h1>
       <p class="lead">Шинжлэх ухааны болон боловсролын доктор, магистрын зэрэгтэй, профессор, дэд профессор цолтой эрдэмтэн багш нарын судалгааны үйл ажиллагаа.</p>
-    </div>
-  </div>
-</section>
-
-<section class="research-hero">
-  <div class="research-hero-inner">
-    <h2 class="research-hero-title">Эрдэм шинжилгээ, инноваци</h2>
-    <p class="research-hero-lead">Оюутан, багш, судлаач — хэн ч шинэ санаагаа хэрэгжүүлэх нээлттэй талбар</p>
-
-    <div class="research-stats">
-      <div class="research-stat">
-        <span class="research-stat-number">11</span>
-        <span class="research-stat-label">Идэвхтэй төсөл</span>
-      </div>
-      <div class="research-stat">
-        <span class="research-stat-number">18</span>
-        <span class="research-stat-label">Оролцогч оюутан</span>
-      </div>
-      <div class="research-stat">
-        <span class="research-stat-number">4</span>
-        <span class="research-stat-label">Боть сэтгүүл</span>
-      </div>
-    </div>
-
-    <div class="research-ctas">
-      <a href="#submit-idea" class="btn-research-primary">Санаа оруулах</a>
-      <a href="#active-projects" class="btn-research-secondary">Төсөлд нэгдэх</a>
-      <a href="#open-topics" class="btn-research-secondary">Нээлттэй сэдвүүд</a>
-    </div>
-  </div>
-</section>
-
-<section class="research-groups">
-  <div class="research-groups-inner">
-    <h3 class="research-groups-heading">Гурван тэргүүлэх чиглэл</h3>
-
-    <div class="research-groups-grid">
-      <a href="#hel-tekhnologi" class="research-group-card" data-group="purple">
-        <span class="research-group-mark"></span>
-        <h4 class="research-group-title">Хэл + Технологийн огтлолцол</h4>
-        <p class="research-group-desc">Япон-Монгол орчуулга, AI хэлний боловсруулалт, дижитал толь, хэл сурах хэрэгсэл</p>
-        <span class="research-group-badge">4 идэвхтэй төсөл</span>
-      </a>
-
-      <a href="#digital-irgen" class="research-group-card" data-group="teal">
-        <span class="research-group-mark"></span>
-        <h4 class="research-group-title">Дижитал иргэний шийдэл</h4>
-        <p class="research-group-desc">Кибер аюулгүй байдал, апп хөгжүүлэлт, нийгмийн асуудлын технологийн шийдэл</p>
-        <span class="research-group-badge">5 идэвхтэй төсөл</span>
-      </a>
-
-      <a href="#soyol-innovatsi" class="research-group-card" data-group="coral">
-        <span class="research-group-mark"></span>
-        <h4 class="research-group-title">Соёл + Инновацийн лаборатори</h4>
-        <p class="research-group-desc">Монгол-Япон соёл, аялал жуулчлал, дижитал архив, VR соёлын өв</p>
-        <span class="research-group-badge">2 идэвхтэй төсөл</span>
-      </a>
     </div>
   </div>
 </section>

@@ -309,6 +309,14 @@ git push
   орно. Картуудын data-pdf зам нь энэ folder рүү зааж байна.
 - `content/research-journals/README.md` + `pdfs/.gitkeep` — CMS хавтасны тэмдэглэл.
 
+### 2026.04.20 (erdem.html цэвэрлэгээ)
+- Давхардсан хэсгүүдийг устгав (118 мөр):
+  * `<section class="research-hero">` (11/18/4 статистик + 3 CTA)
+  * `<section class="research-groups">` (Purple/Teal/Coral 3 карт)
+- Холбогдох CSS-ийг inline `<style>`-аас цэвэрлэв (.research-hero*, .research-groups*, .research-group-card*, .research-stat*, .btn-research-*)
+- Одоо хуудасны дараалал: page-header → research-intro (бодлого) → боти-section (6 PDF) → magazine-hero → research-grid → conferences → footer
+- HTML tag balance шалгав: 6 section, 120 div — бүгд хаагдсан
+
 ### 2026.04.20
 - Захирлын мэндчилгээг placeholder-оос real контент руу шилжүүлэв
 - Д.Эрдэнэчимэг (Гүйцэтгэх захирал)-ийн 6 догол мэндчилгээ (MN): pages/about.html card, pages/about/ceo.html full page
