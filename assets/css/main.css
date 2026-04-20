@@ -271,22 +271,6 @@ nav {
   .logo-img-footer { height: 32px; }
 }
 
-.step-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.step-item {
-  display: flex;
-  gap: 10px;
-  flex: 1 1 calc(20% - 20px); /* 5 item = 1 мөр */
-  min-width: 250px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-}
-
 .nav-menu {
   display: flex;
   list-style: none;
