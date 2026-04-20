@@ -297,6 +297,18 @@ git push
 - SESSION 2+3: pages/erdem.html-д Hero секц + 3 тэргүүлэх чиглэлийн карт нэмэв. Hero-д 11/18/4 статистик, 3 CTA товч. Карт бүр clickable, өнгөт border-top, hover animation-тай.
 - Anchor жагсаалт (дараагийн sessions-д хийгдэнэ): #submit-idea, #active-projects, #open-topics, #hel-tekhnologi, #digital-irgen, #soyol-innovatsi
 
+### 2026.04.20 (үргэлжлэл — PDF flipbook)
+- `assets/js/pdf-viewer.js` шинээр бичив — PDF.js ашигласан book-spread modal
+  (2 хуудас зэрэгцээ, ←/→ сум, ESC-ээр хаах, mobile-д single-page)
+- `pages/erdem.html`-д:
+  * Research policy intro (2022-2027, 2025-2030 баримт бичиг)
+  * 3 тэргүүлэх чиглэл + 3 тэнхимийн дэлгэрэнгүй хүснэгт
+  * 6 боти сэтгүүлийн grid — карт дээр дарахад PDF ном хэлбэрээр уншигдана
+- `admin/config.yml`: **📚 Эрдэм шинжилгээний бичиг (боть)** шинэ collection
+  нэмэв — зөвхөн нэг PDF файл upload. PDF-үүд `content/research-journals/pdfs/`-д
+  орно. Картуудын data-pdf зам нь энэ folder рүү зааж байна.
+- `content/research-journals/README.md` + `pdfs/.gitkeep` — CMS хавтасны тэмдэглэл.
+
 ### 2026.04.20
 - Захирлын мэндчилгээг placeholder-оос real контент руу шилжүүлэв
 - Д.Эрдэнэчимэг (Гүйцэтгэх захирал)-ийн 6 догол мэндчилгээ (MN): pages/about.html card, pages/about/ceo.html full page
