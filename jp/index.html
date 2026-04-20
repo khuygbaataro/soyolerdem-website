@@ -131,7 +131,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-3);
+  flex-wrap: nowrap;
 }
 
 .logo {
@@ -141,22 +142,49 @@ nav {
   flex-shrink: 0;
 }
 
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .logo-img { height: 36px; }
+}
+
+@media (max-width: 640px) {
+  .logo-img { height: 30px; }
+}
+
+.logo-img-footer {
+  height: 40px;
+  width: auto;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .logo-img-footer { height: 32px; }
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: var(--space-3);
+  gap: var(--space-2);
   flex: 1;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .nav-menu a {
   font-family: var(--font-jp);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--ink-soft);
   padding: 0.5rem 0;
   position: relative;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .nav-menu a::after {
