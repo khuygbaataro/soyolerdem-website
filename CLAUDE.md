@@ -306,3 +306,6 @@ git push
 - JP btn-link disabled (jp/about.html хараахан байхгүй) + .btn-disabled CSS нэмэв
 - Зураг: assets/images/director-erdenechimeg.jpg хуулсан
 - .ceo-photo, .chairman-photo CSS-ыг background-image-ээс object-fit: cover-т хөрвүүлэв (бодит зураг харуулахын тулд)
+- Үүсгэн байгуулагчийн мэдээллийг засав: pages/about/founder.html-ийг Макихара Соичи (Үүсгэн байгуулагч, УЗ-ийн дарга)-ийн жинхэнэ мэндчилгээ болон түүхээр орлуулав
+- Зураг: assets/images/soyolt-bgsh.jpg хуулж founder.html-д холбов
+- pages/about.html founder card тайлбарыг Макихара Соичи-н нэрээр шинэчлэв
