@@ -236,6 +236,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
+  flex-wrap: nowrap;
 }
 
 .logo {
@@ -293,6 +294,7 @@ nav {
   flex: 1;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .nav-menu a {
