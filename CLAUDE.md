@@ -296,3 +296,13 @@ git push
 - SESSION 1: CSS-т 3 research group өнгөний variable нэмэв (Purple #7F77DD, Teal #1D9E75, Coral #D85A30 + background хувилбарууд)
 - SESSION 2+3: pages/erdem.html-д Hero секц + 3 тэргүүлэх чиглэлийн карт нэмэв. Hero-д 11/18/4 статистик, 3 CTA товч. Карт бүр clickable, өнгөт border-top, hover animation-тай.
 - Anchor жагсаалт (дараагийн sessions-д хийгдэнэ): #submit-idea, #active-projects, #open-topics, #hel-tekhnologi, #digital-irgen, #soyol-innovatsi
+
+### 2026.04.20
+- Захирлын мэндчилгээг placeholder-оос real контент руу шилжүүлэв
+- Д.Эрдэнэчимэг (Гүйцэтгэх захирал)-ийн 6 догол мэндчилгээ (MN): pages/about.html card, pages/about/ceo.html full page
+- Япон хэлний draft хувилбар (4 догол) — TEACHER-ийн шалгалт хүлээж байна (HTML дотор DRAFT comment үлдээв)
+- Signature seal 學長 хэвээр үлдээв (уламжлалт эстетик)
+- JP label 学長 → 理事長 (функциональ нэр)
+- JP btn-link disabled (jp/about.html хараахан байхгүй) + .btn-disabled CSS нэмэв
+- Зураг: assets/images/director-erdenechimeg.jpg хуулсан
+- .ceo-photo, .chairman-photo CSS-ыг background-image-ээс object-fit: cover-т хөрвүүлэв (бодит зураг харуулахын тулд)
