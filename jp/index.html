@@ -420,6 +420,15 @@ nav {
   border-bottom-color: var(--vermillion);
 }
 
+.btn-link.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--ink-light, #7a7a8a);
+  border-bottom-color: var(--ink-light, #7a7a8a);
+  border-bottom-style: dashed;
+}
+
 /* ============================================
    3 MAIN PATHWAYS — Япон хэрэглэгчдэд хамгийн чухал хэсэг
    ============================================ */
@@ -634,10 +643,10 @@ nav {
 
 .chairman-photo {
   aspect-ratio: 3/4;
-  background:
-    linear-gradient(180deg, transparent 55%, rgba(26, 26, 46, 0.5)),
-    url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80') center/cover;
-  filter: grayscale(25%) sepia(15%);
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) sepia(10%);
   position: relative;
 }
 
@@ -2042,21 +2051,28 @@ footer::before {
 <!-- ============================================
      CHAIRMAN'S MESSAGE
      ============================================ -->
+<!--
+  DRAFT — Japanese translation (2026-04-20)
+  The Japanese text below is an initial draft translation of the Mongolian
+  original. It MUST be reviewed by a Japanese-language instructor at SEDS
+  before going to production.
+  Reviewer: __________________   Date: __________________
+-->
 <section class="chairman-message">
   <div class="container">
     <div class="message-grid">
       <div class="chairman-visual">
-        <div class="chairman-photo"></div>
+        <img src="../assets/images/director-erdenechimeg.jpg" alt="学長 D. エルデネチメグ" class="chairman-photo">
         <div class="name-plate">
-          <div class="jp">ドルジダグワ</div>
-          <div class="role">学長 ・ 学術評議会議長</div>
-          <div class="mn-name">Т. Дорждагва · President</div>
+          <div class="jp">エルデネチメグ</div>
+          <div class="role">理事長 ・ モンゴル文化教育大学</div>
+          <div class="mn-name">Д.Эрдэнэчимэг · Executive Director</div>
         </div>
       </div>
 
       <div class="message-content">
         <div class="section-label">
-          <span class="jp">学長ご挨拶</span>
+          <span class="jp">理事長ご挨拶</span>
           <span class="line"></span>
           <span class="en">Message</span>
         </div>
@@ -2064,30 +2080,36 @@ footer::before {
         <h2>モンゴルと日本の<br><span class="vermillion">架け橋</span>として。</h2>
 
         <p class="message-body drop">
-          1993年の創立以来、本学は日本とモンゴルを結ぶ教育・文化交流の
-          拠点として歩んでまいりました。現在、本学には1,500名を超える
-          卒業生がおり、その約4割が日本で学び、働き、暮らしております。
+          モンゴルと日本の友好の懸け橋として歩み続けるモンゴル文化教育大学の
+          教職員、学生、卒業生、そして連携機関の皆様に、心よりご挨拶申し上げます。
         </p>
 
         <p class="message-body">
-          日本の皆様にとって、モンゴルはまだ遠い国かもしれません。
-          しかし、草原の広がりと、素朴で温かい人々の暮らしは、
-          現代社会が忘れかけているものを思い出させてくれます。
-          本学は、そのモンゴルへの「入口」でありたいと願っております。
+          日本からの100％出資により1996年に設立された本学は、これまでに3度の
+          機関認証を取得し、約1,500名の卒業生を社会に送り出してまいりました。
+          卒業生の約40％が日本で活躍していることは、本学の教育の成果を示して
+          おります。
         </p>
 
         <p class="message-body">
-          留学、教員としての就業、ご寄付によるご支援 ——
-          どのような形であれ、モンゴルとの出会いが、あなたの
-          人生を豊かにすることをお約束いたします。
+          本学では、日本での50％および100％の奨学金制度、月額約25万円の給与
+          付き言語・文化実習、夏期休暇中の100％奨学金語学研修、卒業後の日本
+          での専門職就労など、多様な機会を学生に提供しております。また、
+          2+2および1+3のダブルディグリー・プログラムも推進中です。
+        </p>
+
+        <p class="message-body">
+          文化の伝統を尊び、学問を究め、グローバルな発展を重んじ、モンゴル・
+          日本両国で通用する人材を育成すべく、今後も尽力してまいります。
+          皆様のご来学を心よりお待ち申し上げております。
         </p>
 
         <div class="signature">
           <div>
-            <div class="name">Т・ドルジダグワ</div>
-            <div class="role">学長 · モンゴル文化教育大学</div>
+            <div class="name">Д・エルデネチメグ</div>
+            <div class="role">理事長 · モンゴル文化教育大学</div>
           </div>
-          <a href="#" class="btn-link">大学について詳しく →</a>
+          <span class="btn-link btn-disabled">詳細は準備中</span>
         </div>
       </div>
     </div>
